@@ -1,0 +1,5 @@
+{
+  "appName": "True Radiance",
+  "appId": "ph.trueradiance.app",
+  "apiBase": "https://YOUR-BACKEND-URL.onrender.com"
+}

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>True Radiance Beauty Salon and Spa | Cagayan de Oro City</title>
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Theme Configuration Verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#ffffff",
+            "surface-container": "#ffe8ee",
+            "on-surface-variant": "#564245",
+            "surface-variant": "#f4dde3",
+            "secondary-fixed": "#ffd9e0",
+            "outline": "#897175",
+            "outline-variant": "#dcc0c3",
+            "surface-container-high": "#fae2e9",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed": "#3f0016",
+            "on-primary-fixed-variant": "#851d3e",
+            "primary-fixed-dim": "#ffb1c0",
+            "inverse-on-surface": "#ffecf1",
+            "surface-bright": "#fff8f8",
+            "on-secondary-fixed": "#3f0018",
+            "on-tertiary-container": "#4f3e00",
+            "tertiary-fixed-dim": "#e9c349",
+            "surface": "#fff8f8",
+            "surface-container-highest": "#f4dde3",
+            "inverse-primary": "#ffb1c0",
+            "primary": "#7f1839",
+            "surface-dim": "#ebd4db",
+            "secondary": "#99415a",
+            "on-primary-container": "#ffc0cb",
+            "error-container": "#ffdad6",
+            "on-surface": "#24181d",
+            "on-error-container": "#93000a",
+            "primary-container": "#9e3150",
+            "secondary-fixed-dim": "#ffb1c2",
+            "on-tertiary-fixed-variant": "#574500",
+            "tertiary": "#735c00",
+            "error": "#ba1a1a",
+            "primary-fixed": "#ffd9df",
+            "on-tertiary-fixed": "#241a00",
+            "surface-container-low": "#fff0f3",
+            "tertiary-fixed": "#ffe088",
+            "on-error": "#ffffff",
+            "on-tertiary": "#ffffff",
+            "background": "#fff8f8",
+            "on-primary": "#ffffff",
+            "tertiary-container": "#cca730",
+            "inverse-surface": "#3b2d31",
+            "surface-tint": "#a53655",
+            "on-secondary-fixed-variant": "#7b2942",
+            "on-background": "#24181d",
+            "secondary-container": "#ff93ad",
+            "on-secondary-container": "#7a2841"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "margin": "1.5rem",
+            "gutter-lg": "2rem",
+            "space-xs": "0.25rem",
+            "space-md": "1rem",
+            "gutter": "1.5rem",
+            "gutter-sm": "1rem",
+            "margin-lg": "4rem",
+            "margin-sm": "1rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem"
+          },
+          "fontFamily": {
+            "display-lg-mobile": [
+              "Playfair Display"
+            ],
+            "label-sm": [
+              "Plus Jakarta Sans"
+            ],
+            "body-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-lg": [
+              "Playfair Display"
+            ],
+            "display-lg": [
+              "Playfair Display"
+            ],
+            "title-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-lg-mobile": [
+              "Playfair Display"
+            ],
+            "headline-sm": [
+              "Playfair Display"
+            ],
+            "label-lg": [
+              "Plus Jakarta Sans"
+            ],
+            "headline-md": [
+              "Playfair Display"
+            ],
+            "label-md": [
+              "Plus Jakarta Sans"
+            ],
+            "title-md": [
+              "Plus Jakarta Sans"
+            ],
+            "body-md": [
+              "Plus Jakarta Sans"
+            ]
+          },
+          "fontSize": {
+            "display-lg-mobile": [
+              "36px",
+              {
+                "lineHeight": "44px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "600"
+              }
+            ],
+            "label-sm": [
+              "11px",
+              {
+                "lineHeight": "14px",
+                "letterSpacing": "0.05em",
+                "fontWeight": "500"
+              }
+            ],
+            "body-lg": [
+              "16px",
+              {
+                "lineHeight": "26px",
+                "fontWeight": "400"
+              }
+            ],
+            "headline-lg": [
+              "40px",
+              {
+                "lineHeight": "48px",
+                "letterSpacing": "-0.01em",
+                "fontWeight": "500"
+              }
+            ],
+            "display-lg": [
+              "56px",
+              {
+                "lineHeight": "64px",
+                "letterSpacing": "-0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "title-lg": [
+              "18px",
+              {
+                "lineHeight": "26px",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-lg-mobile": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "fontWeight": "500"
+              }
+            ],
+            "headline-sm": [
+              "22px",
+              {
+                "lineHeight": "30px",
+                "fontWeight": "600"
+              }
+            ],
+            "label-lg": [
+              "14px",
+              {
+                "lineHeight": "20px",
+                "letterSpacing": "0.02em",
+                "fontWeight": "600"
+              }
+            ],
+            "headline-md": [
+              "28px",
+              {
+                "lineHeight": "36px",
+                "fontWeight": "500"
+              }
+            ],
+            "label-md": [
+              "12px",
+              {
+                "lineHeight": "16px",
+                "letterSpacing": "0.04em",
+                "fontWeight": "600"
+              }
+            ],
+            "title-md": [
+              "16px",
+              {
+                "lineHeight": "24px",
+                "fontWeight": "600"
+              }
+            ],
+            "body-md": [
+              "14px",
+              {
+                "lineHeight": "22px",
+                "fontWeight": "400"
+              }
+            ]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .petal-shadow {
+      box-shadow: 0 8px 30px rgba(158, 49, 80, 0.05);
+    }
+    .modal-shadow {
+      box-shadow: 0 20px 45px rgba(74, 59, 64, 0.08);
+    }
+    .gold-glow:hover {
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+    }
+  </style>
+<style>
+ .tile-grad{background:linear-gradient(135deg,#9e3150 0%,#99415a 55%,#cca730 140%)}
+ .glow:hover{box-shadow:0 8px 24px rgba(212,175,55,.38)}
+ details summary::-webkit-details-marker{display:none}
+</style>
+</head><body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed min-h-screen flex flex-col font-body-md text-body-md"><header class="sticky top-0 z-50 bg-surface/85 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center justify-between px-6 lg:px-16 w-full max-w-7xl mx-auto h-24">
+<a class="flex items-center gap-3 active:scale-95 transition-transform" href="/"><img alt="True Radiance Salon &amp; Spa Logo" class="h-14 md:h-20 w-auto object-contain" src="/images/logo.png"/></a>
+<nav class="hidden md:flex items-center gap-8"><a class="font-label-lg text-label-lg transition-colors text-primary font-semibold border-b-2 border-primary pb-1" href="/">Home</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/services">Services</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/packages">Packages</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/about">About Us</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/reviews">Reviews</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/contact">Contact Us</a></nav>
+<div class="flex items-center gap-2 md:gap-3">
+<a aria-label="Services" class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container flex items-center justify-center" href="/services"><span class="material-symbols-outlined">spa</span></a>
+<a aria-label="Account" class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container flex items-center justify-center" href="/login"><span class="material-symbols-outlined">account_circle</span></a>
+<a class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-br from-primary-container to-primary text-on-primary font-label-lg text-label-lg shadow-[0_6px_18px_rgba(127,24,57,0.25)] hover:shadow-[0_8px_24px_rgba(212,175,55,0.38)] hover:-translate-y-px active:scale-95 transition-all duration-200" href="/book"><span>Book Appointment</span></a>
+<button class="md:hidden p-2 text-primary rounded-full hover:bg-surface-container" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined">menu</span></button>
+</div></div>
+<div class="hidden md:hidden border-t border-outline-variant/30 bg-surface px-6 py-4 flex flex-col gap-2 shadow-md" id="mobile-drawer"><a class="py-2 font-label-lg text-label-lg text-primary font-semibold" href="/">Home</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/services">Services</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/packages">Packages</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/about">About Us</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/reviews">Reviews</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/contact">Contact Us</a><a class="mt-2 w-full text-center py-3 rounded-full bg-gradient-to-br from-primary-container to-primary text-on-primary font-label-lg" href="/book">Book Appointment</a></div>
+</header>
+<main>
+<!-- HERO -->
+<section id="home" class="relative overflow-hidden pt-10 pb-16 lg:pt-16 lg:pb-24 bg-gradient-to-b from-surface via-surface-container-low/60 to-surface">
+<div class="absolute -top-32 -right-24 w-96 h-96 rounded-full bg-secondary-fixed/30 blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-16 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-6">
+<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tertiary-fixed/50 border border-tertiary-container/50 text-on-tertiary-container font-label-md text-label-md uppercase tracking-wider mb-6"><span class="text-tertiary">✦</span> Rosario Crescent, Limketkai Center • CDO</span>
+<h1 class="font-headline-lg-mobile md:font-display-lg text-headline-lg-mobile md:text-display-lg text-primary tracking-tight mb-6">Rediscover Your Timeless Glow in Cagayan de Oro</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-8 leading-relaxed">Welcome to True Radiance—your serene sanctuary at Rosario Crescent, Limketkai Center. Combining pure botanical wellness, certified clinical aesthetic precision, and personalized self-care tailored for the vibrant spirit of Northern Mindanao.</p>
+<div class="flex flex-col sm:flex-row gap-4 mb-10"><a class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-br from-primary-container to-primary text-on-primary font-label-lg text-label-lg shadow-[0_6px_18px_rgba(127,24,57,0.25)] hover:shadow-[0_8px_24px_rgba(212,175,55,0.38)] hover:-translate-y-px active:translate-y-0 active:scale-95 transition-all duration-200" href="/book">Book Appointment</a><a class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white border border-secondary/50 text-primary font-label-lg text-label-lg shadow-sm hover:border-tertiary-container hover:bg-surface-container-low hover:shadow-[0_6px_18px_rgba(212,175,55,0.2)] active:scale-95 transition-all duration-200" href="#menu">Explore Treatment</a></div>
+<div class="grid grid-cols-3 gap-6 pt-6 border-t border-outline-variant/30 max-w-lg">
+<div><p class="font-headline-sm text-headline-sm text-primary">4.9 <span class="text-tertiary text-lg">★</span></p><p class="font-label-md text-label-md text-on-surface-variant">1,200+ Kagay-anons</p></div>
+<div><p class="font-headline-sm text-headline-sm text-primary">Limketkai</p><p class="font-label-md text-label-md text-on-surface-variant">Premier Sanctuary</p></div>
+<div><p class="font-headline-sm text-headline-sm text-primary">GCash &amp; Maya</p><p class="font-label-md text-label-md text-on-surface-variant">Easy Deposit Payments</p></div></div></div>
+<div class="lg:col-span-6 grid grid-cols-2 gap-4">
+<div class="col-span-2 relative h-60 md:h-72 rounded-3xl overflow-hidden border border-outline-variant/30 petal-shadow bg-gradient-to-br from-secondary-fixed to-tertiary-fixed/50">
+<img alt="Radiant Hydrafacial treatment" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVNqCorvB44raCfB8K7livvNvr8xrxydp4Iu9uVfcEJBdGOmjAGiEHxPSQckNx5VwnTTL9GV20G53WhwBDAxn-yFv1vd77BywjwtGkhim4OuysJEwF2OxeMpdvrTaWrZHKScD70fkUrpj3Pkx7O6RZj1vRt7i5LvgVCgN5Im7e9pqx2l1vGnYkKXEQbzZ3493eOqTcokOgZEr13UEpKojNhnpcCHsDuJ99I9FgVo0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/10 to-transparent"></div>
+<div class="absolute bottom-5 left-6 text-on-primary"><p class="font-label-sm text-label-sm tracking-widest text-tertiary-fixed uppercase">Aesthetic Care</p><p class="font-headline-sm text-headline-sm">Radiant Hydrafacial Infusion</p></div></div>
+<div class="relative h-56 rounded-3xl overflow-hidden border border-outline-variant/30 petal-shadow bg-gradient-to-br from-secondary-fixed to-surface-container"><img alt="Master stylist at work" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoFGTQqQLMpZKHdAWqWCJ5fKQHTe5siUnpJj7AhxCOlpGGjMTK4Ld9aDqtwMdO3XpVt1Kr-a4wiS3ngOPhgN-rjqm3sczmTpWHbhV-jEU_qqxUuABqGJYKDTlIFDG5qGiI5LN3fhvcEgH05AhTdrgtNjCT81ILLFgL7SOanHoPXPMWr-lG5MdUU5FD1IcshRgvDM11LFiGsYxwWoVxDlCK7D5LAfwygRBiZjx79-o"/></div>
+<div class="relative h-56 rounded-3xl overflow-hidden border border-outline-variant/30 petal-shadow tile-grad"><img alt="Private VIP suite" class="absolute inset-0 w-full h-full object-cover" onerror="this.style.display='none'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGw-rCK3y17hD75blEvd3BtYkWT53qVYSpCMiR_etqZPdnK2j_ZR1USYZDp0UJdfk7pTvpDieeaJQffEpoKJgz60hGqcN6KC2smZCQ-2gsufSycyBc8IOTWO6zCvMv4pHdk9sqbn7b1SQvc_JRvZ3B5zv7PVJ3QBj1Unix3B9pyPQqWF6M7pbSbpWM1Y0oDFm2MjBSbAtivG51tkSENZxyJHTJp7OQRpyxy_RvyCI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 to-transparent"></div><p class="absolute bottom-4 left-4 text-on-primary font-label-md text-label-md flex items-center gap-1.5"><span class="text-tertiary-fixed">★</span> VIP Private Suites</p></div>
+</div></div></section>
+
+<!-- FEATURED PACKAGE -->
+<section id="featured" class="hidden py-14 bg-surface-container-low/70"><div class="max-w-7xl mx-auto px-6 lg:px-16">
+<div class="bg-gradient-to-r from-white via-white to-tertiary-fixed/30 rounded-3xl border border-outline-variant/30 petal-shadow p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-8">
+<div class="flex flex-wrap items-center gap-2 mb-4"><span class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">★ MOST LOVED</span><span class="px-3 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">schedule</span><span id="feat-dur">180 mins</span></span><span class="px-3 py-1 rounded-full bg-surface-container text-primary font-label-sm text-label-sm">Private VIP Suite</span></div>
+<h2 id="feat-name" class="font-headline-md md:font-headline-lg text-headline-md md:text-headline-lg text-primary mb-3">Signature True Radiance Spa Package</h2>
+<p id="feat-desc" class="font-body-lg text-body-lg text-on-surface-variant mb-5 max-w-2xl">Full body revitalizing body scrub, 90-min hot stone massage, customized radiance facial, and herbal tea.</p>
+<div class="flex flex-wrap gap-2"><span class="px-3 py-1 rounded-full bg-surface-container-low border border-outline-variant/40 text-on-surface-variant font-label-sm text-label-sm">Organic Brown Sugar Scrub</span><span class="px-3 py-1 rounded-full bg-surface-container-low border border-outline-variant/40 text-on-surface-variant font-label-sm text-label-sm">Volcanic Basalt Stones</span><span class="px-3 py-1 rounded-full bg-surface-container-low border border-outline-variant/40 text-on-surface-variant font-label-sm text-label-sm">Rose Quartz Gua Sha</span><span class="px-3 py-1 rounded-full bg-surface-container-low border border-outline-variant/40 text-on-surface-variant font-label-sm text-label-sm">Mindanao Lemongrass Infusion</span></div></div>
+<div class="lg:col-span-4 lg:border-l border-outline-variant/30 lg:pl-10 text-left lg:text-right"><p class="font-label-sm text-label-sm tracking-widest text-outline uppercase mb-1">All-inclusive experience</p><p id="feat-price" class="font-display-lg text-headline-lg md:text-display-lg text-primary font-semibold">₱2,500.00</p>
+<a class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-br from-primary-container to-primary text-on-primary font-label-lg text-label-lg shadow-[0_6px_18px_rgba(127,24,57,0.25)] hover:shadow-[0_8px_24px_rgba(212,175,55,0.38)] hover:-translate-y-px active:translate-y-0 active:scale-95 transition-all duration-200 mt-5" href="/book" id="feat-link">Book This Ritual</a></div></div></div></section>
+
+<!-- TREATMENT MENU -->
+<section id="menu" class="py-20"><div class="max-w-7xl mx-auto px-6 lg:px-16">
+<div class="text-center max-w-2xl mx-auto mb-14"><span class="text-secondary font-label-md text-label-md tracking-widest uppercase">Restorative Care</span><h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mt-2 mb-3">Curated Treatment Menu</h2><p class="font-body-lg text-body-lg text-on-surface-variant">Designed to soothe mind, rejuvenate skin, and elevate spirit with botanical ingredients sourced across Northern Mindanao.</p></div>
+<div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"><p class="col-span-full text-center text-on-surface-variant">Loading treatments…</p></div>
+<div class="text-center mt-10"><a class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white border border-secondary/50 text-primary font-label-lg text-label-lg shadow-sm hover:border-tertiary-container hover:bg-surface-container-low hover:shadow-[0_6px_18px_rgba(212,175,55,0.2)] active:scale-95 transition-all duration-200" href="/services">View the full menu <span class="material-symbols-outlined text-[18px]">arrow_forward</span></a></div></div></section>
+
+<!-- SANCTUARY DIFFERENCE -->
+<section class="py-20 bg-surface-container-low/70 border-y border-outline-variant/30"><div class="max-w-7xl mx-auto px-6 lg:px-16">
+<div class="text-center mb-14"><span class="text-secondary font-label-md text-label-md tracking-widest uppercase">Our Standard</span><h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mt-2">The Sanctuary Difference</h2></div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest rounded-3xl p-7 border border-outline-variant/30 petal-shadow hover:-translate-y-1 transition-all duration-300"><div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary mb-5"><span class="material-symbols-outlined">location_on</span></div><h3 class="font-title-lg text-title-lg text-on-surface mb-2">Limketkai Center</h3><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Conveniently nestled at Rosario Crescent with dedicated parking and a whisper-quiet private interior.</p></div><div class="bg-surface-container-lowest rounded-3xl p-7 border border-outline-variant/30 petal-shadow hover:-translate-y-1 transition-all duration-300"><div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary mb-5"><span class="material-symbols-outlined">eco</span></div><h3 class="font-title-lg text-title-lg text-on-surface mb-2">Organic Botanicals</h3><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Cruelty-free, vegan, and regionally harvested plant infusions free of parabens and harsh synthetic sulfates.</p></div><div class="bg-surface-container-lowest rounded-3xl p-7 border border-outline-variant/30 petal-shadow hover:-translate-y-1 transition-all duration-300"><div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary mb-5"><span class="material-symbols-outlined">verified_user</span></div><h3 class="font-title-lg text-title-lg text-on-surface mb-2">Master Specialists</h3><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Licensed massage therapists and aesthetic practitioners committed to strict medical-grade hygiene.</p></div><div class="bg-surface-container-lowest rounded-3xl p-7 border border-outline-variant/30 petal-shadow hover:-translate-y-1 transition-all duration-300"><div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary mb-5"><span class="material-symbols-outlined">payments</span></div><h3 class="font-title-lg text-title-lg text-on-surface mb-2">GCash &amp; Maya Ready</h3><p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Pay your deposit by GCash or Maya. Our concierge confirms your reservation by Viber or SMS.</p></div>
+</div></div></section>
+
+<!-- ONLINE BOOKING DESK -->
+<section id="booking" class="py-20"><div class="max-w-4xl mx-auto px-6 lg:px-8">
+<div class="bg-surface-container-lowest rounded-3xl border border-outline-variant/30 modal-shadow p-8 lg:p-12">
+<div class="flex flex-wrap items-center justify-between gap-3 mb-8"><div><span class="text-secondary font-label-md text-label-md tracking-widest uppercase">Online Booking Desk</span><h2 class="font-headline-sm md:font-headline-md text-headline-sm md:text-headline-md text-primary mt-1">Schedule Your Sanctuary Experience</h2></div>
+<span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container text-primary font-label-md text-label-md"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>Real-time Slots Available</span></div>
+<form id="bk-form" class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+<label class="block font-label-md text-label-md text-on-surface">Select Service or Ritual<select id="bk-service" required class="mt-1.5 w-full h-12 px-4 pr-10 rounded-2xl border border-surface-container bg-white text-body-md focus:border-secondary focus:ring-1 focus:ring-tertiary"><option value="">Loading…</option></select></label>
+<label class="block font-label-md text-label-md text-on-surface">Preferred Specialist (Optional)<select id="bk-spec" class="mt-1.5 w-full h-12 px-4 pr-10 rounded-2xl border border-surface-container bg-white text-body-md focus:border-secondary focus:ring-1 focus:ring-tertiary"><option value="any">First Available Master Specialist</option></select></label>
+<label class="block font-label-md text-label-md text-on-surface">Preferred Date<input id="bk-date" type="date" required class="mt-1.5 w-full h-12 px-4 rounded-2xl border border-surface-container bg-white text-body-md focus:border-secondary focus:ring-1 focus:ring-tertiary"/></label>
+<label class="block font-label-md text-label-md text-on-surface">Preferred Time Slot<select id="bk-time" required class="mt-1.5 w-full h-12 px-4 pr-10 rounded-2xl border border-surface-container bg-white text-body-md focus:border-secondary focus:ring-1 focus:ring-tertiary"><option value="">Choose a service and date</option></select></label>
+<label class="block font-label-md text-label-md text-on-surface">Guest Full Name<input id="bk-name" required minlength="2" placeholder="e.g. Christine Mae Reyes" class="mt-1.5 w-full h-12 px-4 rounded-2xl border border-surface-container bg-white text-body-md focus:border-secondary focus:ring-1 focus:ring-tertiary"/></label>
+<label class="block font-label-md text-label-md text-on-surface">Philippine Mobile (GCash / SMS)<div class="mt-1.5 flex rounded-2xl border border-surface-container overflow-hidden bg-white focus-within:border-secondary"><span class="px-4 flex items-center bg-surface-container-low text-on-surface-variant font-label-md border-r border-surface-container">+63</span><input id="bk-phone" type="tel" required placeholder="917 123 4567" class="w-full h-12 px-4 border-0 focus:ring-0 text-body-md"/></div></label>
+<label class="block sm:col-span-2 font-label-md text-label-md text-on-surface">Email (for your booking details)<input id="bk-email" type="email" required placeholder="you@example.com" class="mt-1.5 w-full h-12 px-4 rounded-2xl border border-surface-container bg-white text-body-md focus:border-secondary focus:ring-1 focus:ring-tertiary"/></label>
+<label class="block sm:col-span-2 font-label-md text-label-md text-on-surface">Special Requests or Skin Sensitivities<textarea id="bk-notes" rows="3" maxlength="500" placeholder="Tell us if you have essential oil preferences, pregnancy considerations, or special occasions…" class="mt-1.5 w-full px-4 py-3 rounded-2xl border border-surface-container bg-white text-body-md focus:border-secondary focus:ring-1 focus:ring-tertiary"></textarea></label>
+<div class="sm:col-span-2 flex flex-col sm:flex-row items-center justify-between gap-4 pt-2"><p class="font-label-md text-label-md text-on-surface-variant max-w-xs">Reserve now and pay your deposit after our concierge confirms your slot.</p><button id="bk-btn" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-br from-primary-container to-primary text-on-primary font-label-lg text-label-lg shadow-[0_6px_18px_rgba(127,24,57,0.25)] hover:shadow-[0_8px_24px_rgba(212,175,55,0.38)] hover:-translate-y-px active:translate-y-0 active:scale-95 transition-all duration-200">Confirm Reservation Request</button></div>
+<p id="bk-msg" class="sm:col-span-2 text-sm text-error min-h-[1.2em]"></p></form>
+<div id="bk-done" class="hidden text-center py-6"><div class="w-16 h-16 mx-auto rounded-full bg-surface-container flex items-center justify-center text-primary mb-4"><span class="material-symbols-outlined text-3xl">check_circle</span></div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Reservation Received</h3><p id="bk-done-text" class="text-on-surface-variant mb-6"></p><div class="flex flex-wrap gap-3 justify-center"><a id="bk-manage" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white border border-secondary/50 text-primary font-label-lg text-label-lg shadow-sm hover:border-tertiary-container hover:bg-surface-container-low hover:shadow-[0_6px_18px_rgba(212,175,55,0.2)] active:scale-95 transition-all duration-200" href="/manage">Manage or cancel booking</a><a class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-gradient-to-br from-primary-container to-primary text-on-primary font-label-lg text-label-lg shadow-[0_6px_18px_rgba(127,24,57,0.25)] hover:shadow-[0_8px_24px_rgba(212,175,55,0.38)] hover:-translate-y-px active:translate-y-0 active:scale-95 transition-all duration-200" href="/">Back to home</a></div></div>
+</div></div></section>
+
+<!-- GUEST LOVE -->
+<section class="py-20 bg-surface-container-low/70 border-t border-outline-variant/30"><div class="max-w-7xl mx-auto px-6 lg:px-16">
+<div class="text-center mb-14"><span class="text-secondary font-label-md text-label-md tracking-widest uppercase">Kagay-anon Voices</span><h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mt-2">Love from Our Guests</h2></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-lowest rounded-3xl p-7 border border-outline-variant/30 petal-shadow flex flex-col justify-between"><div><div class="text-tertiary tracking-widest mb-3">★★★★★</div><p class="italic text-on-surface-variant mb-6">“The Hydrafacial at Limketkai gave my dull skin a glow before my wedding. The VIP room is so peaceful and smelled of pure rose water.”</p></div><div class="flex items-center gap-3 pt-4 border-t border-outline-variant/20"><span class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-sm">AP</span><div><p class="font-title-md text-title-md text-on-surface">Aileen P.</p><p class="font-label-sm text-label-sm text-outline">Pueblo de Oro, CDO</p></div></div></div><div class="bg-surface-container-lowest rounded-3xl p-7 border border-outline-variant/30 petal-shadow flex flex-col justify-between"><div><div class="text-tertiary tracking-widest mb-3">★★★★★</div><p class="italic text-on-surface-variant mb-6">“Their Philippine Hilot with warm banana leaves is the best therapeutic massage in Northern Mindanao. It relieved all the knots in my back.”</p></div><div class="flex items-center gap-3 pt-4 border-t border-outline-variant/20"><span class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-sm">MR</span><div><p class="font-title-md text-title-md text-on-surface">Mark Rodriguez</p><p class="font-label-sm text-label-sm text-outline">Macasandig, CDO</p></div></div></div><div class="bg-surface-container-lowest rounded-3xl p-7 border border-outline-variant/30 petal-shadow flex flex-col justify-between"><div><div class="text-tertiary tracking-widest mb-3">★★★★★</div><p class="italic text-on-surface-variant mb-6">“Booking with GCash was effortless. You walk into this chic sanctuary right inside Limketkai and instantly forget the busy city outside.”</p></div><div class="flex items-center gap-3 pt-4 border-t border-outline-variant/20"><span class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-sm">CS</span><div><p class="font-title-md text-title-md text-on-surface">Claire S.</p><p class="font-label-sm text-label-sm text-outline">Uptown CDO</p></div></div></div>
+</div></div></section>
+</main>
+<footer class="w-full py-16 px-6 lg:px-16 max-w-7xl mx-auto flex flex-col gap-10 border-t border-outline-variant/30 text-on-surface">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+<!-- Brand & Story -->
+<div class="lg:col-span-2">
+<a class="inline-block mb-4" href="#home">
+<img alt="True Radiance Salon &amp; Spa Logo" class="h-14 w-auto object-contain" src="/images/logo.png"/>
+</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mb-6 leading-relaxed">
+          Cagayan de Oro City's haven for exquisite beauty aesthetics, restorative rituals, and mindful self-care. Designed to awaken your inner light in Misamis Oriental.
+        </p>
+<div class="flex items-center gap-3 text-on-surface-variant">
+<span class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-surface-container text-primary">
+<span class="material-symbols-outlined text-[18px]" data-icon="spa">spa</span>
+</span>
+<span class="font-label-md text-label-md">Sanctuary at Rosario Crescent, Limketkai Center</span>
+</div>
+</div>
+<!-- Quick Nav Links -->
+<div>
+<h4 class="font-title-lg text-title-lg text-primary mb-4 font-semibold">Treatments</h4>
+<ul class="space-y-2.5">
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="/services">Services</a></li>
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#packages">Signature Packages</a></li>
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#booking">Consultation Booking</a></li>
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#about">Specialist Roster</a></li>
+</ul>
+</div>
+<!-- Concierge & Destination Links -->
+<div>
+<h4 class="font-title-lg text-title-lg text-primary mb-4 font-semibold">Concierge &amp; Visit</h4>
+<ul class="space-y-2.5">
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#contact">Limketkai Location &amp; Map</a></li>
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#contact">Viber &amp; Messenger Concierge</a></li>
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#contact">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#contact">Terms of Service</a></li>
+</ul>
+</div>
+<!-- Hours & Contact Info -->
+<div>
+<h4 class="font-title-lg text-title-lg text-primary mb-4 font-semibold">Hours &amp; Hotline</h4>
+<div class="space-y-2 font-body-md text-body-md text-on-surface-variant">
+<p>Mon – Sun: 9:00 AM – 9:00 PM</p>
+<p class="font-semibold text-primary">+63 917 892 4561</p>
+<p>(088) 856-7890</p>
+<p class="text-xs text-outline mt-2">CDO, Northern Mindanao</p>
+</div>
+</div>
+</div>
+<!-- Copyright & Disclaimer (Exact String from Shared Components JSON) -->
+<div class="pt-8 border-t border-outline-variant/30 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-4 font-label-md text-label-md text-on-surface-variant">
+<div>
+        © 2025 True Radiance Beauty Salon and Spa. All rights reserved. Rosario Crescent, Limketkai Center, Cagayan de Oro City, 9000 Misamis Oriental, Philippines.
+      </div>
+<div class="flex items-center gap-4 text-xs">
+<span>GCash &amp; Maya Accepted</span>
+<span>•</span>
+<span>Limketkai Branch</span>
+</div>
+</div>
+</footer>
+<script>
+const $=(id)=>document.getElementById(id);
+const esc=(s)=>String(s??'').replace(/[&<>"']/g,(c)=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const peso=(n)=>'₱'+Number(n).toLocaleString('en-PH');
+const pht=()=>new Date(Date.now()+8*36e5).toISOString().slice(0,10);
+const addDays=(iso,d)=>new Date(Date.parse(iso+'T00:00:00Z')+d*864e5).toISOString().slice(0,10);
+async function api(p,o){const r=await fetch('/api'+p,o&&{headers:{'Content-Type':'application/json'},...o});const d=await r.json().catch(()=>({}));if(!r.ok)throw new Error(d.error||'Something went wrong.');return d;}
+const ICON={'Hair Artistry':'content_cut','Facial & Skin':'face','Nails & Care':'back_hand','Therapeutic Massage':'self_improvement','Spa Packages':'spa'};
+let services=[],specs=[];
+function menuCard(s,i){return `<a href="/book?service=${s._id}" class="group block bg-surface-container-lowest rounded-3xl p-7 border ${i===1?'border-2 border-secondary-container':'border-outline-variant/30'} petal-shadow hover:-translate-y-1 hover:border-secondary-container transition-all duration-300 flex flex-col justify-between min-h-[250px]">
+ <div><div class="flex items-start justify-between gap-3 mb-4"><div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0"><span class="material-symbols-outlined">${ICON[s.category]||'spa'}</span></div></div>
+ <div class="flex items-start justify-between gap-3"><h3 class="font-headline-sm text-headline-sm text-primary">${esc(s.name)}</h3><span class="font-title-lg text-title-lg text-primary font-bold whitespace-nowrap">${peso(s.price)}</span></div>
+ <p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-3">${esc(s.description)}</p></div>
+ <div class="flex items-center justify-between mt-6 pt-4 border-t border-outline-variant/20 font-label-md text-label-md"><span class="flex items-center gap-1 text-on-surface-variant"><span class="material-symbols-outlined text-[16px]">schedule</span>${s.durationMin} mins</span><span class="text-primary font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">Select <span class="material-symbols-outlined text-[16px]">arrow_forward</span></span></div></a>`;}
+const WANT=['haircut-and-blowdry','radiant-hydrafacial-glow','rejuvenating-facial','swedish-full-body-massage','philippine-traditional-hilot','deluxe-manicure-and-pedicure'];
+function bookingEls(){return {svc:$('bk-service'),spec:$('bk-spec'),date:$('bk-date'),time:$('bk-time')};}
+function fillSpecs(){const {svc,spec}=bookingEls();const s=services.find((x)=>x._id===svc.value);spec.innerHTML='<option value="any">First Available Master Specialist</option>'+specs.filter((p)=>!s||p.serviceCategories.includes(s.category)).map((p)=>`<option value="${p._id}">${esc(p.name)} — ${esc(p.role)}</option>`).join('');}
+async function loadSlots(){const {svc,spec,date,time}=bookingEls();if(!svc.value||!date.value){time.innerHTML='<option value="">Choose a service and date</option>';return;}
+ time.innerHTML='<option value="">Loading times…</option>';
+ try{const {slots}=await api(`/availability?serviceId=${svc.value}&specialistId=${spec.value}&date=${date.value}`);const free=slots.filter((s)=>s.available);
+  time.innerHTML=free.length?'<option value="">Select a time</option>'+free.map((s)=>`<option value="${s.time}">${s.label} PHT</option>`).join(''):'<option value="">Fully booked — try another date</option>';}
+ catch(e){time.innerHTML=`<option value="">${esc(e.message)}</option>`;}}
+(async function(){
+ try{[services,specs]=await Promise.all([api('/services'),api('/specialists')]);}catch(e){$('menu-grid').innerHTML='<p class="col-span-full text-center text-on-surface-variant">Our menu is temporarily unavailable. Please call +63 917 892 4561.</p>';return;}
+ const feat=services.find((s)=>s.category==='Spa Packages'&&s.popular)||services.find((s)=>s.category==='Spa Packages');
+ if(feat){$('featured').classList.remove('hidden');$('feat-name').textContent=feat.name;$('feat-desc').textContent=feat.description;$('feat-dur').textContent=feat.durationMin+' mins';$('feat-price').textContent=peso(feat.price)+'.00';$('feat-link').href='/book?service='+feat._id;}
+ let pick=WANT.map((w)=>services.find((s)=>s.slug===w)).filter(Boolean);
+ if(pick.length<6)pick=[...pick,...services.filter((s)=>!pick.includes(s)&&s.category!=='Spa Packages')].slice(0,6);
+ $('menu-grid').innerHTML=pick.map(menuCard).join('');
+ const {svc,date}=bookingEls();
+ svc.innerHTML='<option value="">Select a service…</option>'+services.map((s)=>`<option value="${s._id}">${esc(s.name)} (${s.durationMin} mins) — ${peso(s.price)}</option>`).join('');
+ if(feat)svc.value=feat._id; fillSpecs();
+ date.min=pht(); date.max=addDays(pht(),60);
+ svc.onchange=()=>{fillSpecs();loadSlots();}; $('bk-spec').onchange=loadSlots; date.onchange=loadSlots;
+ try{const me=await api('/auth/me'); if(me.role==='customer'){$('bk-name').value=me.name;$('bk-email').value=me.email;$('bk-phone').value=me.phone.replace(/^\+63(\d{3})(\d{3})(\d{4})$/,'$1 $2 $3');}}catch{}
+})();
+$('bk-form').onsubmit=async(e)=>{e.preventDefault();const msg=$('bk-msg'),btn=$('bk-btn');msg.textContent='';btn.disabled=true;
+ try{const {booking:b}=await api('/bookings',{method:'POST',body:JSON.stringify({serviceId:$('bk-service').value,specialistId:$('bk-spec').value,date:$('bk-date').value,time:$('bk-time').value,
+  guest:{name:$('bk-name').value,phone:'+63'+$('bk-phone').value,email:$('bk-email').value},notes:$('bk-notes').value,payOption:'deposit',paymentMethod:'Pay at the Salon'})});
+  $('bk-form').classList.add('hidden');$('bk-done').classList.remove('hidden');
+  $('bk-done-text').textContent=`Salamat, ${b.guest.name.split(' ')[0]}! Your reference is #${b.ref} for ${b.serviceName} with ${b.specialistName} on ${b.date} at ${b.timeLabel} PHT. Our concierge will confirm your reservation shortly and share deposit details.`;
+  $('bk-manage').href='/manage?ref='+encodeURIComponent(b.ref);
+ }catch(err){msg.textContent=err.message;btn.disabled=false;loadSlots();}};
+</script>
+<script src="/js/account.js"></script>
+</body></html>

@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">True Radiance</string>
+    <string name="title_activity_main">True Radiance</string>
+    <string name="package_name">ph.trueradiance.app</string>
+    <string name="custom_url_scheme">ph.trueradiance.app</string>
+</resources>

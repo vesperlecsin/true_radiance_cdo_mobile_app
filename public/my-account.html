@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>My Account | True Radiance Beauty Salon and Spa</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{--primary:#7f1839;--pc:#9e3150;--bg:#fff5f7;--tint:#fce7eb;--ink:#4a3b40;--rose:#e17a94}
+  *{box-sizing:border-box} body{margin:0;min-height:100vh;background:var(--bg);font-family:'Plus Jakarta Sans',sans-serif;color:var(--ink)}
+  header{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.5rem;background:rgba(255,245,247,.85);backdrop-filter:blur(16px);border-bottom:1px solid rgba(225,122,148,.2)}
+  header img{height:64px;width:auto} header a,header button{color:var(--primary);font:600 .875rem 'Plus Jakarta Sans',sans-serif;text-decoration:none;background:none;border:0;cursor:pointer;margin-left:1rem}
+  header>div{display:flex;align-items:center;gap:.25rem;flex-shrink:0;white-space:nowrap} header>a{min-width:0} header>a img{max-width:100%}
+  @media(max-width:480px){header{padding:.75rem 1rem} header img{height:48px} header a,header button{margin-left:.5rem}}
+  main{max-width:760px;margin:0 auto;padding:2rem 1rem 4rem}
+  h1{font-family:'Playfair Display',serif;color:var(--primary);font-weight:600;font-size:2.1rem;margin:0}
+  .sub{color:#6b575c;font-size:.9rem;margin:.25rem 0 1.5rem}
+  .top{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;flex-wrap:wrap}
+  .pill{display:inline-block;border-radius:9999px;padding:.7rem 1.5rem;background:var(--pc);color:#fff;font-weight:600;font-size:.875rem;text-decoration:none}
+  .tabs{display:flex;gap:.5rem;margin:1.25rem 0}
+  .tabs button{border:1px solid rgba(225,122,148,.3);background:#fff;border-radius:9999px;padding:.5rem 1.1rem;font:600 .8rem 'Plus Jakarta Sans',sans-serif;color:var(--ink);cursor:pointer}
+  .tabs button.on{background:var(--pc);color:#fff;border-color:var(--pc)}
+  .bk{background:#fff;border-radius:1.5rem;padding:1.4rem 1.5rem;margin-bottom:1rem;border:1px solid rgba(225,122,148,.15);box-shadow:0 8px 30px rgba(158,49,80,.04)}
+  .bk h3{margin:0;font-family:'Playfair Display',serif;color:var(--primary);font-size:1.2rem}
+  .meta{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;margin:.6rem 0;font-size:.85rem;color:#6b575c}
+  .st{display:inline-block;padding:.15rem .7rem;border-radius:9999px;font-size:.72rem;font-weight:700;background:var(--tint);color:var(--primary);float:right}
+  .st.confirmed{background:#e6f4ec;color:#1f7a4d} .st.pending{background:#fff4d6;color:#8a6a00} .st.cancelled,.st.no_show{background:#eee;color:#666}
+  .row{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin-top:.9rem;padding-top:.9rem;border-top:1px solid rgba(225,122,148,.15)}
+  .btn{border:1.5px solid #ba1a1a;color:#ba1a1a;background:#fff;border-radius:9999px;padding:.55rem 1.2rem;font:600 .8rem 'Plus Jakarta Sans',sans-serif;cursor:pointer;display:inline-flex;align-items:center;gap:.4rem;white-space:nowrap}
+  .btn:hover{background:#ffdad6}
+  .btn:disabled{opacity:.45;cursor:not-allowed;background:#fff}
+  .btn:disabled:hover{background:#fff}
+  .note{font-size:.75rem;color:#8a6a00;max-width:60ch;flex:1;min-width:200px}
+  .empty{text-align:center;color:#6b575c;padding:2.5rem 1rem;background:#fff;border-radius:1.5rem}
+  #msg{position:fixed;left:50%;transform:translateX(-50%);bottom:1.5rem;background:var(--primary);color:#fff;padding:.7rem 1.4rem;border-radius:9999px;font-size:.85rem;font-weight:600;opacity:0;transition:.3s;max-width:90vw}
+</style></head>
+<body>
+<header><a href="/" style="margin:0"><img src="/images/logo.png" alt="True Radiance Beauty Salon &amp; Spa Logo"/></a><div><a href="/">Home</a><button id="out">Sign out</button></div></header>
+<main>
+  <div class="top"><div><h1 id="hi">My Account</h1><p class="sub" id="who"></p></div><a class="pill" href="/book">Book an Appointment</a></div>
+  <div class="tabs"><button id="tUp" class="on">Upcoming</button><button id="tPast">Past &amp; cancelled</button></div>
+  <div id="list"></div>
+</main>
+<div id="msg"></div>
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const peso = (n) => '₱' + Number(n || 0).toLocaleString('en-PH');
+const LABEL = { pending: 'Pending', confirmed: 'Confirmed', in_treatment: 'In treatment', completed: 'Completed', cancelled: 'Cancelled', no_show: 'No-show' };
+let all = [], tab = 'up';
+const toast = (t) => { const m = $('msg'); m.textContent = t; m.style.opacity = 1; setTimeout(() => (m.style.opacity = 0), 4000); };
+const isUp = (b) => ['pending', 'confirmed'].includes(b.status) && !b.past;
+
+function cancelRow(b) {
+  // The Cancel button is always shown on upcoming bookings; it is switched off (with the reason) once the cancellation window has closed.
+  const ok = b.cancel && b.cancel.ok;
+  const until = ok && b.cancel.graceEndsAt ? new Date(b.cancel.graceEndsAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'Asia/Manila' }) : '';
+  const graceNote = until ? `<span class="note" style="color:#1f7a4d">Booked by mistake? You can cancel free of charge until ${until} (PHT).</span>` : '';
+  const reason = ok
+    ? (b.amountPaid > 0 ? `<span class="note">A payment of ${peso(b.amountPaid)} was recorded. If you cancel, our team will contact you about your deposit.</span>` : '')
+    : `<span class="note">${esc(b.cancel ? b.cancel.reason : 'This booking can no longer be cancelled online.')}</span>`;
+  return `<div class="row"><button class="btn" data-cancel="${b.id}" ${ok ? '' : 'disabled'}>✕ Cancel booking</button>${graceNote}${reason}</div>`;
+}
+
+function render() {
+  const rows = all.filter((b) => (tab === 'up' ? isUp(b) : !isUp(b)));
+  if (tab === 'up') rows.reverse();                              // soonest first
+  $('list').innerHTML = rows.length ? rows.map((b) => {
+    const d = new Date(b.date + 'T00:00:00Z').toLocaleDateString('en-US', { weekday: 'short', month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+    return `<div class="bk"><span class="st ${b.status}">${LABEL[b.status] || b.status}</span><h3>${esc(b.serviceName)}</h3>
+      <div class="meta"><span>📅 ${d} · ${b.timeLabel} (PHT)</span><span>✦ ${esc(b.specialistName)}</span><span>#${esc(b.ref)}</span><span>${peso(b.totalAmount)}</span></div>
+      ${isUp(b) ? cancelRow(b) : ''}</div>`;
+  }).join('') : `<div class="empty">${tab === 'up' ? 'No upcoming appointments yet. <a href="/book" style="color:var(--primary);font-weight:600">Book your self-care</a>.' : 'Nothing here yet.'}</div>`;
+}
+
+async function load() {
+  const me = await (await fetch('/api/auth/me')).json();
+  if (me.role === 'admin') return (location.href = '/admin');
+  if (me.role !== 'customer') return (location.href = '/login?next=/my-account');
+  $('hi').textContent = 'Hello, ' + me.name.split(' ')[0]; $('who').textContent = me.email + ' · ' + me.phone;
+  all = (await (await fetch('/api/auth/my/bookings')).json()).bookings; render();
+}
+$('tUp').onclick = () => { tab = 'up'; $('tUp').classList.add('on'); $('tPast').classList.remove('on'); render(); };
+$('tPast').onclick = () => { tab = 'past'; $('tPast').classList.add('on'); $('tUp').classList.remove('on'); render(); };
+
+$('list').addEventListener('click', async (e) => {
+  const btn = e.target.closest('[data-cancel]');
+  if (!btn || btn.disabled) return;
+  const b = all.find((x) => String(x.id) === btn.dataset.cancel);
+  const msg = `Cancel ${b ? b.serviceName + ' (#' + b.ref + ')' : 'this booking'}? This cannot be undone.` +
+    (b && b.amountPaid > 0 ? `\n\nA payment of ${peso(b.amountPaid)} was recorded. Our team will contact you about it.` : '');
+  if (!confirm(msg)) return;
+  btn.disabled = true;
+  try {
+    const r = await fetch(`/api/auth/my/bookings/${btn.dataset.cancel}/cancel`, { method: 'POST' });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok) { toast(d.error || 'Could not cancel.'); btn.disabled = false; return; }
+    toast(d.paidNote ? 'Cancelled. Our team will contact you about your deposit.' : 'Your booking has been cancelled.');
+    await load();
+  } catch (err) { toast('Network problem. Please try again.'); btn.disabled = false; }
+});
+$('out').onclick = async () => { await fetch('/api/auth/logout', { method: 'POST' }); location.href = '/'; };
+load();
+</script></body></html>

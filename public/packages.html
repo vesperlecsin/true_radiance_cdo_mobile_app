@@ -1,0 +1,729 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Packages | True Radiance Beauty Salon and Spa Limketkai CDO</title>
+<!-- Material Symbols Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#ffb1c2",
+            "tertiary-fixed-dim": "#e9c349",
+            "on-tertiary-container": "#4f3e00",
+            "secondary-container": "#ff93ad",
+            "primary": "#7f1839",
+            "surface-tint": "#a53655",
+            "secondary-fixed": "#ffd9e0",
+            "surface-container-highest": "#f4dde3",
+            "on-secondary-container": "#7a2841",
+            "outline": "#897175",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#ffc0cb",
+            "on-background": "#24181d",
+            "inverse-on-surface": "#ffecf1",
+            "error": "#ba1a1a",
+            "tertiary-container": "#cca730",
+            "tertiary": "#735c00",
+            "surface": "#fff8f8",
+            "on-tertiary-fixed": "#241a00",
+            "surface-container": "#ffe8ee",
+            "on-tertiary-fixed-variant": "#574500",
+            "on-surface": "#24181d",
+            "primary-fixed-dim": "#ffb1c0",
+            "on-secondary-fixed": "#3f0018",
+            "on-error": "#ffffff",
+            "surface-container-low": "#fff0f3",
+            "background": "#fff8f8",
+            "secondary": "#99415a",
+            "surface-container-high": "#fae2e9",
+            "on-surface-variant": "#564245",
+            "surface-bright": "#fff8f8",
+            "inverse-primary": "#ffb1c0",
+            "primary-fixed": "#ffd9df",
+            "inverse-surface": "#3b2d31",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#dcc0c3",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#851d3e",
+            "surface-variant": "#f4dde3",
+            "on-primary-fixed": "#3f0016",
+            "surface-dim": "#ebd4db",
+            "on-secondary-fixed-variant": "#7b2942",
+            "primary-container": "#9e3150",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#ffe088"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "1.5rem",
+            "gutter-lg": "2rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "gutter-sm": "1rem",
+            "space-lg": "1.5rem",
+            "margin-lg": "4rem",
+            "margin-sm": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Playfair Display"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Playfair Display"],
+            "title-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    .card-rose-shadow {
+      box-shadow: 0 12px 35px -8px rgba(158, 49, 80, 0.07), 0 2px 10px -2px rgba(225, 122, 148, 0.05);
+    }
+    .card-vip-glow {
+      box-shadow: 0 16px 40px -10px rgba(158, 49, 80, 0.12), 0 0 0 1.5px rgba(212, 175, 55, 0.4);
+    }
+    .coming-soon-card {
+      opacity: 0.9;
+      transition: all 0.3s ease;
+    }
+    .coming-soon-card:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+    .package-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 0.75rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 14px rgba(158, 49, 80, 0.08);
+      background-color: #f4dde3; /* Fallback color while loading */
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-primary min-h-screen flex flex-col font-body-md text-body-md">
+<!-- TOP APP BAR -->
+<header class="sticky top-0 z-50 bg-surface/85 backdrop-blur-md shadow-sm border-b border-outline-variant/30">
+<div class="flex items-center justify-between px-6 lg:px-16 w-full max-w-7xl mx-auto h-24">
+<!-- Logo Branding -->
+<a class="flex items-center gap-3 group" href="#">
+<img alt="True Radiance Beauty Salon and Spa" class="h-14 md:h-20 w-auto object-contain" src="/images/logo.png">
+</a>
+<!-- Desktop Navigation Links -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/services">Services</a>
+<!-- Active Tab: Packages -->
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 text-label-lg font-label-lg" href="/packages">Packages</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/about">About Us</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/reviews">Reviews</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/contact">Contact Us</a>
+</nav>
+<!-- Trailing Primary Action & Icon Actions -->
+<div class="flex items-center gap-3">
+<button aria-label="spa" class="hidden sm:flex items-center justify-center p-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Spa Menu">
+<span class="material-symbols-outlined" data-icon="spa">spa</span>
+</button>
+<button aria-label="account" class="hidden sm:flex items-center justify-center p-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="My Account">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+<a class="bg-primary-container text-on-primary px-6 py-2.5 rounded-full font-label-lg text-label-lg hover:shadow-lg hover:scale-[1.02] transition-all duration-200 active:scale-95 inline-flex items-center gap-2" href="/book">
+<span>Book Appointment</span>
+</a>
+</div>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-grow">
+<!-- HERO SECTION -->
+<section class="relative pt-12 pb-16 lg:pt-20 lg:pb-24 overflow-hidden bg-gradient-to-b from-surface-container-low via-surface to-background">
+<div class="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
+<div class="text-center max-w-3xl mx-auto space-y-4">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container border border-outline-variant/40">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-md text-label-md text-primary tracking-wide">Limketkai Center, Cagayan de Oro City</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg md:font-display-lg md:text-display-lg text-primary tracking-tight">
+            Signature Wellness Packages &amp; Curated Rituals
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+            Immerse yourself in botanical serenity, heated stones, and radiant skin rejuvenation. Our signature package is now available, with more extraordinary journeys arriving soon.
+          </p>
+<!-- Quick Value Highlight Chips -->
+<div class="pt-4 flex flex-wrap items-center justify-center gap-3">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant text-label-md font-label-md border border-outline-variant/30">
+<span class="material-symbols-outlined text-tertiary-container text-[16px]" data-icon="check_circle">check_circle</span>
+              Private VIP Suites
+            </div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant text-label-md font-label-md border border-outline-variant/30">
+<span class="material-symbols-outlined text-tertiary-container text-[16px]" data-icon="check_circle">check_circle</span>
+              Complimentary Herbal Infusion
+            </div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest text-on-surface-variant text-label-md font-label-md border border-outline-variant/30">
+<span class="material-symbols-outlined text-tertiary-container text-[16px]" data-icon="check_circle">check_circle</span>
+              Certified Skin &amp; Spa Specialists
+            </div>
+</div>
+</div>
+</div>
+</section>
+<!-- PACKAGES SHOWCASE -->
+<section class="max-w-7xl mx-auto px-6 lg:px-16 pb-20">
+  
+<!-- THE ONE AVAILABLE PACKAGE -->
+<div class="mb-16">
+  <article class="bg-surface-container-lowest rounded-lg border border-outline-variant/40 card-vip-glow p-8 lg:p-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative overflow-hidden transition-all duration-300 hover:-translate-y-1">
+    <div class="absolute -right-12 -top-12 w-64 h-64 bg-surface-container-high rounded-full blur-3xl pointer-events-none opacity-60"></div>
+    <div class="relative z-10">
+      <!-- Badges Bar -->
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+        <div class="flex items-center gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md border border-tertiary-container/30">
+            <span class="material-symbols-outlined text-[15px]" data-icon="workspace_premium" data-weight="fill" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+            VIP Experience
+          </span>
+          <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-md text-label-md font-semibold">
+            Available Now
+          </span>
+        </div>
+        <div class="flex items-center gap-1 text-on-surface-variant font-label-md text-label-md">
+          <span class="material-symbols-outlined text-primary text-[18px]" data-icon="schedule">schedule</span>
+          180 min (3 Hours)
+        </div>
+      </div>
+      
+      <!-- Title & Pricing -->
+      <h2 class="font-headline-lg text-headline-lg text-primary mb-3">
+        Signature True Radiance Spa Package
+      </h2>
+      <p class="text-body-md font-body-md text-on-surface-variant mb-6">
+        Our signature 3-hour transformative ritual designed to release deep body tension, renew facial luster, and soothe tired limbs in private sanctuary luxury.
+      </p>
+      
+      <div class="flex items-baseline gap-3 mb-6 pb-6 border-b border-outline-variant/30">
+        <span class="font-headline-lg text-headline-lg font-bold text-primary">₱2,500</span>
+        <span class="text-body-md font-body-md text-on-surface-variant line-through">Value ₱3,200</span>
+        <span class="ml-auto inline-flex items-center text-label-sm font-label-sm font-semibold text-primary-container bg-surface-container px-2.5 py-1 rounded-full">
+          Save ₱700
+        </span>
+      </div>
+      
+      <!-- Inclusions Checklist -->
+      <div class="space-y-3.5 mb-8">
+        <p class="text-label-md font-label-md text-on-surface font-semibold tracking-wide uppercase text-xs">Curated Inclusions</p>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface"><strong>90-min Swedish Full Body Massage</strong> with warm therapeutic botanical oils</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface"><strong>60-min Rejuvenating Facial</strong> featuring chilled Rose Quartz drainage stones</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface"><strong>Deluxe Manicure and Pedicure</strong> with Himalayan salt soak</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[20px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Complimentary organic herbal infusion tea &amp; reserved private suite access</span>
+        </div>
+      </div>
+      
+      <!-- Card CTA -->
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2 text-on-surface-variant text-label-sm font-label-sm">
+          <span class="material-symbols-outlined text-secondary text-[18px]" data-icon="hotel_class">hotel_class</span>
+          Limketkai Center Private Suite Included
+        </div>
+        <a class="w-full sm:w-auto bg-primary-container text-on-primary px-8 py-3.5 rounded-full font-label-lg text-label-lg hover:shadow-lg hover:scale-[1.02] transition-all duration-200 text-center" href="#appointment-booking">
+          Book This Package
+        </a>
+      </div>
+    </div>
+    <!-- Image: Signature package (swapped) -->
+    <div class="relative rounded-lg overflow-hidden h-full min-h-[300px]">
+      <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1200&auto=format&fit=crop" alt="Signature Spa Package Setup" class="absolute inset-0 w-full h-full object-cover rounded-lg" />
+    </div>
+  </article>
+</div>
+
+<!-- UPCOMING PACKAGES HEADER -->
+<div class="mb-8 flex items-center justify-center gap-4">
+  <span class="h-px w-16 bg-outline-variant/50"></span>
+  <h2 class="font-headline-md text-headline-md text-primary tracking-wide flex items-center gap-2">
+    <span class="material-symbols-outlined text-tertiary-container text-[24px]">auto_awesome</span>
+    Coming Soon to Our Sanctuary
+  </h2>
+  <span class="h-px w-16 bg-outline-variant/50"></span>
+</div>
+
+<!-- UPCOMING PACKAGES GRID -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  
+  <!-- UPCOMING CARD 1: Bride-to-Be Glow Ritual -->
+  <article class="coming-soon-card bg-surface-container-lowest rounded-lg border border-outline-variant/40 card-rose-shadow p-6 flex flex-col justify-between relative overflow-hidden">
+    <div>
+      <!-- Image: Act+Acre cosmetic tubes -->
+      <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?q=80&w=800&auto=format&fit=crop" alt="Bridal Package Setup" class="package-img" />
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-semibold">
+          <span class="material-symbols-outlined text-[16px]" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+          Bridal Special
+        </span>
+        <div class="flex items-center gap-1 text-on-surface-variant font-label-md text-label-md">
+          <span class="material-symbols-outlined text-primary text-[16px]" data-icon="schedule">schedule</span>
+          240 min
+        </div>
+      </div>
+      <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
+        Bride-to-Be Glow Ritual
+      </h3>
+      <p class="text-body-md font-body-md text-on-surface-variant mb-4">
+        A luminous pre-wedding sanctuary day crafted to polish, refine, and calm the radiant bride before her grand walk.
+      </p>
+      <div class="space-y-3 mb-6">
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Radiant Hydrafacial Glow &amp; Rosehip Ampoule</span>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Warm Coconut-Almond Body Polish</span>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Russian Gel Manicure &amp; Paraffin Therapy</span>
+        </div>
+      </div>
+    </div>
+    <button disabled class="w-full bg-surface-container text-outline py-3 rounded-full font-label-lg text-label-lg cursor-not-allowed border border-outline-variant/30 flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-[18px]">lock_clock</span> Coming Soon
+    </button>
+  </article>
+
+  <!-- UPCOMING CARD 2: Ultimate CDO Bliss -->
+  <article class="coming-soon-card bg-surface-container-lowest rounded-lg border border-outline-variant/40 card-rose-shadow p-6 flex flex-col justify-between relative overflow-hidden">
+    <div>
+      <!-- Image: Ultimate CDO Bliss (swapped) -->
+      <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?q=80&w=800&auto=format&fit=crop" alt="Weekend Bliss Setup" class="package-img" />
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-secondary-container font-label-md text-label-md font-medium">
+          Weekend Renewal
+        </span>
+        <div class="flex items-center gap-1 text-on-surface-variant font-label-md text-label-md">
+          <span class="material-symbols-outlined text-primary text-[16px]" data-icon="schedule">schedule</span>
+          120 min
+        </div>
+      </div>
+      <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
+        Ultimate CDO Bliss
+      </h3>
+      <p class="text-body-md font-body-md text-on-surface-variant mb-4">
+        The favorite restorative escape for busy Cagayan de Oro professionals needing an effortless reset.
+      </p>
+      <div class="space-y-3 mb-6">
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">60-min Swedish Full Body Massage</span>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Keratin Silk Smoothing Treatment</span>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Rejuvenating Facial</span>
+        </div>
+      </div>
+    </div>
+    <button disabled class="w-full bg-surface-container text-outline py-3 rounded-full font-label-lg text-label-lg cursor-not-allowed border border-outline-variant/30 flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-[18px]">lock_clock</span> Coming Soon
+    </button>
+  </article>
+
+  <!-- UPCOMING CARD 3: Radiant Duo -->
+  <article class="coming-soon-card bg-surface-container-lowest rounded-lg border border-outline-variant/40 card-rose-shadow p-6 flex flex-col justify-between relative overflow-hidden">
+    <div>
+      <!-- Image: Aromatherapy oils and stones -->
+      <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&auto=format&fit=crop" alt="Couples Package Setup" class="package-img" />
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-medium">
+          For 2 Guests
+        </span>
+        <div class="flex items-center gap-1 text-on-surface-variant font-label-md text-label-md">
+          <span class="material-symbols-outlined text-primary text-[16px]" data-icon="schedule">schedule</span>
+          120 min
+        </div>
+      </div>
+      <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
+        Radiant Duo: Couples Sanctuary
+      </h3>
+      <p class="text-body-md font-body-md text-on-surface-variant mb-4">
+        Share peaceful restoration side-by-side inside our romantic twin suite with aromatherapy candles.
+      </p>
+      <div class="space-y-3 mb-6">
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Side-by-side Philippine Traditional Hilot</span>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Deeply hydrating Radiant Hydrafacial</span>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Aromatherapy foot bath &amp; refreshments</span>
+        </div>
+      </div>
+    </div>
+    <button disabled class="w-full bg-surface-container text-outline py-3 rounded-full font-label-lg text-label-lg cursor-not-allowed border border-outline-variant/30 flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-[18px]">lock_clock</span> Coming Soon
+    </button>
+  </article>
+
+  <!-- UPCOMING CARD 4: Head-to-Toe Quick Glam -->
+  <article class="coming-soon-card bg-surface-container-lowest rounded-lg border border-outline-variant/40 card-rose-shadow p-6 flex flex-col justify-between relative overflow-hidden">
+    <div>
+      <!-- Image: Salon tools -->
+      <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop" alt="Quick Glam Setup" class="package-img" />
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-secondary-container font-label-md text-label-md font-medium">
+          Express Pampering
+        </span>
+        <div class="flex items-center gap-1 text-on-surface-variant font-label-md text-label-md">
+          <span class="material-symbols-outlined text-primary text-[16px]" data-icon="schedule">schedule</span>
+          90 min
+        </div>
+      </div>
+      <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
+        Head-to-Toe Quick Glam
+      </h3>
+      <p class="text-body-md font-body-md text-on-surface-variant mb-4">
+        Fast-track your radiance before dinner dates, photoshoots, or special events in Northern Mindanao.
+      </p>
+      <div class="space-y-3 mb-6">
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Haircut &amp; Blowdry styling</span>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Deluxe Manicure and Pedicure</span>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Express Neck &amp; Shoulder release</span>
+        </div>
+      </div>
+    </div>
+    <button disabled class="w-full bg-surface-container text-outline py-3 rounded-full font-label-lg text-label-lg cursor-not-allowed border border-outline-variant/30 flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-[18px]">lock_clock</span> Coming Soon
+    </button>
+  </article>
+
+  <!-- UPCOMING CARD 5: Mother & Daughter Glow Day -->
+  <article class="coming-soon-card bg-surface-container-lowest rounded-lg border border-outline-variant/40 card-rose-shadow p-6 flex flex-col justify-between relative overflow-hidden">
+    <div>
+      <!-- Image: Soft pastel spa items -->
+      <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=800&auto=format&fit=crop" alt="Family Package Setup" class="package-img" />
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-secondary-container font-label-md text-label-md font-medium">
+          Family Bonding
+        </span>
+        <div class="flex items-center gap-1 text-on-surface-variant font-label-md text-label-md">
+          <span class="material-symbols-outlined text-primary text-[16px]" data-icon="schedule">schedule</span>
+          120 min
+        </div>
+      </div>
+      <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
+        Mother &amp; Daughter Glow Day
+      </h3>
+      <p class="text-body-md font-body-md text-on-surface-variant mb-4">
+        A beautiful intergenerational bonding experience featuring gentle, age-appropriate treatments for both.
+      </p>
+      <div class="space-y-3 mb-6">
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Gentle Rejuvenating Facial for Mom</span>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Kid-Friendly Manicure &amp; Pedicure</span>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Express Shoulder Massage for both</span>
+        </div>
+      </div>
+    </div>
+    <button disabled class="w-full bg-surface-container text-outline py-3 rounded-full font-label-lg text-label-lg cursor-not-allowed border border-outline-variant/30 flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-[18px]">lock_clock</span> Coming Soon
+    </button>
+  </article>
+
+  <!-- UPCOMING CARD 6: Groom's Grooming Ritual -->
+  <article class="coming-soon-card bg-surface-container-lowest rounded-lg border border-outline-variant/40 card-rose-shadow p-6 flex flex-col justify-between relative overflow-hidden">
+    <div>
+      <!-- Image: Men's grooming -->
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800&auto=format&fit=crop" alt="Groom Package Setup" class="package-img" />
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+        <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-secondary-container font-label-md text-label-md font-medium">
+          For Him
+        </span>
+        <div class="flex items-center gap-1 text-on-surface-variant font-label-md text-label-md">
+          <span class="material-symbols-outlined text-primary text-[16px]" data-icon="schedule">schedule</span>
+          90 min
+        </div>
+      </div>
+      <h3 class="font-headline-sm text-headline-sm text-primary mb-2">
+        The Groom's Grooming Ritual
+      </h3>
+      <p class="text-body-md font-body-md text-on-surface-variant mb-4">
+        A sharp, revitalizing pre-wedding or event prep package designed specifically for the modern gentleman.
+      </p>
+      <div class="space-y-3 mb-6">
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Executive Haircut &amp; Scalp Detox</span>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Deep Cleansing Facial</span>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="material-symbols-outlined text-primary mt-0.5 text-[18px]" data-icon="check_circle">check_circle</span>
+          <span class="text-body-md font-body-md text-on-surface">Express Hand Grooming &amp; Buffing</span>
+        </div>
+      </div>
+    </div>
+    <button disabled class="w-full bg-surface-container text-outline py-3 rounded-full font-label-lg text-label-lg cursor-not-allowed border border-outline-variant/30 flex items-center justify-center gap-2">
+      <span class="material-symbols-outlined text-[18px]">lock_clock</span> Coming Soon
+    </button>
+  </article>
+  
+</div>
+</section>
+<!-- BRIDAL ENTOURAGE & GROUP CONCIERGE CALLOUT -->
+<section class="max-w-7xl mx-auto px-6 lg:px-16 pb-20">
+<div class="bg-gradient-to-r from-surface-container-high via-surface-container to-surface-container-low rounded-xl border border-secondary-fixed p-8 lg:p-12 relative overflow-hidden">
+<div class="max-w-3xl relative z-10">
+<span class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-surface-container-lowest text-primary text-label-md font-label-md mb-4 border border-outline-variant/40">
+<span class="material-symbols-outlined text-[16px]" data-icon="groups">groups</span>
+            VIP Group Concierge Service
+          </span>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-3">
+            Planning a Bridal Entourage or Spa Party in CDO?
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8 leading-relaxed">
+            Reserve our entire Limketkai private pavilion for bridal entourages, milestone birthdays, or corporate wellness retreats. We curate custom wine pairings, grazing boards, and personalized multi-therapist treatments for up to 12 guests.
+          </p>
+<div class="flex flex-wrap items-center gap-4">
+<!-- Direct Viber Concierge -->
+<a class="bg-primary text-on-primary px-6 py-3.5 rounded-full font-label-lg text-label-lg inline-flex items-center gap-2.5 hover:shadow-md hover:scale-[1.02] transition-all" href="viber://chat?number=%2B639178924561">
+<span class="material-symbols-outlined text-[20px]" data-icon="chat">chat</span>
+              Viber Concierge (+63 917 892 4561)
+            </a>
+<!-- Messenger Quick Booking -->
+<a class="bg-surface-container-lowest text-primary border border-primary px-6 py-3.5 rounded-full font-label-lg text-label-lg inline-flex items-center gap-2 hover:bg-surface transition-colors" href="https://m.me/trueradiancecdo" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-[20px]" data-icon="send">send</span>
+              Messenger Quick Booking
+            </a>
+</div>
+</div>
+<div class="absolute right-0 bottom-0 top-0 w-1/3 opacity-10 hidden lg:flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined text-[280px] text-primary" data-icon="spa">spa</span>
+</div>
+</div>
+</section>
+<!-- FREQUENTLY ASKED QUESTIONS & POLICIES -->
+<section class="max-w-4xl mx-auto px-6 lg:px-16 pb-24">
+<div class="text-center mb-12">
+<h2 class="font-headline-md text-headline-md text-primary mb-2">Package Policies &amp; Limketkai FAQ</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Everything you need to know about reserving rituals at our Cagayan de Oro sanctuary.</p>
+</div>
+<div class="space-y-4">
+<!-- FAQ 1 -->
+<details class="group bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 transition-all open:ring-1 open:ring-primary/20">
+<summary class="flex items-center justify-between cursor-pointer list-none font-title-md text-title-md text-primary font-semibold">
+<span>What deposit is required to secure a signature package reservation?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-3 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20 pt-3 leading-relaxed">
+            All package appointments require a <strong>20% advance confirmation deposit</strong> via GCash, Maya, or bank transfer. The remaining balance can be settled at our Limketkai reception counter upon check-in via cash, card, or e-wallet.
+          </div>
+</details>
+<!-- FAQ 2 -->
+<details class="group bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 transition-all open:ring-1 open:ring-primary/20">
+<summary class="flex items-center justify-between cursor-pointer list-none font-title-md text-title-md text-primary font-semibold">
+<span>Can I reschedule my appointment or swap specific treatments?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-3 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20 pt-3 leading-relaxed">
+            Yes! Rescheduling is permitted up to <strong>12 hours prior</strong> to your scheduled time without forfeiture of deposit. Package elements (such as swapping Swedish massage pressure for traditional Filipino Hilot) can be adjusted upon consultation with your aesthetician.
+          </div>
+</details>
+<!-- FAQ 3 -->
+<details class="group bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 transition-all open:ring-1 open:ring-primary/20">
+<summary class="flex items-center justify-between cursor-pointer list-none font-title-md text-title-md text-primary font-semibold">
+<span>Where inside Limketkai Center is True Radiance located?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-3 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20 pt-3 leading-relaxed">
+            We are nestled peacefully along <strong>Rosario Crescent, Limketkai Center</strong> (near the garden concourse walkway). Free dedicated valet and ample mall parking are accessible just steps from our private reception foyer.
+          </div>
+</details>
+<!-- FAQ 4 -->
+<details class="group bg-surface-container-lowest rounded-lg border border-outline-variant/30 p-5 transition-all open:ring-1 open:ring-primary/20">
+<summary class="flex items-center justify-between cursor-pointer list-none font-title-md text-title-md text-primary font-semibold">
+<span>How early should we arrive before our package begins?</span>
+<span class="material-symbols-outlined text-on-surface-variant transition group-open:rotate-180" data-icon="expand_more">expand_more</span>
+</summary>
+<div class="mt-3 text-body-md font-body-md text-on-surface-variant border-t border-outline-variant/20 pt-3 leading-relaxed">
+            We recommend arriving <strong>15 minutes early</strong>. This allows you to slip into complimentary linen robes, savor our chilled botanical tea infusion, and complete a customized skin and tension assessment.
+          </div>
+</details>
+</div>
+</section>
+<!-- INLINE BOOKING CONSULTATION JUMP ANCHOR -->
+<section class="max-w-5xl mx-auto px-6 lg:px-16 pb-20" id="appointment-booking">
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant/40 p-8 md:p-10 card-rose-shadow text-center">
+<span class="material-symbols-outlined text-primary text-[36px] mb-2" data-icon="calendar_month">calendar_month</span>
+<h3 class="font-headline-md text-headline-md text-primary mb-2">Ready for Your True Radiance Experience?</h3>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-xl mx-auto mb-6">
+          Secure your Signature True Radiance Spa Package today and let our concierge prepare your private suite at Limketkai Center.
+        </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<a class="w-full sm:w-auto bg-primary-container text-on-primary px-8 py-3.5 rounded-full font-label-lg text-label-lg hover:shadow-lg transition-all inline-flex items-center justify-center gap-2" href="tel:+639178924561">
+<span class="material-symbols-outlined text-[18px]" data-icon="call">call</span>
+            Call Concierge (+63 917 892 4561)
+          </a>
+<a class="w-full sm:w-auto border border-outline-variant/50 text-on-surface px-8 py-3.5 rounded-full font-label-lg text-label-lg hover:bg-surface-container transition-colors inline-flex items-center justify-center gap-2" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="mark_email_read">mark_email_read</span>
+            Inquire via Online Form
+          </a>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/30">
+<div class="w-full py-16 px-6 lg:px-16 max-w-7xl mx-auto flex flex-col gap-10">
+<!-- Top Row: Brand & Description + Quick Links -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Brand Summary -->
+<div class="space-y-4 lg:col-span-1">
+<div class="flex items-center gap-3">
+<img alt="True Radiance Beauty Salon and Spa" class="h-14 w-auto object-contain" src="/images/logo.png">
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">
+            Northern Mindanao's premier sanctuary for holistic relaxation, advanced skin therapies, and head-to-toe beauty rejuvenation.
+          </p>
+<div class="flex items-center gap-2 text-on-surface-variant text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="pin_drop">pin_drop</span>
+            Limketkai Center, CDO City
+          </div>
+</div>
+<!-- Links Column 1 -->
+<div>
+<h4 class="font-title-md text-title-md text-primary mb-4 font-semibold">Treatments &amp; Menus</h4>
+<ul class="space-y-2.5">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="/services">Services</a></li>
+<li><a class="text-primary font-medium text-body-md font-body-md" href="#">Signature Packages</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Consultation Booking</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Specialist Roster</a></li>
+</ul>
+</div>
+<!-- Links Column 2 -->
+<div>
+<h4 class="font-title-md text-title-md text-primary mb-4 font-semibold">Concierge &amp; Location</h4>
+<ul class="space-y-2.5">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Limketkai Location &amp; Map</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="viber://chat?number=%2B639178924561">Viber &amp; Messenger Concierge</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors text-body-md font-body-md" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<!-- Operating Hours & Contact -->
+<div>
+<h4 class="font-title-md text-title-md text-primary mb-4 font-semibold">Sanctuary Hours</h4>
+<div class="space-y-2 text-body-md font-body-md text-on-surface-variant">
+<p>Monday – Sunday</p>
+<p class="font-semibold text-on-surface">10:00 AM – 9:00 PM</p>
+<p class="text-label-sm font-label-sm pt-2 text-outline">Walk-ins welcome; advance reservations strongly advised for private suites.</p>
+</div>
+</div>
+</div>
+<!-- Bottom Hairline & Copyright -->
+<div class="pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+<p class="text-on-surface-variant text-label-md font-label-md leading-normal">
+          © 2025 True Radiance Beauty Salon and Spa. All rights reserved. Rosario Crescent, Limketkai Center, Cagayan de Oro City, 9000 Misamis Oriental, Philippines.
+        </p>
+<div class="flex items-center gap-4 text-on-surface-variant">
+<span class="inline-flex items-center gap-1 text-label-sm font-label-sm text-primary">
+<span class="material-symbols-outlined text-[16px]" data-icon="verified">verified</span>
+            Official CDO Branch
+          </span>
+</div>
+</div>
+</div>
+</footer>
+<script src="/js/account.js"></script>
+</body></html>

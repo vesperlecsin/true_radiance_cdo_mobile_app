@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Book Appointment | True Radiance Beauty Salon and Spa</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-lowest": "#ffffff", "surface-container": "#ffe8ee", "on-surface-variant": "#564245",
+            "surface-variant": "#f4dde3", "secondary-fixed": "#ffd9e0", "outline": "#897175", "outline-variant": "#dcc0c3",
+            "surface-container-high": "#fae2e9", "on-secondary": "#ffffff", "on-primary-fixed": "#3f0016",
+            "on-primary-fixed-variant": "#851d3e", "primary-fixed-dim": "#ffb1c0", "inverse-on-surface": "#ffecf1",
+            "surface-bright": "#fff8f8", "on-secondary-fixed": "#3f0018", "on-tertiary-container": "#4f3e00",
+            "tertiary-fixed-dim": "#e9c349", "surface": "#fff8f8", "surface-container-highest": "#f4dde3",
+            "inverse-primary": "#ffb1c0", "primary": "#7f1839", "surface-dim": "#ebd4db", "secondary": "#99415a",
+            "on-primary-container": "#ffc0cb", "error-container": "#ffdad6", "on-surface": "#24181d",
+            "on-error-container": "#93000a", "primary-container": "#9e3150", "secondary-fixed-dim": "#ffb1c2",
+            "on-tertiary-fixed-variant": "#574500", "tertiary": "#735c00", "error": "#ba1a1a", "primary-fixed": "#ffd9df",
+            "on-tertiary-fixed": "#241a00", "surface-container-low": "#fff0f3", "tertiary-fixed": "#ffe088",
+            "on-error": "#ffffff", "on-tertiary": "#ffffff", "background": "#fff8f8", "on-primary": "#ffffff",
+            "tertiary-container": "#cca730", "inverse-surface": "#3b2d31", "surface-tint": "#a53655",
+            "on-secondary-fixed-variant": "#7b2942", "on-background": "#24181d", "secondary-container": "#ff93ad",
+            "on-secondary-container": "#7a2841"
+          },
+          "fontFamily": {
+            "display-lg-mobile": ["Playfair Display"], "label-sm": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"],
+            "headline-lg": ["Playfair Display"], "display-lg": ["Playfair Display"], "title-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Playfair Display"], "headline-sm": ["Playfair Display"], "label-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Playfair Display"], "label-md": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; display: inline-block; vertical-align: middle; line-height: 1; }
+    .custom-shadow-card { box-shadow: 0 8px 30px rgba(158, 49, 80, 0.04); }
+    .custom-shadow-elevated { box-shadow: 0 20px 45px rgba(74, 59, 64, 0.08); }
+
+    /* Form Focus States */
+    input:focus, textarea:focus, select:focus {
+      outline: none !important;
+      box-shadow: 0 0 0 3px rgba(158, 49, 80, 0.15) !important;
+      border-color: #7f1839 !important;
+    }
+    .relative.focus-within\:border-secondary:focus-within {
+      outline: none !important;
+      box-shadow: 0 0 0 3px rgba(158, 49, 80, 0.15) !important;
+      border-color: #7f1839 !important;
+    }
+
+    /* Calendar styling */
+    .date-btn.disabled { opacity: 0.3; pointer-events: none; text-decoration: line-through; }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- Top Nav -->
+<header class="sticky top-0 z-50 bg-surface/85 backdrop-blur-md border-b border-outline-variant/30 transition-all duration-200 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-16 h-24 flex items-center justify-between">
+<a class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors duration-200 group" href="/">
+<span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
+<span class="font-label-lg text-label-lg hidden sm:inline">Back to Home</span>
+</a>
+<div class="flex items-center justify-center">
+<img alt="True Radiance Salon &amp; Spa Logo" class="h-14 md:h-20 w-auto object-contain" src="/images/logo.png"/>
+</div>
+<div class="flex items-center gap-3">
+<a class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary-container text-white hover:bg-primary transition-colors duration-200 shadow-md text-xs sm:text-sm font-label-md" href="tel:+639178924561">
+<span class="material-symbols-outlined text-base text-white" style="font-variation-settings: 'FILL' 1;">phone</span>
+<span class="font-bold text-white">+63 917 892 4561</span>
+</a>
+</div>
+</div>
+</header>
+
+<!-- Step Progress Bar -->
+<div class="bg-surface-container-lowest border-b border-outline-variant/20 py-4 px-4 sm:px-6 lg:px-16">
+<div class="max-w-7xl mx-auto">
+<div class="md:hidden flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<span class="w-6 h-6 rounded-full bg-primary-container text-white flex items-center justify-center text-xs font-bold" id="mobile-step-num">1</span>
+<span class="font-headline-sm text-sm font-semibold text-primary" id="mobile-step-title">Step 1 of 5: Choose Service</span>
+</div>
+<span class="text-xs text-on-surface-variant font-label-sm" id="mobile-step-percentage">20% Completed</span>
+</div>
+<div class="md:hidden w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden mb-1">
+<div class="bg-primary-container h-full w-1/5 transition-all duration-300" id="mobile-progress-bar"></div>
+</div>
+<nav aria-label="Booking Progress" class="hidden md:flex items-center justify-between gap-3">
+<button class="flex items-center gap-3 py-2 px-4 rounded-full step-pill-active transition-all duration-200 text-left cursor-pointer" id="step-nav-1" onclick="goToStep(1)">
+<span class="w-7 h-7 rounded-full bg-primary-fixed-dim text-primary flex items-center justify-center font-bold text-xs">1</span>
+<div><p class="text-[10px] uppercase tracking-wider text-primary font-label-sm leading-none mb-1">STEP 1</p><p class="font-title-md text-sm font-semibold text-primary">Choose Service</p></div>
+</button>
+<span class="h-px flex-1 bg-outline-variant/40 mx-1"></span>
+<button class="flex items-center gap-3 py-2 px-4 rounded-full step-pill-inactive hover:bg-surface-container transition-all duration-200 text-left cursor-pointer" id="step-nav-2" onclick="goToStep(2)">
+<span class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-xs text-outline">2</span>
+<div><p class="text-[10px] uppercase tracking-wider text-outline font-label-sm leading-none mb-1">STEP 2</p><p class="font-title-md text-sm font-medium text-on-surface">Specialist</p></div>
+</button>
+<span class="h-px flex-1 bg-outline-variant/40 mx-1"></span>
+<button class="flex items-center gap-3 py-2 px-4 rounded-full step-pill-inactive hover:bg-surface-container transition-all duration-200 text-left cursor-pointer" id="step-nav-3" onclick="goToStep(3)">
+<span class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-xs text-outline">3</span>
+<div><p class="text-[10px] uppercase tracking-wider text-outline font-label-sm leading-none mb-1">STEP 3</p><p class="font-title-md text-sm font-medium text-on-surface">Date &amp; Time</p></div>
+</button>
+<span class="h-px flex-1 bg-outline-variant/40 mx-1"></span>
+<button class="flex items-center gap-3 py-2 px-4 rounded-full step-pill-inactive hover:bg-surface-container transition-all duration-200 text-left cursor-pointer" id="step-nav-4" onclick="goToStep(4)">
+<span class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-xs text-outline">4</span>
+<div><p class="text-[10px] uppercase tracking-wider text-outline font-label-sm leading-none mb-1">STEP 4</p><p class="font-title-md text-sm font-medium text-on-surface">Details &amp; Pay</p></div>
+</button>
+<span class="h-px flex-1 bg-outline-variant/40 mx-1"></span>
+<button class="flex items-center gap-3 py-2 px-4 rounded-full step-pill-inactive hover:bg-surface-container transition-all duration-200 text-left cursor-pointer" id="step-nav-5" onclick="goToStep(5)">
+<span class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-xs text-outline">5</span>
+<div><p class="text-[10px] uppercase tracking-wider text-outline font-label-sm leading-none mb-1">STEP 5</p><p class="font-title-md text-sm font-medium text-on-surface">Confirmation</p></div>
+</button>
+</nav>
+</div>
+</div>
+
+<!-- Main Canvas -->
+<main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-16 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<section class="lg:col-span-8 flex flex-col gap-6">
+
+<!-- ================= STEP 1: SERVICE ================= -->
+<div class="booking-step transition-opacity duration-300" id="step-panel-1">
+<div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-8 custom-shadow-card border border-outline-variant/20">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-outline-variant/20 gap-4">
+<div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-tertiary-fixed/30 text-on-tertiary-container mb-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">spa</span> Sanctuary Rituals
+</span>
+<h1 class="font-headline-md text-2xl text-primary font-semibold">Select Your Service</h1>
+<p class="text-on-surface-variant font-body-md mt-1">Immerse yourself in Cagayan de Oro's premier beauty and wellness sanctuary.</p>
+</div>
+<span class="text-xs text-outline font-label-md bg-surface-container px-3 py-1.5 rounded-full self-start">Step 1 of 5</span>
+</div>
+<div class="mt-6 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+<button class="category-pill active px-4 py-2 rounded-full font-label-md text-xs whitespace-nowrap bg-primary-container text-white transition-all" onclick="filterCategory('All Services', this)">All Services</button>
+<button class="category-pill px-4 py-2 rounded-full font-label-md text-xs whitespace-nowrap bg-white text-on-surface-variant border border-outline-variant/40 hover:border-primary transition-all" onclick="filterCategory('Hair Artistry', this)">Hair Artistry</button>
+<button class="category-pill px-4 py-2 rounded-full font-label-md text-xs whitespace-nowrap bg-white text-on-surface-variant border border-outline-variant/40 hover:border-primary transition-all" onclick="filterCategory('Facial &amp; Skin', this)">Facial &amp; Skin</button>
+<button class="category-pill px-4 py-2 rounded-full font-label-md text-xs whitespace-nowrap bg-white text-on-surface-variant border border-outline-variant/40 hover:border-primary transition-all" onclick="filterCategory('Nails &amp; Care', this)">Nails &amp; Care</button>
+<button class="category-pill px-4 py-2 rounded-full font-label-md text-xs whitespace-nowrap bg-white text-on-surface-variant border border-outline-variant/40 hover:border-primary transition-all" onclick="filterCategory('Therapeutic Massage', this)">Massage</button>
+<button class="category-pill px-4 py-2 rounded-full font-label-md text-xs whitespace-nowrap bg-white text-on-surface-variant border border-outline-variant/40 hover:border-primary transition-all" onclick="filterCategory('Spa Packages', this)">Spa Packages</button>
+</div>
+
+<!-- Service cards are loaded from the database by /js/book.js -->
+<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5" id="services-grid">
+<p class="text-sm text-on-surface-variant col-span-2">Loading services…</p>
+</div>
+
+<div class="mt-8 flex justify-end">
+<button class="px-8 py-3.5 rounded-full bg-primary-container text-white font-label-lg font-semibold hover:bg-primary transition-all duration-200 shadow-md hover:shadow-lg flex items-center gap-2 group active:scale-95" onclick="validateAndGoToStep(2)">
+<span>Continue to Specialist</span><span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+
+<!-- ================= STEP 2: SPECIALIST ================= -->
+<div class="booking-step hidden transition-opacity duration-300" id="step-panel-2">
+<div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-8 custom-shadow-card border border-outline-variant/20">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-outline-variant/20 gap-4">
+<div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-tertiary-fixed/30 text-on-tertiary-container mb-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">workspace_premium</span> Dedicated Artisans
+</span>
+<h2 class="font-headline-md text-2xl text-primary font-semibold">Choose Your Specialist</h2>
+<p class="text-on-surface-variant font-body-md mt-1">Our certified wellness therapists bring years of mastery.</p>
+</div>
+<span class="text-xs text-outline font-label-md bg-surface-container px-3 py-1.5 rounded-full self-start">Step 2 of 5</span>
+</div>
+
+<!-- Specialist cards are filled in by /js/book.js (only people who can do the chosen service) -->
+<div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4" id="specialist-grid">
+<p class="text-xs text-outline col-span-2">Choose a service first.</p>
+</div>
+
+<div class="mt-8 flex items-center justify-between">
+<button class="px-6 py-3 rounded-full border border-secondary text-primary font-label-lg font-semibold hover:bg-surface-container transition-all flex items-center gap-2" onclick="goToStep(1)"><span class="material-symbols-outlined">arrow_back</span> Back</button>
+<button class="px-8 py-3.5 rounded-full bg-primary-container text-white font-label-lg font-semibold hover:bg-primary transition-all duration-200 shadow-md flex items-center gap-2 group active:scale-95" onclick="goToStep(3)"><span>Select Date &amp; Time</span><span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span></button>
+</div>
+</div>
+</div>
+
+<!-- ================= STEP 3: DATE & TIME ================= -->
+<div class="booking-step hidden transition-opacity duration-300" id="step-panel-3">
+<div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-8 custom-shadow-card border border-outline-variant/20">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-outline-variant/20 gap-4">
+<div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-tertiary-fixed/30 text-on-tertiary-container mb-2">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">schedule</span> <span id="pht-clock">Philippine Time (PHT)</span>
+</span>
+<h2 class="font-headline-md text-2xl text-primary font-semibold">Choose Date &amp; Time</h2>
+<p class="text-on-surface-variant font-body-md mt-1">Limketkai Center Branch • Cagayan de Oro City</p>
+</div>
+<span class="text-xs text-outline font-label-md bg-surface-container px-3 py-1.5 rounded-full self-start">Step 3 of 5</span>
+</div>
+<div class="mt-6 grid grid-cols-1 md:grid-cols-12 gap-8">
+<!-- Calendar View (book.js finds the title h3 + the "grid-cols-7 gap-1" grid, so keep both as they are) -->
+<div class="md:col-span-7 bg-surface-container-low/60 rounded-2xl p-5 border border-outline-variant/30">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-headline-sm text-base text-primary font-semibold" id="calendar-month-year">Loading...</h3>
+<div class="flex items-center gap-1">
+<button type="button" class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:bg-surface-container transition-colors" onclick="changeMonth(-1)" title="Previous Month"><span class="material-symbols-outlined text-lg">chevron_left</span></button>
+<button type="button" class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:bg-surface-container transition-colors" onclick="changeMonth(1)" title="Next Month"><span class="material-symbols-outlined text-lg">chevron_right</span></button>
+</div>
+</div>
+<div class="grid grid-cols-7 text-center font-label-sm text-[11px] text-outline mb-2">
+<span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+</div>
+<div class="grid grid-cols-7 gap-1 text-center font-body-md text-sm" id="calendar-grid">
+<!-- Generated by JS -->
+</div>
+</div>
+<!-- Time Slots -->
+<div class="md:col-span-5 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-3">
+<h3 class="font-headline-sm text-sm text-primary font-semibold">Available Time Slots</h3>
+</div>
+<p class="text-xs text-on-surface-variant mb-4">Showing slots for <span class="font-semibold text-primary" id="display-selected-date-slot">Select a date</span></p>
+<div class="grid grid-cols-2 gap-2.5" id="timeslot-container">
+<p class="text-xs text-outline col-span-2 italic" id="slot-placeholder">Please select a date on the calendar.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 flex items-center justify-between">
+<button class="px-6 py-3 rounded-full border border-secondary text-primary font-label-lg font-semibold hover:bg-surface-container transition-all flex items-center gap-2" onclick="goToStep(2)"><span class="material-symbols-outlined">arrow_back</span> Back</button>
+<button class="px-8 py-3.5 rounded-full bg-primary-container text-white font-label-lg font-semibold hover:bg-primary transition-all duration-200 shadow-md flex items-center gap-2 group active:scale-95" onclick="goToStep(4)"><span>Enter Guest Details</span><span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span></button>
+</div>
+</div>
+</div>
+
+<!-- ================= STEP 4: DETAILS & PAYMENT ================= -->
+<div class="booking-step hidden transition-opacity duration-300" id="step-panel-4">
+<div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-8 custom-shadow-card border border-outline-variant/20">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-outline-variant/20 gap-4">
+<div>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-tertiary-fixed/30 text-on-tertiary-container mb-2"><span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">lock</span> Safe &amp; Confidential</span>
+<h2 class="font-headline-md text-2xl text-primary font-semibold">Guest Details &amp; Payment</h2>
+<p class="text-on-surface-variant font-body-md mt-1">Please provide your contact information and select payment preference.</p>
+</div>
+<span class="text-xs text-outline font-label-md bg-surface-container px-3 py-1.5 rounded-full self-start">Step 4 of 5</span>
+</div>
+
+<!-- Submitted by /js/book.js (it replaces onsubmit), so there is no inline handler here -->
+<form id="booking-form" class="mt-6 flex flex-col gap-6" novalidate="false">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div>
+<label class="block text-xs font-label-md text-on-surface mb-1.5 font-semibold" for="client-name">Full Name <span class="text-primary">*</span></label>
+<div class="relative"><input id="client-name" name="name" autocomplete="name" minlength="2" maxlength="80" class="w-full h-12 rounded-full bg-white border border-outline-variant/60 pl-5 pr-12 text-sm focus:outline-none transition-all placeholder:text-outline/60" placeholder="e.g. Maria Alyssa De Vera" required/><span class="material-symbols-outlined absolute right-4 top-3 text-outline text-lg">person</span></div>
+</div>
+<div>
+<label class="block text-xs font-label-md text-on-surface mb-1.5 font-semibold" for="client-phone">Philippine Mobile Number <span class="text-primary">*</span></label>
+<div class="relative flex rounded-full border border-outline-variant/60 bg-white overflow-hidden focus-within:border-secondary h-12 transition-all">
+<span class="flex items-center px-4 bg-surface-container-low text-xs font-bold text-primary border-r border-outline-variant/60 select-none">PH +63</span>
+<input id="client-phone" name="phone" class="w-full h-full border-0 px-4 text-sm focus:ring-0 bg-transparent placeholder:text-outline/60" placeholder="9XX XXX XXXX" required type="tel" inputmode="numeric" autocomplete="tel-national" pattern="9[0-9]{2} [0-9]{3} [0-9]{4}" title="Enter your 10-digit mobile number starting with 9, e.g. 917 892 4561"/>
+</div>
+</div>
+<div class="md:col-span-2">
+<label class="block text-xs font-label-md text-on-surface mb-1.5 font-semibold" for="client-email">Email Address <span class="text-primary">*</span></label>
+<div class="relative"><input id="client-email" name="email" autocomplete="email" class="w-full h-12 rounded-full bg-white border border-outline-variant/60 pl-5 pr-12 text-sm focus:outline-none transition-all placeholder:text-outline/60" placeholder="alyssa.devera@example.com" required type="email"/><span class="material-symbols-outlined absolute right-4 top-3 text-outline text-lg">mail</span></div>
+</div>
+<div class="md:col-span-2">
+<label class="block text-xs font-label-md text-on-surface mb-1.5 font-semibold" for="client-notes">Special Requests, Allergies or Skin Sensitivities (Optional)</label>
+<textarea id="client-notes" name="notes" maxlength="500" class="w-full rounded-2xl bg-white border border-outline-variant/60 p-4 text-sm focus:outline-none transition-all resize-none placeholder:text-outline/60" placeholder="e.g. Mild lavender aroma sensitivity, gentle pressure preferred..." rows="2"></textarea>
+</div>
+</div>
+
+<div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/30">
+<div class="flex items-center justify-between mb-4"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-xl">payments</span><h3 class="font-title-md text-sm text-primary font-bold">Flexible Booking Option</h3></div><span class="px-3 py-1 rounded-full text-[10px] font-bold bg-[#ffe088] text-[#735c00] shadow-sm">Recommended</span></div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<label class="deposit-option active flex items-center gap-4 p-4 rounded-2xl border-2 border-primary bg-white cursor-pointer transition-all shadow-sm" onclick="selectDepositOption(this, 'deposit')">
+<input checked class="text-primary focus:ring-secondary shrink-0 w-5 h-5" name="payment-split" type="radio" value="deposit"/>
+<div><p class="text-sm font-bold text-on-surface">Pay 20% Deposit</p><p class="text-[11px] text-on-surface-variant mt-0.5">Pay <span class="font-bold text-primary" id="dep-amt-label">₱0</span> to secure slot</p></div>
+</label>
+<label class="deposit-option flex items-center gap-4 p-4 rounded-2xl border border-outline-variant/50 bg-white cursor-pointer hover:border-primary transition-all" onclick="selectDepositOption(this, 'full')">
+<input class="text-primary focus:ring-secondary shrink-0 w-5 h-5" name="payment-split" type="radio" value="full"/>
+<div><p class="text-sm font-bold text-on-surface">Pay Full Amount</p><p class="text-[11px] text-on-surface-variant mt-0.5">Pay <span class="font-bold text-primary" id="full-amt-label">₱0</span> in advance</p></div>
+</label>
+</div>
+</div>
+
+<div>
+<h3 class="font-title-md text-sm text-on-surface font-semibold mb-3">Select Payment Method</h3>
+<!-- data-method is sent to the server and MUST match an entry in PAYMENT_METHODS in config/rules.js -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<!-- GCash -->
+<div class="payment-method-card active p-4 rounded-xl border-2 border-primary bg-surface-container-low cursor-pointer flex items-center justify-between transition-all" data-kind="gcash" data-method="GCash" onclick="selectPaymentMethod(this)">
+<div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-blue-600 text-white font-bold flex items-center justify-center text-sm shadow-sm">G</div><div><p class="text-sm font-bold">GCash</p><p class="text-[11px] text-on-surface-variant">Instant QR / Mobile Pay</p></div></div>
+<span class="pay-radio w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-[14px] font-bold">check</span></span>
+</div>
+<!-- Maya -->
+<div class="payment-method-card p-4 rounded-xl border border-outline-variant/60 bg-white hover:border-primary cursor-pointer flex items-center justify-between transition-all" data-kind="maya" data-method="Maya" onclick="selectPaymentMethod(this)">
+<div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-emerald-600 text-white font-bold flex items-center justify-center text-sm shadow-sm">M</div><div><p class="text-sm font-bold">Maya</p><p class="text-[11px] text-on-surface-variant">Instant QR / Maya app</p></div></div>
+<span class="pay-radio w-5 h-5 rounded-full border border-outline-variant flex items-center justify-center text-transparent shrink-0"><span class="material-symbols-outlined text-[14px] font-bold">check</span></span>
+</div>
+<!-- Bank Transfer -->
+<div class="payment-method-card p-4 rounded-xl border border-outline-variant/60 bg-white hover:border-primary cursor-pointer flex items-center justify-between transition-all" data-kind="bank" data-method="Bank Transfer" onclick="selectPaymentMethod(this)">
+<div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-surface-container text-primary font-bold flex items-center justify-center text-sm"><span class="material-symbols-outlined text-xl">account_balance</span></div><div><p class="text-sm font-bold">Online Bank Transfer</p><p class="text-[11px] text-on-surface-variant">BDO / BPI / UnionBank</p></div></div>
+<span class="pay-radio w-5 h-5 rounded-full border border-outline-variant flex items-center justify-center text-transparent shrink-0"><span class="material-symbols-outlined text-[14px] font-bold">check</span></span>
+</div>
+<!-- Pay at Salon -->
+<div class="payment-method-card p-4 rounded-xl border border-outline-variant/60 bg-white hover:border-primary cursor-pointer flex items-center justify-between transition-all" data-kind="salon" data-method="Pay at Salon" onclick="selectPaymentMethod(this)">
+<div class="flex items-center gap-3"><div class="w-10 h-10 rounded-lg bg-surface-container text-primary font-bold flex items-center justify-center text-sm"><span class="material-symbols-outlined text-xl">storefront</span></div><div><p class="text-sm font-bold">Pay at the Salon</p><p class="text-[11px] text-on-surface-variant">Cash / Card upon arrival</p></div></div>
+<span class="pay-radio w-5 h-5 rounded-full border border-outline-variant flex items-center justify-center text-transparent shrink-0"><span class="material-symbols-outlined text-[14px] font-bold">check</span></span>
+</div>
+</div>
+</div>
+
+<div class="mt-4 flex items-center justify-between pt-4 border-t border-outline-variant/20">
+<button class="px-6 py-3 rounded-full border border-secondary text-primary font-label-lg font-semibold hover:bg-surface-container transition-all flex items-center gap-2" onclick="goToStep(3)" type="button"><span class="material-symbols-outlined">arrow_back</span> Back</button>
+<button class="px-8 py-3.5 rounded-full bg-primary-container text-white font-label-lg font-semibold hover:bg-primary transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group active:scale-95" type="submit"><span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Book Appointment</span></button>
+</div>
+</form>
+</div>
+</div>
+
+<!-- ================= STEP 5: CONFIRMATION ================= -->
+<div class="booking-step hidden transition-opacity duration-300" id="step-panel-5">
+<div class="bg-surface-container-lowest rounded-2xl p-6 sm:p-10 custom-shadow-elevated border border-outline-variant/20 text-center relative overflow-hidden">
+<div class="relative w-20 h-20 mx-auto mb-5 rounded-full bg-surface-container flex items-center justify-center ring-8 ring-surface-container-high/60">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<h2 class="font-headline-lg text-primary font-semibold">Radiance Awaits You</h2>
+<p class="text-on-surface-variant font-body-md max-w-lg mx-auto mt-2">Your reservation request has been received. Our concierge will confirm it once your deposit is verified.</p>
+<div class="mt-8 max-w-xl mx-auto bg-surface-container-low rounded-2xl p-6 border border-outline-variant/30 text-left">
+<div class="flex flex-col sm:flex-row items-center justify-between pb-4 border-b border-outline-variant/30 gap-4">
+<div><span class="text-[11px] font-label-md text-outline uppercase tracking-wider">Booking Reference</span><p class="font-title-lg text-lg text-primary font-bold" id="conf-ref">-</p></div>
+</div>
+<div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+<div><span class="text-outline font-label-sm">Service Ritual</span><p class="font-semibold text-on-surface mt-0.5" id="conf-service-name">-</p></div>
+<div><span class="text-outline font-label-sm">Assigned Specialist</span><p class="font-semibold text-on-surface mt-0.5" id="conf-specialist-name">-</p></div>
+<div><span class="text-outline font-label-sm">Date &amp; Time</span><p class="font-semibold text-on-surface mt-0.5" id="conf-datetime">-</p></div>
+<div><span class="text-outline font-label-sm">Payment</span><p class="font-semibold text-tertiary mt-0.5" id="conf-payment">-</p></div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant/30 text-xs text-on-surface-variant space-y-1">
+<p>Thank you, <b id="conf-name" class="text-on-surface"></b>. We will reach you at <span id="conf-phone" class="font-semibold text-on-surface"></span> · <span id="conf-email" class="font-semibold text-on-surface"></span></p>
+<p id="conf-balance"></p>
+</div>
+</div>
+<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+<a class="px-6 py-2.5 rounded-full bg-primary-container text-white text-xs font-label-lg font-semibold hover:bg-primary transition-all shadow-sm" href="/">Back to Home</a>
+</div>
+</div>
+</div>
+
+</section>
+
+<!-- Sidebar Summary -->
+<aside class="lg:col-span-4 sticky top-28">
+<div class="bg-surface-container-lowest rounded-2xl p-6 custom-shadow-card border border-outline-variant/20">
+<div class="flex items-center justify-between pb-4 border-b border-outline-variant/20"><h3 class="font-title-lg text-primary font-semibold">Booking Summary</h3><span class="w-7 h-7 rounded-full bg-surface-container flex items-center justify-center text-primary"><span class="material-symbols-outlined text-sm">receipt_long</span></span></div>
+<div class="py-4 space-y-4 text-xs border-b border-outline-variant/20">
+<div class="flex items-start justify-between gap-3"><div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-primary text-base mt-0.5">spa</span><div><span class="text-outline font-label-sm block">Selected Ritual</span><p class="font-semibold text-on-surface text-sm" id="summary-service-title">Not selected yet</p><p class="text-[11px] text-on-surface-variant" id="summary-service-duration">-</p></div></div><span class="font-bold text-primary text-sm shrink-0" id="summary-service-price">₱0</span></div>
+<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-primary text-base mt-0.5">person</span><div><span class="text-outline font-label-sm block">Specialist</span><p class="font-semibold text-on-surface" id="summary-specialist-title">Any Available</p><p class="text-[11px] text-on-surface-variant" id="summary-specialist-role">To be assigned</p></div></div>
+<div class="flex items-start gap-2.5"><span class="material-symbols-outlined text-primary text-base mt-0.5">event</span><div><span class="text-outline font-label-sm block">Date &amp; Time (PHT)</span><p class="font-semibold text-on-surface" id="summary-datetime-title">Pending selection</p></div></div>
+</div>
+<div class="py-4 space-y-2 text-xs border-b border-outline-variant/20">
+<div class="flex items-center justify-between text-on-surface-variant"><span>Service Subtotal:</span><span class="font-semibold text-on-surface" id="summary-subtotal">₱0</span></div>
+<div class="flex items-center justify-between text-on-surface-variant"><span>Deposit Due Today (20%):</span><span class="font-bold text-primary" id="summary-deposit">₱0</span></div>
+<div class="flex items-center justify-between text-[11px] text-outline pt-1"><span>Balance Due at Salon:</span><span class="font-medium text-on-surface" id="summary-balance">₱0</span></div>
+</div>
+<div class="pt-4 flex items-center justify-between">
+<div><span class="text-[11px] font-label-sm uppercase tracking-wider text-outline block">Due Now</span><p class="font-headline-sm text-xl text-primary font-bold" id="summary-total-due">₱0</p></div>
+<span class="text-[11px] text-tertiary font-semibold bg-tertiary-fixed/30 px-2.5 py-1 rounded-full">Slot Guaranteed</span>
+</div>
+<div class="mt-8" id="summary-action-container">
+<button type="button" id="summary-next-btn" class="w-full py-3.5 rounded-full bg-primary-container text-white font-label-lg font-semibold hover:bg-primary transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2 group active:scale-95 disabled:opacity-60" onclick="advanceNextStep()">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check_circle</span><span>Book Appointment</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+</main>
+
+<footer class="bg-surface-container-lowest border-t border-outline-variant/30 w-full">
+<div class="w-full py-10 px-6 lg:px-16 max-w-7xl mx-auto text-center">
+<p class="text-label-md text-on-surface-variant">© 2025 True Radiance Beauty Salon and Spa. All rights reserved.</p>
+</div>
+</footer>
+
+<!-- ============ 1) Page helpers: step navigation, summary, selection styling ============ -->
+<script>
+    const state = {
+      step: 1,
+      serviceName: "",
+      servicePrice: 0,
+      serviceDuration: "",
+      specialistName: "Any Available",
+      specialistRole: "To be assigned",
+      selectedDate: "Pending selection",
+      selectedTime: "",
+      isDeposit: true,
+      paymentMethod: "GCash",          // sent to the server; changed by selectPaymentMethod()
+      depositAmount: 0,
+      balanceAmount: 0,
+      currentDate: new Date()
+    };
+
+    const stepTitles = ["Step 1 of 5: Choose Service","Step 2 of 5: Choose Specialist","Step 3 of 5: Choose Date & Time","Step 4 of 5: Your Details & Payment","Step 5 of 5: Confirmation"];
+
+    // Placeholder calendar (book.js takes over and draws the real one with live availability)
+    function renderCalendar() {
+      const year = state.currentDate.getFullYear();
+      const month = state.currentDate.getMonth();
+      const monthNames = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      document.getElementById('calendar-month-year').textContent = `${monthNames[month]} ${year}`;
+    }
+    function changeMonth() { /* replaced by book.js */ }
+
+    function selectDate(dateString, element) {
+      state.selectedDate = dateString;
+      state.selectedTime = "";
+      document.querySelectorAll('.date-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-primary-container', 'text-white', 'font-bold', 'ring-2', 'ring-primary', 'ring-offset-2');
+        btn.classList.add('font-medium', 'text-on-surface');
+      });
+      if (element) {
+        element.classList.add('active', 'bg-primary-container', 'text-white', 'font-bold', 'ring-2', 'ring-primary', 'ring-offset-2');
+        element.classList.remove('text-on-surface');
+      }
+      document.getElementById('display-selected-date-slot').textContent = dateString;
+      updateSummaryUI();            // time slots are loaded from the server by book.js
+    }
+
+    function selectTime(timeString, element) {
+      state.selectedTime = timeString;
+      document.querySelectorAll('.time-slot-btn').forEach(btn => {
+        btn.classList.remove('active', 'bg-primary-container', 'text-white', 'ring-2', 'ring-primary', 'ring-offset-1');
+        btn.classList.add('border', 'border-outline-variant/40', 'bg-white', 'text-on-surface');
+      });
+      element.classList.add('active', 'bg-primary-container', 'text-white', 'ring-2', 'ring-primary', 'ring-offset-1');
+      element.classList.remove('border', 'border-outline-variant/40', 'bg-white', 'text-on-surface');
+      updateSummaryUI();
+    }
+
+    function validateAndGoToStep(targetStep) {
+      if (targetStep === 2 && !state.serviceName) { alert("Please select a service to continue."); return; }
+      goToStep(targetStep);
+    }
+
+    function goToStep(targetStep) {
+      if (targetStep < 1 || targetStep > 5) return;
+      if (targetStep > 1 && !state.serviceName) { alert("Please select a service first."); return; }
+
+      state.step = targetStep;
+
+      for (let i = 1; i <= 5; i++) {
+        const panel = document.getElementById(`step-panel-${i}`);
+        const navBtn = document.getElementById(`step-nav-${i}`);
+        if (panel) { if (i === targetStep) panel.classList.remove('hidden'); else panel.classList.add('hidden'); }
+
+        if (navBtn) {
+          const numCircle = navBtn.querySelector('span:first-child');
+          const smallText = navBtn.querySelector('p:first-child');
+          const bigText = navBtn.querySelector('p:last-child');
+          if (i === targetStep) {
+            navBtn.className = "flex items-center gap-3 py-2 px-4 rounded-full bg-primary-container text-white shadow-sm transition-all duration-200 text-left cursor-pointer";
+            if (numCircle) { numCircle.className = "w-7 h-7 rounded-full bg-primary-fixed-dim text-primary flex items-center justify-center font-bold text-xs"; numCircle.textContent = i; }
+            if (smallText) { smallText.classList.remove('text-outline', 'text-primary', 'text-primary/70'); smallText.classList.add('text-white/80'); }
+            if (bigText) { bigText.classList.remove('text-on-surface', 'text-primary'); bigText.classList.add('text-white'); }
+          } else if (i < targetStep) {
+            navBtn.className = "flex items-center gap-3 py-2 px-4 rounded-full step-pill-completed hover:bg-surface-container transition-all duration-200 text-left cursor-pointer";
+            if (numCircle) { numCircle.className = "w-7 h-7 rounded-full bg-primary text-white flex items-center justify-center font-bold text-xs"; numCircle.innerHTML = '<span class="material-symbols-outlined text-[14px]">check</span>'; }
+            if (smallText) { smallText.classList.remove('text-outline', 'text-white/80'); smallText.classList.add('text-primary/70'); }
+            if (bigText) { bigText.classList.remove('text-on-surface', 'text-white'); bigText.classList.add('text-primary'); }
+          } else {
+            navBtn.className = "flex items-center gap-3 py-2 px-4 rounded-full step-pill-inactive hover:bg-surface-container transition-all duration-200 text-left cursor-pointer";
+            if (numCircle) { numCircle.className = "w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-xs text-outline"; numCircle.textContent = i; }
+            if (smallText) { smallText.classList.remove('text-primary/70', 'text-white/80'); smallText.classList.add('text-outline'); }
+            if (bigText) { bigText.classList.remove('text-primary', 'text-white'); bigText.classList.add('text-on-surface'); }
+          }
+        }
+      }
+
+      document.getElementById('mobile-step-num').textContent = targetStep;
+      document.getElementById('mobile-step-title').textContent = stepTitles[targetStep - 1];
+      document.getElementById('mobile-progress-bar').style.width = `${(targetStep / 5) * 100}%`;
+      document.getElementById('mobile-step-percentage').textContent = `${targetStep * 20}% Completed`;
+      window.scrollTo({ top: 120, behavior: 'smooth' });
+    }
+
+    // Sidebar "Book Appointment" button: moves forward; on step 4 book.js turns it into a real submit
+    function advanceNextStep() {
+      if (!state.serviceName) { alert("Please select a service first."); return; }
+      if (state.step < 5) goToStep(state.step + 1);
+    }
+
+    function filterCategory(category, buttonEl) {
+      document.querySelectorAll('.category-pill').forEach(btn => btn.className = "category-pill px-4 py-2 rounded-full font-label-md text-xs whitespace-nowrap bg-white text-on-surface-variant border border-outline-variant/40 hover:border-primary transition-all");
+      buttonEl.className = "category-pill active px-4 py-2 rounded-full font-label-md text-xs whitespace-nowrap bg-primary-container text-white transition-all";
+      document.querySelectorAll('.service-card').forEach(card => {
+        if (category === 'All Services' || card.dataset.category === category) card.classList.remove('hidden');
+        else card.classList.add('hidden');
+      });
+    }
+
+    function selectService(name, price, duration, element) {
+      state.serviceName = name;
+      state.servicePrice = price;
+      state.serviceDuration = duration;
+
+      document.querySelectorAll('.service-card').forEach(card => {
+        card.classList.remove('active', 'border-2', 'border-primary', 'bg-surface-container-low', 'ring-4', 'ring-primary/10');
+        card.classList.add('border', 'border-outline-variant/30', 'bg-surface-container-lowest');
+        const indicator = card.querySelector('.selection-indicator');
+        if (indicator) indicator.className = "selection-indicator w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center text-transparent shrink-0 mt-1";
+      });
+
+      element.classList.add('active', 'border-2', 'border-primary', 'bg-surface-container-low', 'ring-4', 'ring-primary/10');
+      element.classList.remove('border-outline-variant/30', 'bg-surface-container-lowest');
+      const indicator = element.querySelector('.selection-indicator');
+      if (indicator) indicator.className = "selection-indicator w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0 mt-1";
+
+      updatePricingCalculations();
+      updateSummaryUI();
+    }
+
+    // NOTE: 4 arguments now (name, role, id, element) – book.js passes the specialist id
+    function selectSpecialist(name, role, id, element) {
+      state.specialistName = name;
+      state.specialistRole = role;
+      document.querySelectorAll('.specialist-card').forEach(card => {
+        card.classList.remove('active', 'border-2', 'border-primary', 'bg-surface-container-low', 'ring-4', 'ring-primary/10');
+        card.classList.add('border', 'border-outline-variant/30', 'bg-surface-container-lowest');
+        const radio = card.querySelector('.specialist-radio');
+        if (radio) radio.className = "specialist-radio w-6 h-6 rounded-full border-2 border-outline-variant flex items-center justify-center text-transparent shrink-0";
+      });
+      element.classList.add('active', 'border-2', 'border-primary', 'bg-surface-container-low', 'ring-4', 'ring-primary/10');
+      element.classList.remove('border-outline-variant/30', 'bg-surface-container-lowest');
+      const radio = element.querySelector('.specialist-radio');
+      if (radio) radio.className = "specialist-radio w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shrink-0";
+      updateSummaryUI();
+    }
+
+    function selectDepositOption(element, type) {
+      state.isDeposit = (type === 'deposit');
+      document.querySelectorAll('.deposit-option').forEach(opt => {
+        opt.classList.remove('active', 'border-2', 'border-primary');
+        opt.classList.add('border', 'border-outline-variant/40');
+        opt.querySelector('input[type="radio"]').checked = false;
+      });
+      element.classList.add('active', 'border-2', 'border-primary');
+      element.classList.remove('border', 'border-outline-variant/40');
+      element.querySelector('input[type="radio"]').checked = true;
+      updatePricingCalculations();
+      updateSummaryUI();
+    }
+
+    function selectPaymentMethod(element) {
+      state.paymentMethod = element.dataset.method;      // <-- what gets saved with the booking
+      document.querySelectorAll('.payment-method-card').forEach(card => {
+        card.classList.remove('active', 'border-2', 'border-primary', 'bg-surface-container-low');
+        card.classList.add('border', 'border-outline-variant/40', 'bg-white');
+        const radio = card.querySelector('.pay-radio');
+        if (radio) radio.className = "pay-radio w-5 h-5 rounded-full border border-outline-variant flex items-center justify-center text-transparent shrink-0";
+      });
+      element.classList.add('active', 'border-2', 'border-primary', 'bg-surface-container-low');
+      element.classList.remove('border-outline-variant/40', 'bg-white');
+      const radio = element.querySelector('.pay-radio');
+      if (radio) radio.className = "pay-radio w-5 h-5 rounded-full bg-primary text-white flex items-center justify-center shrink-0";
+    }
+
+    function updatePricingCalculations() {
+      if (state.isDeposit) {
+        state.depositAmount = Math.round(state.servicePrice * 0.20);
+        state.balanceAmount = state.servicePrice - state.depositAmount;
+      } else {
+        state.depositAmount = state.servicePrice;
+        state.balanceAmount = 0;
+      }
+      const dep = document.getElementById('dep-amt-label'), full = document.getElementById('full-amt-label');
+      if (dep) dep.textContent = `₱${Math.round(state.servicePrice * 0.20).toLocaleString()}`;
+      if (full) full.textContent = `₱${state.servicePrice.toLocaleString()}`;
+    }
+
+    function updateSummaryUI() {
+      const set = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+      const when = state.selectedTime && state.selectedTime !== '—' ? `${state.selectedDate} at ${state.selectedTime} PHT` : "Pending selection";
+      set('summary-service-title', state.serviceName || "Not selected yet");
+      set('summary-service-duration', state.serviceDuration || "-");
+      set('summary-service-price', state.servicePrice ? `₱${state.servicePrice.toLocaleString()}` : "₱0");
+      set('summary-specialist-title', state.specialistName);
+      set('summary-specialist-role', state.specialistRole);
+      set('summary-datetime-title', when);
+      set('summary-subtotal', state.servicePrice ? `₱${state.servicePrice.toLocaleString()}` : "₱0");
+      const dueNow = state.servicePrice ? (state.isDeposit ? `₱${state.depositAmount.toLocaleString()}` : `₱${state.servicePrice.toLocaleString()}`) : "₱0";
+      set('summary-deposit', dueNow);
+      set('summary-balance', state.servicePrice ? `₱${state.balanceAmount.toLocaleString()}` : "₱0");
+      set('summary-total-due', dueNow);
+      set('conf-service-name', state.serviceName || "-");
+      set('conf-specialist-name', state.specialistName);
+      set('conf-datetime', when === "Pending selection" ? "-" : when);
+      set('conf-payment', state.isDeposit ? `₱${state.depositAmount.toLocaleString()} Deposit` : `₱${state.servicePrice.toLocaleString()} Full payment`);
+    }
+
+    // Mobile number box: digits only, no leading 0, formatted as 9XX XXX XXXX
+    document.getElementById('client-phone').addEventListener('input', (e) => {
+      let d = e.target.value.replace(/\D/g, '');
+      if (d.startsWith('63')) d = d.slice(2);
+      if (d.startsWith('0')) d = d.slice(1);
+      d = d.slice(0, 10);
+      e.target.value = [d.slice(0, 3), d.slice(3, 6), d.slice(6)].filter(Boolean).join(' ');
+    });
+
+    // Optional photos for the service cards (cards themselves now come from the database).
+    // Matched by service name; services without an entry here simply show no photo.
+    const SERVICE_IMAGES = {
+      'haircut & blowdry': 'https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop',
+      'premium botanical hair color': 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop',
+      'keratin silk smoothing treatment': 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=800&auto=format&fit=crop',
+      'rejuvenating facial': 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop',
+      'radiant hydrafacial glow': 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop',
+      'deluxe manicure and pedicure': 'https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800&auto=format&fit=crop',
+      'russian gel manicure': 'https://images.unsplash.com/photo-1607779097040-26e80aa78e66?q=80&w=800&auto=format&fit=crop',
+      'swedish full body massage': 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop',
+      'philippine traditional hilot': 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=800&auto=format&fit=crop'
+    };
+    // Fallback photo by category, so any service without its own photo above (e.g. the Spa Package) still gets a picture
+    const CATEGORY_IMAGES = {
+      'Hair Artistry': 'https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop',
+      'Facial & Skin': 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop',
+      'Nails & Care': 'https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=800&auto=format&fit=crop',
+      'Therapeutic Massage': 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=800&auto=format&fit=crop',
+      'Spa Packages': 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=800&auto=format&fit=crop'
+    };
+    (function () {
+      const grid = document.getElementById('services-grid');
+      function decorate() {
+        grid.querySelectorAll('.service-card').forEach((card) => {
+          if (card.querySelector('.tr-img')) return;
+          const name = (card.querySelector('h3')?.textContent || '').trim().toLowerCase();
+          const src = SERVICE_IMAGES[name] || CATEGORY_IMAGES[card.dataset.category];
+          if (!src) return;
+          card.insertAdjacentHTML('afterbegin',
+            `<div class="tr-img -mx-5 -mt-5 mb-4 h-[160px] overflow-hidden"><img src="${src}" alt="" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"/></div>`);
+        });
+      }
+      new MutationObserver(decorate).observe(grid, { childList: true });
+      decorate();
+    })();
+
+    // Payment names come from the server (config/rules.js -> PAYMENT_METHODS), so they can never mismatch.
+    // Each card is matched by kind; a card with no matching method on the server is hidden.
+    (async function () {
+      try {
+        const res = await fetch('/api/config');
+        const { paymentMethods } = await res.json();
+        if (!Array.isArray(paymentMethods) || !paymentMethods.length) return;
+        const kinds = { gcash: /gcash/i, maya: /maya/i, bank: /bank/i, salon: /salon|cash|counter|person|store|arrival/i };
+        const used = new Set();
+        document.querySelectorAll('.payment-method-card').forEach((card) => {
+          const m = paymentMethods.find((x) => kinds[card.dataset.kind].test(x) && !used.has(x));
+          if (m) { card.dataset.method = m; used.add(m); } else card.classList.add('hidden');
+        });
+        const first = document.querySelector('.payment-method-card.active:not(.hidden)') || document.querySelector('.payment-method-card:not(.hidden)');
+        if (first) selectPaymentMethod(first);
+      } catch (e) { /* keep the built-in names */ }
+    })();
+
+    // Live Philippine date & time (from the device clock, shown in PHT) so guests see the real "now"
+    (function () {
+      const el = document.getElementById('pht-clock');
+      if (!el) return;
+      const fmt = new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Manila', weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit' });
+      const tick = () => { el.textContent = 'Philippine time now: ' + fmt.format(new Date()); };
+      tick(); setInterval(tick, 15000);
+    })();
+
+    // Real-time guard: times that have already passed (Philippine time) are blocked on the page itself,
+    // even if the server is still running an old version. Re-checked every 30 seconds.
+    (function () {
+      const box = document.getElementById('timeslot-container');
+      const LEAD_HOURS = 2;   // keep in step with "Minimum notice (hours)" in Admin > Settings
+      const OFF = 'py-2.5 px-3 rounded-full bg-surface-container-high/60 text-xs font-medium text-outline/60 cursor-not-allowed';
+      const phtNow = () => {
+        const d = new Date(Date.now() + 8 * 3600e3).toISOString();
+        return { date: d.slice(0, 10), min: +d.slice(11, 13) * 60 + +d.slice(14, 16) };
+      };
+      const toMin = (label) => {
+        const m = /(\d{1,2}):(\d{2})\s*(AM|PM)/i.exec(label || '');
+        return m ? ((+m[1] % 12) + (m[3].toUpperCase() === 'PM' ? 12 : 0)) * 60 + +m[2] : null;
+      };
+      function guard() {
+        const active = document.querySelector('#cal-days [data-date].active');
+        const now = phtNow();
+        if (!active || active.dataset.date !== now.date) return;      // only today needs checking
+        const cutoff = now.min + LEAD_HOURS * 60;
+        let open = 0, total = 0;
+        box.querySelectorAll('button').forEach((b) => {
+          const label = b.dataset.label || b.textContent.replace(/\(.*\)/, '').trim();
+          const m = toMin(label);
+          if (m === null) return;
+          total++;
+          if (m < cutoff) {
+            if (!b.dataset.passed) {
+              b.disabled = true; delete b.dataset.time; b.dataset.passed = '1'; b.className = OFF;
+              b.innerHTML = label + ' <span class="text-[10px] text-error ml-1">(Passed)</span>';
+            }
+          } else if (!b.disabled) open++;
+        });
+        const note = box.querySelector('.tr-none');
+        if (total && !open && !note) box.insertAdjacentHTML('beforeend', '<p class="tr-none col-span-2 text-xs text-error font-semibold">No more times available today. Please choose another date.</p>');
+        else if (open && note) note.remove();
+      }
+      new MutationObserver(guard).observe(box, { childList: true });
+      setInterval(guard, 30000);
+    })();
+
+    renderCalendar();
+</script>
+
+<!-- ============ 2) Booking wizard <-> API (must come AFTER the script above) ============ -->
+<script src="/js/book.js"></script>
+</body>
+</html>

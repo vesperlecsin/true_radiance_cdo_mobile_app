@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | True Radiance Beauty Salon &amp; Spa | Cagayan de Oro</title>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "secondary-fixed-dim": "#ffb1c2",
+            "tertiary-fixed-dim": "#e9c349",
+            "on-tertiary-container": "#4f3e00",
+            "secondary-container": "#ff93ad",
+            "primary": "#7f1839",
+            "surface-tint": "#a53655",
+            "secondary-fixed": "#ffd9e0",
+            "surface-container-highest": "#f4dde3",
+            "on-secondary-container": "#7a2841",
+            "outline": "#897175",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#ffc0cb",
+            "on-background": "#24181d",
+            "inverse-on-surface": "#ffecf1",
+            "error": "#ba1a1a",
+            "tertiary-container": "#cca730",
+            "tertiary": "#735c00",
+            "surface": "#fff8f8",
+            "on-tertiary-fixed": "#241a00",
+            "surface-container": "#ffe8ee",
+            "on-tertiary-fixed-variant": "#574500",
+            "on-surface": "#24181d",
+            "primary-fixed-dim": "#ffb1c0",
+            "on-secondary-fixed": "#3f0018",
+            "on-error": "#ffffff",
+            "surface-container-low": "#fff0f3",
+            "background": "#fff8f8",
+            "secondary": "#99415a",
+            "surface-container-high": "#fae2e9",
+            "on-surface-variant": "#564245",
+            "surface-bright": "#fff8f8",
+            "inverse-primary": "#ffb1c0",
+            "primary-fixed": "#ffd9df",
+            "inverse-surface": "#3b2d31",
+            "surface-container-lowest": "#ffffff",
+            "outline-variant": "#dcc0c3",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "on-primary-fixed-variant": "#851d3e",
+            "surface-variant": "#f4dde3",
+            "on-primary-fixed": "#3f0016",
+            "surface-dim": "#ebd4db",
+            "on-secondary-fixed-variant": "#7b2942",
+            "primary-container": "#9e3150",
+            "on-tertiary": "#ffffff",
+            "tertiary-fixed": "#ffe088"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1.5rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "margin": "1.5rem",
+            "gutter-lg": "2rem",
+            "space-sm": "0.5rem",
+            "space-xl": "2.5rem",
+            "gutter-sm": "1rem",
+            "space-lg": "1.5rem",
+            "margin-lg": "4rem",
+            "margin-sm": "1rem"
+          },
+          "fontFamily": {
+            "headline-lg-mobile": ["Playfair Display"],
+            "headline-lg": ["Playfair Display"],
+            "headline-sm": ["Playfair Display"],
+            "headline-md": ["Playfair Display"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Playfair Display"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "display-lg": ["Playfair Display"],
+            "title-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+            "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "500" }],
+            "headline-sm": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-md": ["28px", { "lineHeight": "36px", "fontWeight": "500" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+            "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 1;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    .shadow-rose-soft {
+      box-shadow: 0 8px 30px rgba(158, 49, 80, 0.05);
+    }
+    .shadow-gold-hover:hover {
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.32);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed min-h-screen flex flex-col justify-between">
+<!-- ================= TOP NAVIGATION BAR ================= -->
+<header class="sticky top-0 z-50 w-full bg-surface/85 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-200">
+<div class="max-w-7xl mx-auto px-6 lg:px-16 h-24 flex items-center justify-between">
+<!-- Brand Logo Anchor -->
+<a class="flex items-center gap-3 transition-transform active:scale-95" href="#">
+<img alt="True Radiance Beauty Salon &amp; Spa Logo" class="h-14 md:h-20 w-auto object-contain" src="/images/logo.png"/>
+</a>
+<!-- Desktop Navigation Links (About Us is actively locked) -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/">Home</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/services">Services</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/packages">Packages</a>
+<!-- Active Tab: About Us -->
+<a class="text-primary font-semibold border-b-2 border-primary pb-1 text-label-lg font-label-lg" href="/about">About Us</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/reviews">Reviews</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/contact">Contact Us</a>
+</nav>
+<!-- Trailing Action Cluster -->
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2">
+<button aria-label="Spa Wellness Concierge" class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="spa">spa</span>
+</button>
+<button aria-label="Member Account" class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+<!-- Removed Calendar Icon from this button -->
+<a class="bg-primary-container text-on-primary rounded-full px-6 py-2.5 text-label-lg font-label-lg tracking-wide shadow-rose-soft shadow-gold-hover hover:scale-[1.02] active:scale-95 transition-all duration-200 flex items-center gap-2" href="/book">
+<span>Book Appointment</span>
+</a>
+</div>
+</div>
+</header>
+<!-- ================= MAIN CANVAS ================= -->
+<main class="flex-grow">
+<!-- HERO SECTION -->
+<section class="relative overflow-hidden pt-12 pb-20 lg:pt-20 lg:pb-28">
+<!-- Ambient Sunlit Rose Gradient Glow -->
+<div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[720px] h-[520px] bg-secondary-fixed/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="max-w-7xl mx-auto px-6 lg:px-16">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+<!-- Editorial Copy Column -->
+<div class="lg:col-span-7 space-y-6">
+<div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-surface-container border border-outline-variant/40">
+<span class="material-symbols-outlined text-tertiary-container text-sm" data-icon="sparkles" data-weight="fill" style="font-variation-settings: 'FILL' 1;">arrow_back_ios_new</span>
+<span class="text-primary font-label-md text-label-md tracking-wider">CAGAYAN DE ORO’S SANCTUARY OF BEAUTY</span>
+</div>
+<h1 class="font-headline-lg lg:font-display-lg text-headline-lg lg:text-display-lg text-primary leading-tight">
+              An Oasis of Grace &amp; Radiance in Northern Mindanao
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+              Nestled at the premier Rosario Crescent in Limketkai Center, True Radiance redefines holistic wellness. We blend bespoke aesthetic dermatology, organic botanical hair artistry, and time-honored Filipino restorative therapy in a private, petal-soft retreat designed for effortless calm.
+            </p>
+<div class="pt-4 flex flex-wrap items-center gap-4">
+<a class="bg-primary text-on-primary rounded-full px-8 py-3.5 text-label-lg font-label-lg shadow-rose-soft shadow-gold-hover hover:scale-[1.02] active:scale-95 transition-all" href="#sanctuary">
+                Explore The Sanctuary
+              </a>
+<a class="border border-secondary text-primary hover:bg-surface-container rounded-full px-8 py-3.5 text-label-lg font-label-lg transition-all" href="#specialists">
+                Meet Our Specialists
+              </a>
+</div>
+<!-- Key Trust Badges -->
+<div class="pt-6 border-t border-outline-variant/30 grid grid-cols-3 gap-6">
+<div>
+<p class="font-headline-sm text-headline-sm text-primary">100%</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Cruelty-Free Botanical Care</p>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-primary">12+</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Master Aestheticians</p>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-primary">Limketkai</p>
+<p class="font-label-md text-label-md text-on-surface-variant">Rosario Crescent Suites</p>
+</div>
+</div>
+</div>
+<!-- Asymmetric Visual Showcase -->
+<div class="lg:col-span-5 relative">
+<div class="relative mx-auto max-w-md lg:max-w-none">
+<div class="rounded-xl overflow-hidden border border-outline-variant/40 shadow-rose-soft bg-surface-container-lowest">
+<!-- Replaced with the True Radiance reception image -->
+<img class="w-full h-[480px] object-cover hover:scale-105 transition-transform duration-700 ease-out" alt="The elegant reception area of True Radiance Beauty Salon and Spa, featuring a pink marble counter, gold accents, plush pink armchairs, and orchid arrangements." src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=1200&auto=format&fit=crop"/>
+</div>
+<!-- Floating Champagne Accent Card -->
+<div class="absolute -bottom-6 -left-6 bg-surface-container-lowest/95 backdrop-blur-md p-5 rounded-lg border border-tertiary-container/30 shadow-xl max-w-xs hidden sm:flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined" data-icon="local_florist">local_florist</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Pure Botanical Touch</h4>
+<p class="font-label-md text-label-md text-on-surface-variant">Dermatologist-formulated &amp; hypo-allergenic formulas.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- STORY & FOUNDATION SECTION -->
+<section class="py-20 bg-surface-container-low/60 border-y border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-6 lg:px-16">
+<div class="max-w-3xl mx-auto text-center mb-16 space-y-4">
+<span class="text-secondary font-label-md text-label-md tracking-wider">HERITAGE &amp; PURPOSE</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">
+            Born in the City of Golden Friendship
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            True Radiance began with a singular devotion: to give Cagayan de Oro a wellness haven where clinical precision meets restorative luxury. Located at Limketkai Center, we welcome clients into an intimate sanctuary inspired by the natural beauty and warm hospitality of Mindanao.
+          </p>
+</div>
+<!-- 3 Core Values / Pillars (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Pillar 1 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/30 shadow-rose-soft hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="eco">eco</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Botanical &amp; Non-Toxic</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Organic hair revitalizers, cruelty-free vegan nail formulations, and dermatologically tested hypoallergenic skin elixirs. We ensure gentle yet potent cellular nourishment without harsh parabens or sulfates.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center gap-2 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-base" data-icon="verified">verified</span>
+<span>100% Certified Clean Formulations</span>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/30 shadow-rose-soft hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="favorite">favorite</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Cagayan de Oro Hospitality</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Authentic Kagay-anon warmth infused with medical-grade hygiene protocols. From private acoustic suites to complimentary herbal infusions, every visitor is welcomed like cherished family into a quiet haven.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center gap-2 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-base" data-icon="handshake">handshake</span>
+<span>True Kagay-anon Grace &amp; Discretion</span>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-surface-container-lowest p-8 rounded-lg border border-outline-variant/30 shadow-rose-soft hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+<div class="space-y-4">
+<div class="w-14 h-14 rounded-full bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="workspace_premium">workspace_premium</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Master Aesthetic Specialists</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                Continual mastery through intensive masterclasses led by the Philippines’ top hair directors and Philippine board-certified aesthetic practitioners. Uncompromising precision in every touch.
+              </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center gap-2 text-primary font-label-md text-label-md">
+<span class="material-symbols-outlined text-base" data-icon="hotel_class">hotel_class</span>
+<span>Advanced International Certifications</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- MEET OUR SPECIALISTS SECTION -->
+<section class="py-24" id="specialists">
+<div class="max-w-7xl mx-auto px-6 lg:px-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div class="space-y-3 max-w-2xl">
+<span class="text-secondary font-label-md text-label-md tracking-wider">THE ARTISANS OF RADIANCE</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">Meet Our Senior Specialists</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Every practitioner brings years of dedicated craftsmanship, aesthetic discernment, and attentive care to customize each therapy session to your skin and soul.
+            </p>
+</div>
+<a class="inline-flex items-center gap-2 text-primary font-label-lg text-label-lg hover:underline decoration-tertiary-container decoration-2 underline-offset-4" href="#book">
+<span>Consult with a Specialist</span>
+<span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<!-- 4 Specialists Cards Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Specialist 1: Elena Roa -->
+<div class="group bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/30 shadow-rose-soft hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of Elena Roa, an elegant Filipina senior esthetician wearing a crisp tailored blush-rose uniform, gently smiling in a bright, modern beauty treatment suite with warm ambient backlighting and soft focus flora in Cagayan de Oro." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCr6UUojrBeYfYFWnDt6omIvWjUHY-fCxDq85a-BUuswCdUMzBBc7Ojn7Adg2ewidtVZ9wy-2mzPlMt8y5d4835HTesgI0N5dgq1tlw8KsEkDK4NmegghoUDmkHTJKLq3p62qg0t9yHEiQ66WYz02W6sC5-QiHYIcqBi2erwku8uP9gLkWLnt_S1fq2RrcdDVhmmS4LlXsDqj6OPte0JpgRaewospO7GGt2AJ_bSy0"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-primary font-label-sm text-label-sm border border-outline-variant/40">
+                9+ Years Exp
+              </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div class="space-y-1.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Elena Roa</h3>
+<p class="text-primary font-label-md text-label-md font-semibold">Senior Esthetician &amp; Facial Specialist</p>
+<p class="font-body-md text-body-md text-on-surface-variant pt-2">
+                  Specializes in bespoke Hydra-Glow, LED rejuvenation, and non-invasive lymphatic facial sculpting.
+                </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Hydra-Facials</span>
+<span class="text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span> 4.98
+                </span>
+</div>
+</div>
+</div>
+<!-- Specialist 2: Maria Santos -->
+<div class="group bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/30 shadow-rose-soft hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of Maria Santos, a stylish master hair stylist with chic layered dark hair wearing an artistic modern rose tunic, confident and warm expression inside a bright, sunlit boutique hair studio with rose-gold mirrors." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoFGTQqQLMpZKHdAWqWCJ5fKQHTe5siUnpJj7AhxCOlpGGjMTK4Ld9aDqtwMdO3XpVt1Kr-a4wiS3ngOPhgN-rjqm3sczmTpWHbhV-jEU_qqxUuABqGJYKDTlIFDG5qGiI5LN3fhvcEgH05AhTdrgtNjCT81ILLFgL7SOanHoPXPMWr-lG5MdUU5FD1IcshRgvDM11LFiGsYxwWoVxDlCK7D5LAfwygRBiZjx79-o"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-primary font-label-sm text-label-sm border border-outline-variant/40">
+                11+ Years Exp
+              </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div class="space-y-1.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Maria Santos</h3>
+<p class="text-primary font-label-md text-label-md font-semibold">Master Hair Stylist &amp; Color Director</p>
+<p class="font-body-md text-body-md text-on-surface-variant pt-2">
+                  Trained in Tokyo and Manila in French balayage, dimensional brunette glossing, and keratin botanical repair.
+                </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Balayage &amp; Cut</span>
+<span class="text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span> 5.0
+                </span>
+</div>
+</div>
+</div>
+<!-- Specialist 3: Grace Lim -->
+<div class="group bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/30 shadow-rose-soft hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of Grace Lim, a serene Filipina lead massage therapist in soft cream linen spa attire, smiling gently in a dim, candlelit therapy suite decorated with fresh tropical banana leaves and warm rosewood tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc3IvNh2kXrh42TjtgwoVYyEO1uUC1iS3WieDIlshfIponmtuquY0kWAA2EghCcquro3cWWL8kD9VE7RUWWJ1S8WxSq6Q0-6FO8mCHvdt-RZfaq1gk6yO7iLHSHzEMW1xpnPtl1q0jb4doBNRrJkdmBoawbH6xZYkOFZuPWUKcT7h7_zzX0BiMq0waaBVHg41s8mXR4oXMaQ5kowS964ac-iHQkOZVTTtKvZjVBog"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-primary font-label-sm text-label-sm border border-outline-variant/40">
+                8+ Years Exp
+              </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div class="space-y-1.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Grace Lim</h3>
+<p class="text-primary font-label-md text-label-md font-semibold">Lead Massage Therapist &amp; Hilot Specialist</p>
+<p class="font-body-md text-body-md text-on-surface-variant pt-2">
+                  Master practitioner of traditional Dagdagay and Kagay-anon herbal warm stone hilot for deep somatic tension relief.
+                </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Hilot &amp; Stones</span>
+<span class="text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span> 4.99
+                </span>
+</div>
+</div>
+</div>
+<!-- Specialist 4: Camille Javier -->
+<div class="group bg-surface-container-lowest rounded-lg overflow-hidden border border-outline-variant/30 shadow-rose-soft hover:shadow-xl transition-all duration-300 flex flex-col">
+<div class="relative overflow-hidden aspect-[4/5] bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Portrait of Camille Javier, an attentive senior nail artist and medical pedicurist with tidy hair and modern rose workwear, smiling in a clean luxury manicure salon with shelves of pastel polishes behind her." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4ecEhGeMiLX118jCVaAphX1e9Fw96jLXeQfYlU2f4-2E9twI0iLWEtaw6GKe5lvQ7-pX7wssLKA5tE83iCP__ODJ3DT6kqXVorf7vL0MicwBavpEbjuBdmCQxoE3Rm8-PmC2G_2LuUGykRQBB6n6clj5xGQuOq4gIEHyZv3n4pvMtiLuRQSDMCPxULwERv0QokJjnmlV9V4JQXcsh2EXs1sCXQ8WcprkJjEHaQgI"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-primary font-label-sm text-label-sm border border-outline-variant/40">
+                6+ Years Exp
+              </div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div class="space-y-1.5">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Camille Javier</h3>
+<p class="text-primary font-label-md text-label-md font-semibold">Senior Nail Artist &amp; Medical Pedicurist</p>
+<p class="font-body-md text-body-md text-on-surface-variant pt-2">
+                  Expertise in restorative Russian dry manicure, non-toxic bio-gel strengtheners, and therapeutic foot therapies.
+                </p>
+</div>
+<div class="mt-6 pt-4 border-t border-surface-container flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span>Nail Art &amp; Care</span>
+<span class="text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span> 4.97
+                </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- THE SANCTUARY AT LIMKETKAI CENTER SECTION -->
+<section class="py-20 bg-surface-container-high/40 border-t border-outline-variant/20" id="sanctuary">
+<div class="max-w-7xl mx-auto px-6 lg:px-16">
+<div class="max-w-3xl mb-14 space-y-3">
+<span class="text-secondary font-label-md text-label-md tracking-wider">A HAVEN OF MINDFUL SERENITY</span>
+<h2 class="font-headline-lg text-headline-lg text-primary">The Sanctuary at Limketkai Center</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+            Engineered for pure decompression. Located peacefully along Rosario Crescent, our clinic offers immediate respite from the lively city bustle.
+          </p>
+</div>
+<!-- Bento Grid Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+<!-- Large Feature: Private Treatment Suites -->
+<div class="md:col-span-2 lg:col-span-2 relative group overflow-hidden rounded-lg border border-outline-variant/30 shadow-rose-soft h-[360px] bg-surface-container">
+<!-- HD Image: Private Suite -->
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A peaceful private VIP treatment suite at True Radiance Spa with an ergonomic heated plush aesthetic treatment bed, soft draped linen curtains, warm indirect wall lighting." src="https://images.unsplash.com/photo-1620733723572-11c53f73a416?q=80&w=1200&auto=format&fit=crop"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex flex-col justify-end p-8 text-on-primary">
+<span class="text-tertiary-fixed font-label-sm text-label-sm tracking-widest uppercase">Private Retreat</span>
+<h3 class="font-headline-sm text-headline-sm mt-1">Individual Facial &amp; Body Suites</h3>
+<p class="font-body-md text-body-md text-surface-container-highest mt-1">Temperature-controlled and isolated for uninterrupted personal relaxation.</p>
+</div>
+</div>
+<!-- Feature 2: Acoustic Isolation -->
+<div class="relative group overflow-hidden rounded-lg border border-outline-variant/30 shadow-rose-soft h-[360px] bg-surface-container">
+<!-- HD Image: Acoustic Room -->
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A serene massage chamber featuring minimalist acoustic sound dampening wood panels, gentle pink quartz salt lamps, and white plush towels." src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex flex-col justify-end p-6 text-on-primary">
+<span class="text-tertiary-fixed font-label-sm text-label-sm tracking-widest uppercase">Acoustic Calm</span>
+<h3 class="font-title-lg text-title-lg mt-1">Sound-Insulated Walls</h3>
+<p class="font-label-md text-label-md text-surface-container-highest mt-1">Zero exterior mall distraction.</p>
+</div>
+</div>
+<!-- Feature 3: Botanical Hair Station -->
+<div class="relative group overflow-hidden rounded-lg border border-outline-variant/30 shadow-rose-soft h-[360px] bg-surface-container">
+<!-- HD Image: Hair Wash Station -->
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="An open, sunlit hair wash and styling lounge with arched champagne gilded mirrors, ergonomic leather recliner wash sinks." src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex flex-col justify-end p-6 text-on-primary">
+<span class="text-tertiary-fixed font-label-sm text-label-sm tracking-widest uppercase">Artisanal Hair Bar</span>
+<h3 class="font-title-lg text-title-lg mt-1">Botanical Wash Stations</h3>
+<p class="font-label-md text-label-md text-surface-container-highest mt-1">Ergonomic scalp therapy chairs.</p>
+</div>
+</div>
+</div>
+<!-- Quality & Medical-Grade Hygiene Commitment Row -->
+<div class="mt-14 bg-surface-container-lowest p-8 lg:p-10 rounded-lg border border-outline-variant/30 shadow-rose-soft">
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-8 items-center">
+<div class="lg:col-span-1 space-y-2">
+<span class="text-tertiary font-label-md text-label-md font-semibold">OUR UNCOMPROMISED STANDARD</span>
+<h3 class="font-headline-sm text-headline-sm text-primary">Hospital-Grade Cleanliness</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Your health and absolute peace of mind are non-negotiable.</p>
+</div>
+<div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-6">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined" data-icon="sanitizer">sanitizer</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Medical Autoclaves</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Hospital-grade steam sterilization for all implements.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined" data-icon="dry_cleaning">dry_cleaning</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">Single-Use Linens</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Individually sealed Egyptian cotton covers &amp; robes.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined" data-icon="air">air</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface">HEPA Air Filtration</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Medical grade continuous clean-air circulation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CALL TO ACTION BANNER -->
+<section class="py-20 bg-surface" id="book">
+<div class="max-w-7xl mx-auto px-6 lg:px-16">
+<div class="relative overflow-hidden bg-primary-container text-on-primary rounded-xl p-10 lg:p-16 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-10">
+<!-- Subtle Gilded Glow Effect Inside Banner -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-tertiary-container/30 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-2xl space-y-4 text-center lg:text-left relative z-10">
+<span class="inline-block px-3 py-1 bg-surface-container-high/20 rounded-full text-primary-fixed font-label-md text-label-md tracking-wider">
+              RESERVE YOUR MOMENT OF PEACE
+            </span>
+<h2 class="font-headline-lg lg:font-display-lg text-headline-lg lg:text-display-lg font-headline-lg leading-tight text-on-primary">
+              Experience True Radiance Today
+            </h2>
+<p class="font-body-lg text-body-lg text-primary-fixed max-w-xl">
+              Step inside our Limketkai sanctuary and allow our master specialists to curate a bespoke aesthetic and restorative journey for you.
+            </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto relative z-10 shrink-0">
+<a class="w-full sm:w-auto text-center bg-surface-container-lowest text-primary rounded-full px-8 py-4 font-label-lg text-label-lg font-semibold shadow-lg hover:scale-105 active:scale-95 transition-all" href="/book">
+              Book an Appointment
+            </a>
+<a class="w-full sm:w-auto text-center border-2 border-primary-fixed/60 text-on-primary hover:bg-primary/40 rounded-full px-8 py-3.5 font-label-lg text-label-lg transition-all flex items-center justify-center gap-2" href="https://viber.com">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+<span>Chat on Viber / Messenger</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- ================= FOOTER ================= -->
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/30">
+<div class="max-w-7xl mx-auto py-16 px-6 lg:px-16 flex flex-col gap-10">
+<!-- Top Grid: Brand & Categorized Navigation Links -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+<!-- Brand Info Column -->
+<div class="lg:col-span-2 space-y-4">
+<a class="flex items-center gap-3" href="#">
+<img alt="True Radiance Beauty Salon &amp; Spa Logo" class="h-14 w-auto object-contain" src="/images/logo.png"/>
+</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm leading-relaxed">
+            Northern Mindanao’s destination for restorative wellness, bespoke facial rejuvenation, and botanical salon care.
+          </p>
+<div class="pt-2 flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined" data-icon="location_on">location_on</span>
+<span class="font-label-md text-label-md text-on-surface">Rosario Crescent, Limketkai Center, CDO</span>
+</div>
+</div>
+<!-- Links Group 1 -->
+<div class="space-y-3">
+<h4 class="font-title-lg text-title-lg text-primary">Offerings</h4>
+<ul class="space-y-2.5">
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="/services">Services</a></li>
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#">Signature Packages</a></li>
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#">Consultation Booking</a></li>
+</ul>
+</div>
+<!-- Links Group 2 -->
+<div class="space-y-3">
+<h4 class="font-title-lg text-title-lg text-primary">Experience</h4>
+<ul class="space-y-2.5">
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#">Specialist Roster</a></li>
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#">Limketkai Location &amp; Map</a></li>
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#">Viber &amp; Messenger Concierge</a></li>
+</ul>
+</div>
+<!-- Links Group 3 -->
+<div class="space-y-3">
+<h4 class="font-title-lg text-title-lg text-primary">Policies</h4>
+<ul class="space-y-2.5">
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant text-body-md font-body-md hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Line: Copyright & Regional Attribution -->
+<div class="pt-8 border-t border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+<p class="font-body-md text-body-md text-on-surface-variant">
+          © 2025 True Radiance Beauty Salon and Spa. All rights reserved. Rosario Crescent, Limketkai Center, Cagayan de Oro City, 9000 Misamis Oriental, Philippines.
+        </p>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-md text-label-md shrink-0">
+<span>Open Daily 10:00 AM – 8:00 PM</span>
+</div>
+</div>
+</div>
+</footer>
+<script src="/js/account.js"></script>
+</body></html>
