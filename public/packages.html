@@ -161,35 +161,17 @@
 </head>
 <body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-primary min-h-screen flex flex-col font-body-md text-body-md">
 <!-- TOP APP BAR -->
-<header class="sticky top-0 z-50 bg-surface/85 backdrop-blur-md shadow-sm border-b border-outline-variant/30">
+<header class="sticky top-0 z-50 bg-surface/85 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
 <div class="flex items-center justify-between px-6 lg:px-16 w-full max-w-7xl mx-auto h-24">
-<!-- Logo Branding -->
-<a class="flex items-center gap-3 group" href="#">
-<img alt="True Radiance Beauty Salon and Spa" class="h-14 md:h-20 w-auto object-contain" src="/images/logo.png">
-</a>
-<!-- Desktop Navigation Links -->
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/">Home</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/services">Services</a>
-<!-- Active Tab: Packages -->
-<a class="text-primary font-semibold border-b-2 border-primary pb-1 text-label-lg font-label-lg" href="/packages">Packages</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/about">About Us</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/reviews">Reviews</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/contact">Contact Us</a>
-</nav>
-<!-- Trailing Primary Action & Icon Actions -->
-<div class="flex items-center gap-3">
-<button aria-label="spa" class="hidden sm:flex items-center justify-center p-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="Spa Menu">
-<span class="material-symbols-outlined" data-icon="spa">spa</span>
-</button>
-<button aria-label="account" class="hidden sm:flex items-center justify-center p-2 rounded-full text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" title="My Account">
-<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-</button>
-<a class="bg-primary-container text-on-primary px-6 py-2.5 rounded-full font-label-lg text-label-lg hover:shadow-lg hover:scale-[1.02] transition-all duration-200 active:scale-95 inline-flex items-center gap-2" href="/book">
-<span>Book Appointment</span>
-</a>
-</div>
-</div>
+<a class="flex items-center gap-3 active:scale-95 transition-transform" href="/"><img alt="True Radiance Salon &amp; Spa Logo" class="h-14 md:h-20 w-auto object-contain" src="/images/logo.png"/></a>
+<nav class="hidden md:flex items-center gap-8"><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/">Home</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/services">Services</a><a class="font-label-lg text-label-lg transition-colors text-primary font-semibold border-b-2 border-primary pb-1" href="/packages">Packages</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/about">About Us</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/reviews">Reviews</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/contact">Contact Us</a></nav>
+<div class="flex items-center gap-2 md:gap-3">
+<a aria-label="Services" class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container flex items-center justify-center" href="/services"><span class="material-symbols-outlined">spa</span></a>
+<a aria-label="Account" class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container flex items-center justify-center" href="/login"><span class="material-symbols-outlined">account_circle</span></a>
+<a class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-br from-primary-container to-primary text-on-primary font-label-lg text-label-lg shadow-[0_6px_18px_rgba(127,24,57,0.25)] hover:shadow-[0_8px_24px_rgba(212,175,55,0.38)] hover:-translate-y-px active:scale-95 transition-all duration-200" href="/book"><span>Book Appointment</span><span class="material-symbols-outlined text-[18px]">calendar_month</span></a>
+<button class="md:hidden p-2 text-primary rounded-full hover:bg-surface-container" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined">menu</span></button>
+</div></div>
+<div class="hidden md:hidden border-t border-outline-variant/30 bg-surface px-6 py-4 flex flex-col gap-2 shadow-md" id="mobile-drawer"><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/">Home</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/services">Services</a><a class="py-2 font-label-lg text-label-lg text-primary font-semibold" href="/packages">Packages</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/about">About Us</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/reviews">Reviews</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/contact">Contact Us</a><a class="mt-2 w-full text-center py-3 rounded-full bg-gradient-to-br from-primary-container to-primary text-on-primary font-label-lg" href="/book">Book Appointment</a></div>
 </header>
 <!-- MAIN CANVAS -->
 <main class="flex-grow">

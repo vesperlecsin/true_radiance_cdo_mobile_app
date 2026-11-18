@@ -142,39 +142,18 @@
   </style>
 </head>
 <body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed min-h-screen flex flex-col justify-between">
-<!-- ================= TOP NAVIGATION BAR ================= -->
-<header class="sticky top-0 z-50 w-full bg-surface/85 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-200">
-<div class="max-w-7xl mx-auto px-6 lg:px-16 h-24 flex items-center justify-between">
-<!-- Brand Logo Anchor -->
-<a class="flex items-center gap-3 transition-transform active:scale-95" href="#">
-<img alt="True Radiance Beauty Salon &amp; Spa Logo" class="h-14 md:h-20 w-auto object-contain" src="/images/logo.png"/>
-</a>
-<!-- Desktop Navigation Links (About Us is actively locked) -->
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/">Home</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/services">Services</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/packages">Packages</a>
-<!-- Active Tab: About Us -->
-<a class="text-primary font-semibold border-b-2 border-primary pb-1 text-label-lg font-label-lg" href="/about">About Us</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/reviews">Reviews</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/contact">Contact Us</a>
-</nav>
-<!-- Trailing Action Cluster -->
-<div class="flex items-center gap-4">
-<div class="hidden sm:flex items-center gap-2">
-<button aria-label="Spa Wellness Concierge" class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container-high transition-colors" type="button">
-<span class="material-symbols-outlined" data-icon="spa">spa</span>
-</button>
-<button aria-label="Member Account" class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container-high transition-colors" type="button">
-<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-</button>
-</div>
-<!-- Removed Calendar Icon from this button -->
-<a class="bg-primary-container text-on-primary rounded-full px-6 py-2.5 text-label-lg font-label-lg tracking-wide shadow-rose-soft shadow-gold-hover hover:scale-[1.02] active:scale-95 transition-all duration-200 flex items-center gap-2" href="/book">
-<span>Book Appointment</span>
-</a>
-</div>
-</div>
+<!-- ================= TOP NAVIGATION BAR (From Shared Components JSON) ================= -->
+<header class="sticky top-0 z-50 bg-surface/85 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
+<div class="flex items-center justify-between px-6 lg:px-16 w-full max-w-7xl mx-auto h-24">
+<a class="flex items-center gap-3 active:scale-95 transition-transform" href="/"><img alt="True Radiance Salon &amp; Spa Logo" class="h-14 md:h-20 w-auto object-contain" src="/images/logo.png"/></a>
+<nav class="hidden md:flex items-center gap-8"><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/">Home</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/services">Services</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/packages">Packages</a><a class="font-label-lg text-label-lg transition-colors text-primary font-semibold border-b-2 border-primary pb-1" href="/about">About Us</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/reviews">Reviews</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/contact">Contact Us</a></nav>
+<div class="flex items-center gap-2 md:gap-3">
+<a aria-label="Services" class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container flex items-center justify-center" href="/services"><span class="material-symbols-outlined">spa</span></a>
+<a aria-label="Account" class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container flex items-center justify-center" href="/login"><span class="material-symbols-outlined">account_circle</span></a>
+<a class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-br from-primary-container to-primary text-on-primary font-label-lg text-label-lg shadow-[0_6px_18px_rgba(127,24,57,0.25)] hover:shadow-[0_8px_24px_rgba(212,175,55,0.38)] hover:-translate-y-px active:scale-95 transition-all duration-200" href="/book"><span>Book Appointment</span><span class="material-symbols-outlined text-[18px]">calendar_month</span></a>
+<button class="md:hidden p-2 text-primary rounded-full hover:bg-surface-container" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined">menu</span></button>
+</div></div>
+<div class="hidden md:hidden border-t border-outline-variant/30 bg-surface px-6 py-4 flex flex-col gap-2 shadow-md" id="mobile-drawer"><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/">Home</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/services">Services</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/packages">Packages</a><a class="py-2 font-label-lg text-label-lg text-primary font-semibold" href="/about">About Us</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/reviews">Reviews</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/contact">Contact Us</a><a class="mt-2 w-full text-center py-3 rounded-full bg-gradient-to-br from-primary-container to-primary text-on-primary font-label-lg" href="/book">Book Appointment</a></div>
 </header>
 <!-- ================= MAIN CANVAS ================= -->
 <main class="flex-grow">
@@ -224,8 +203,7 @@
 <div class="lg:col-span-5 relative">
 <div class="relative mx-auto max-w-md lg:max-w-none">
 <div class="rounded-xl overflow-hidden border border-outline-variant/40 shadow-rose-soft bg-surface-container-lowest">
-<!-- Replaced with the True Radiance reception image -->
-<img class="w-full h-[480px] object-cover hover:scale-105 transition-transform duration-700 ease-out" alt="The elegant reception area of True Radiance Beauty Salon and Spa, featuring a pink marble counter, gold accents, plush pink armchairs, and orchid arrangements." src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?q=80&w=1200&auto=format&fit=crop"/>
+<img class="w-full h-[480px] object-cover hover:scale-105 transition-transform duration-700 ease-out" data-alt="An ethereal, sun-drenched wellness reception room at True Radiance Salon with soft blush velvet armchairs, warm white travertine tables, Champagne gold detailing, and fragrant white orchids under warm morning daylight, evoking timeless elegance in a serene luxury palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKLWfGV7BhNA_oaMGPm4NfvGiD1Xi1fsIpHZHL5vniJfdrLn9iYDuib1dR_wECgydc7ZC6Ij877vrXYNKUq0P31EGFGYivZ-ETr3zhpvroDGfJbWaNszCkgWXVByIOEMoe4Nrwew3l7oSUQ2eN_DMZrtaxOjpl2sczSXLJ1xAGta2_ZHVSPguni2DgmNPPAcujVOuowpPzSR1tOawy7GdrgtSwXLRc9rg_wgW9Pps"/>
 </div>
 <!-- Floating Champagne Accent Card -->
 <div class="absolute -bottom-6 -left-6 bg-surface-container-lowest/95 backdrop-blur-md p-5 rounded-lg border border-tertiary-container/30 shadow-xl max-w-xs hidden sm:flex items-center gap-4">
@@ -438,8 +416,7 @@
 <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
 <!-- Large Feature: Private Treatment Suites -->
 <div class="md:col-span-2 lg:col-span-2 relative group overflow-hidden rounded-lg border border-outline-variant/30 shadow-rose-soft h-[360px] bg-surface-container">
-<!-- HD Image: Private Suite -->
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A peaceful private VIP treatment suite at True Radiance Spa with an ergonomic heated plush aesthetic treatment bed, soft draped linen curtains, warm indirect wall lighting." src="https://images.unsplash.com/photo-1620733723572-11c53f73a416?q=80&w=1200&auto=format&fit=crop"/>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A peaceful private VIP treatment suite at True Radiance Spa with an ergonomic heated plush aesthetic treatment bed, soft draped linen curtains, warm indirect wall lighting, and natural stone flooring in gentle rose and ivory tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGw-rCK3y17hD75blEvd3BtYkWT53qVYSpCMiR_etqZPdnK2j_ZR1USYZDp0UJdfk7pTvpDieeaJQffEpoKJgz60hGqcN6KC2smZCQ-2gsufSycyBc8IOTWO6zCvMv4pHdk9sqbn7b1SQvc_JRvZ3B5zv7PVJ3QBj1Unix3B9pyPQqWF6M7pbSbpWM1Y0oDFm2MjBSbAtivG51tkSENZxyJHTJp7OQRpyxy_RvyCI"/>
 <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex flex-col justify-end p-8 text-on-primary">
 <span class="text-tertiary-fixed font-label-sm text-label-sm tracking-widest uppercase">Private Retreat</span>
 <h3 class="font-headline-sm text-headline-sm mt-1">Individual Facial &amp; Body Suites</h3>
@@ -448,8 +425,7 @@
 </div>
 <!-- Feature 2: Acoustic Isolation -->
 <div class="relative group overflow-hidden rounded-lg border border-outline-variant/30 shadow-rose-soft h-[360px] bg-surface-container">
-<!-- HD Image: Acoustic Room -->
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="A serene massage chamber featuring minimalist acoustic sound dampening wood panels, gentle pink quartz salt lamps, and white plush towels." src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=800&auto=format&fit=crop"/>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A serene massage chamber featuring minimalist acoustic sound dampening wood panels, gentle pink quartz salt lamps, and white plush towels on a cedar massage bed in a luxury spa." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3Z1--ayEzOhmxncaAfFcKPmGUIsSRSN748NjQCb1tbXnAJRl-Kv6M-Tew02J1iVwW5D-aj4lvHTqflabOAXcDPErwzegvxFRUrDVjIE_B5CyvWU8kbkDI1J28SeXsiocRYdMX2r66Fu9ZZoWHYfMcW8lsXOa4g2Uy6i5Q-m-BKZXJ5g8tfJYXRcvL2fuzx09bY-n6mE4DTWpV0A8zmgWJh_ejzAjKMa4wjGzE2vg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex flex-col justify-end p-6 text-on-primary">
 <span class="text-tertiary-fixed font-label-sm text-label-sm tracking-widest uppercase">Acoustic Calm</span>
 <h3 class="font-title-lg text-title-lg mt-1">Sound-Insulated Walls</h3>
@@ -458,8 +434,7 @@
 </div>
 <!-- Feature 3: Botanical Hair Station -->
 <div class="relative group overflow-hidden rounded-lg border border-outline-variant/30 shadow-rose-soft h-[360px] bg-surface-container">
-<!-- HD Image: Hair Wash Station -->
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="An open, sunlit hair wash and styling lounge with arched champagne gilded mirrors, ergonomic leather recliner wash sinks." src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=800&auto=format&fit=crop"/>
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="An open, sunlit hair wash and styling lounge with arched champagne gilded mirrors, ergonomic leather recliner wash sinks, and lush potted indoor ficus trees in an airy modern salon." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQ1sYsSZoN7RQ3A8qPSydacJZc4yuwDxsK0CzdWAketncwnsXXQayTJWapZ9YF6iVl4LcsSRfB-U7E_YEsOyQYJ_ZxyjkiLWtH8DHbupWKVOxvuCamYjcKeyqeFYzZmVrFpZlAoRYZJhRvVqZTsVXOclruN8Uy5miJhdDRvGCAx1M4nQNML9xYRarhg0UJDmM99hVFWeFzZycENWbVcHWXJpHlGJSzBqq_Hsy55Yk"/>
 <div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent flex flex-col justify-end p-6 text-on-primary">
 <span class="text-tertiary-fixed font-label-sm text-label-sm tracking-widest uppercase">Artisanal Hair Bar</span>
 <h3 class="font-title-lg text-title-lg mt-1">Botanical Wash Stations</h3>
@@ -538,7 +513,7 @@
 </div>
 </section>
 </main>
-<!-- ================= FOOTER ================= -->
+<!-- ================= FOOTER (From Shared Components JSON) ================= -->
 <footer class="w-full bg-surface-container-lowest border-t border-outline-variant/30">
 <div class="max-w-7xl mx-auto py-16 px-6 lg:px-16 flex flex-col gap-10">
 <!-- Top Grid: Brand & Categorized Navigation Links -->

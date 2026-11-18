@@ -136,153 +136,106 @@
     .gold-glow:hover {
       box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
     }
-    /* New UI enhancements */
-    .review-card {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .review-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 35px -5px rgba(158, 49, 80, 0.08), 0 4px 10px -2px rgba(225, 122, 148, 0.05);
-    }
-    .quote-mark {
-      position: absolute;
-      top: 20px;
-      right: 25px;
-      font-size: 120px;
-      line-height: 1;
-      font-family: 'Playfair Display', serif;
-      color: rgba(255, 232, 238, 0.5); /* surface-container color */
-      z-index: 0;
-      pointer-events: none;
-    }
-    .filter-pill-active {
-      background: linear-gradient(135deg, #7f1839 0%, #9e3150 100%);
-      color: white;
-      box-shadow: 0 4px 12px rgba(127, 24, 57, 0.25);
-    }
-    .hero-glow {
-      background: radial-gradient(circle at center, rgba(255, 217, 224, 0.6) 0%, rgba(255, 248, 248, 0) 70%);
-    }
   </style>
 </head>
 <body class="bg-background text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed min-h-screen flex flex-col justify-between">
-<!-- ================= TOP APP BAR ================= -->
-<header class="sticky top-0 z-50 bg-surface/85 backdrop-blur-md shadow-sm border-b border-outline-variant/30">
+<!-- ================= TOP APP BAR (Shared Components JSON Anchor) ================= -->
+<header class="sticky top-0 z-50 bg-surface/85 backdrop-blur-md border-b border-outline-variant/30 shadow-sm">
 <div class="flex items-center justify-between px-6 lg:px-16 w-full max-w-7xl mx-auto h-24">
-<!-- Brand Identity / Logo -->
-<a class="flex items-center gap-3 transition-transform duration-200 active:scale-95 group" href="#">
-<img alt="True Radiance Beauty Salon and Spa Logo" class="h-14 md:h-20 w-auto object-contain" src="/images/logo.png"/>
-</a>
-<!-- Desktop Navigation Links (Reviews is currently ACTIVE) -->
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/">Home</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/services">Services</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/packages">Packages</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/about">About Us</a>
-<a class="text-primary font-semibold border-b-2 border-primary pb-1 text-label-lg font-label-lg" href="/reviews">Reviews</a>
-<a class="text-on-surface-variant font-medium hover:text-primary transition-colors text-label-lg font-label-lg" href="/contact">Contact Us</a>
-</nav>
-<!-- Trailing Primary Action & Icon Actions -->
-<div class="flex items-center gap-3">
-<button class="hidden lg:flex items-center justify-center p-2.5 rounded-full text-primary hover:bg-surface-container transition-colors" title="Spa Atmosphere">
-<span class="material-symbols-outlined" data-icon="spa">spa</span>
-</button>
-<button class="hidden lg:flex items-center justify-center p-2.5 rounded-full text-primary hover:bg-surface-container transition-colors" title="Guest Account">
-<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
-</button>
-<a class="inline-flex items-center gap-2 bg-primary-container text-on-primary px-6 py-2.5 rounded-full text-label-lg font-label-lg tracking-wide shadow-sm hover:scale-[1.02] gold-glow transition-all duration-200 active:scale-95" href="/book">
-          Book Appointment
-        </a>
-</div>
-</div>
+<a class="flex items-center gap-3 active:scale-95 transition-transform" href="/"><img alt="True Radiance Salon &amp; Spa Logo" class="h-14 md:h-20 w-auto object-contain" src="/images/logo.png"/></a>
+<nav class="hidden md:flex items-center gap-8"><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/">Home</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/services">Services</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/packages">Packages</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/about">About Us</a><a class="font-label-lg text-label-lg transition-colors text-primary font-semibold border-b-2 border-primary pb-1" href="/reviews">Reviews</a><a class="font-label-lg text-label-lg transition-colors text-on-surface-variant font-medium hover:text-primary" href="/contact">Contact Us</a></nav>
+<div class="flex items-center gap-2 md:gap-3">
+<a aria-label="Services" class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container flex items-center justify-center" href="/services"><span class="material-symbols-outlined">spa</span></a>
+<a aria-label="Account" class="p-2 text-on-surface-variant hover:text-primary rounded-full hover:bg-surface-container flex items-center justify-center" href="/login"><span class="material-symbols-outlined">account_circle</span></a>
+<a class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-br from-primary-container to-primary text-on-primary font-label-lg text-label-lg shadow-[0_6px_18px_rgba(127,24,57,0.25)] hover:shadow-[0_8px_24px_rgba(212,175,55,0.38)] hover:-translate-y-px active:scale-95 transition-all duration-200" href="/book"><span>Book Appointment</span><span class="material-symbols-outlined text-[18px]">calendar_month</span></a>
+<button class="md:hidden p-2 text-primary rounded-full hover:bg-surface-container" onclick="document.getElementById('mobile-drawer').classList.toggle('hidden')" type="button"><span class="material-symbols-outlined">menu</span></button>
+</div></div>
+<div class="hidden md:hidden border-t border-outline-variant/30 bg-surface px-6 py-4 flex flex-col gap-2 shadow-md" id="mobile-drawer"><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/">Home</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/services">Services</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/packages">Packages</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/about">About Us</a><a class="py-2 font-label-lg text-label-lg text-primary font-semibold" href="/reviews">Reviews</a><a class="py-2 font-label-lg text-label-lg text-on-surface-variant hover:text-primary" href="/contact">Contact Us</a><a class="mt-2 w-full text-center py-3 rounded-full bg-gradient-to-br from-primary-container to-primary text-on-primary font-label-lg" href="/book">Book Appointment</a></div>
 </header>
 <!-- ================= MAIN CONTENT CANVAS ================= -->
 <main class="w-full flex-grow">
-<!-- Hero Section with Subtle Background -->
-<section class="relative pt-16 pb-16 px-6 lg:px-16 overflow-hidden border-b border-outline-variant/20">
-<!-- Pink Spa Background with Gradient Overlay -->
-<div class="absolute inset-0 z-0">
-  <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2000&auto=format&fit=crop" alt="Soft pink spa background" class="w-full h-full object-cover object-center opacity-20" />
-  <div class="absolute inset-0 bg-gradient-to-b from-surface/90 via-surface/95 to-background"></div>
-</div>
-<div class="relative z-10 max-w-7xl mx-auto">
-<div class="text-center max-w-3xl mx-auto space-y-5">
+<!-- Hero Section -->
+<section class="relative pt-12 pb-14 px-6 lg:px-16 max-w-7xl mx-auto overflow-hidden">
+<!-- Ambient Decorative Glows -->
+<div class="absolute -top-20 right-10 w-96 h-96 bg-secondary-fixed/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-40 -left-20 w-80 h-80 bg-tertiary-fixed/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="text-center max-w-3xl mx-auto space-y-4">
 <!-- Rating Badge -->
-<div class="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-surface-container-high/80 backdrop-blur-sm border border-outline-variant/40 text-on-secondary-container shadow-sm">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/40 text-on-secondary-container shadow-xs">
 <span class="material-symbols-outlined text-tertiary-container material-symbols-filled text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="text-label-md font-label-md tracking-wider uppercase font-bold text-primary">4.9 out of 5.0 Star Rating</span>
-<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
-<span class="text-label-md font-label-md text-on-surface-variant font-medium">1,200+ Verified Guests</span>
+<span class="text-label-md font-label-md tracking-wider uppercase font-semibold">4.9 out of 5.0 Star Rating</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-label-md font-label-md text-on-surface-variant font-medium">1,200+ Verified Kagay-anon Guests</span>
 </div>
-<h1 class="text-display-lg-mobile md:text-display-lg font-headline-lg text-primary tracking-tight leading-tight">
-          Love Notes from Our<br class="hidden sm:block"/> Kagay-anon Guests
+<h1 class="text-display-lg-mobile md:text-headline-lg font-headline-lg text-primary tracking-tight">
+          Love Notes from Our Kagay-anon Guests
         </h1>
-<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+<p class="text-body-lg font-body-lg text-on-surface-variant max-w-2xl mx-auto">
           From tranquil hot stone retreats to radiant wedding rituals, discover how our Limketkai sanctuary curates serene wellness and tailored beauty transformations for Cagayan de Oro.
         </p>
 </div>
 <!-- Rating Breakdown Summary Bento Card -->
-<div class="mt-12 bg-surface-container-lowest/90 backdrop-blur-md rounded-xl p-8 lg:p-10 border border-outline-variant/40 card-rose-shadow">
+<div class="mt-12 bg-surface-container-lowest rounded-xl p-8 lg:p-10 border border-outline-variant/30 card-rose-shadow">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 <!-- Overall Aggregate Column -->
 <div class="lg:col-span-4 flex flex-col items-center justify-center text-center lg:border-r border-outline-variant/30 lg:pr-8 py-2">
-<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-semibold mb-2">Overall Satisfaction</span>
-<div class="flex items-baseline gap-2 mb-3">
-<span class="text-[72px] leading-none font-bold text-primary font-display-lg">4.9</span>
+<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-semibold mb-1">Overall Satisfaction</span>
+<div class="flex items-baseline gap-2 mb-2">
+<span class="text-[64px] leading-none font-bold text-primary font-display-lg">4.9</span>
 <span class="text-title-lg font-title-lg text-on-surface-variant">/ 5.0</span>
 </div>
 <!-- Gilded Stars -->
-<div class="flex items-center gap-1 text-tertiary-container mb-4">
-<span class="material-symbols-outlined text-[28px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[28px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[28px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[28px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[28px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<div class="flex items-center gap-1 text-tertiary-container mb-3">
+<span class="material-symbols-outlined text-[24px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[24px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[24px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[24px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[24px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="text-label-md font-label-md text-on-surface-variant max-w-[250px]">
+<p class="text-label-md font-label-md text-on-surface-variant">
               Based on 1,248 verified customer submissions across Misamis Oriental
             </p>
 </div>
 <!-- Star Distribution Bars Column -->
-<div class="lg:col-span-4 space-y-3.5 lg:border-r border-outline-variant/30 lg:pr-8">
-<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-semibold block mb-2">Review Distribution</span>
+<div class="lg:col-span-4 space-y-3 lg:border-r border-outline-variant/30 lg:pr-8">
+<span class="text-label-md font-label-md uppercase tracking-wider text-secondary font-semibold block mb-1">Review Distribution</span>
 <!-- 5 Stars -->
 <div class="flex items-center gap-3">
-<span class="text-label-sm font-label-sm w-12 text-on-surface-variant font-medium">5 Stars</span>
-<div class="flex-1 h-3 bg-surface-container-high rounded-full overflow-hidden shadow-inner">
+<span class="text-label-sm font-label-sm w-12 text-on-surface-variant">5 Stars</span>
+<div class="flex-1 h-2.5 bg-surface-container-high rounded-full overflow-hidden">
 <div class="h-full bg-primary-container rounded-full" style="width: 92%;"></div>
 </div>
-<span class="text-label-sm font-label-sm font-bold text-primary w-8 text-right">92%</span>
+<span class="text-label-sm font-label-sm font-semibold text-primary w-8 text-right">92%</span>
 </div>
 <!-- 4 Stars -->
 <div class="flex items-center gap-3">
-<span class="text-label-sm font-label-sm w-12 text-on-surface-variant font-medium">4 Stars</span>
-<div class="flex-1 h-3 bg-surface-container-high rounded-full overflow-hidden shadow-inner">
+<span class="text-label-sm font-label-sm w-12 text-on-surface-variant">4 Stars</span>
+<div class="flex-1 h-2.5 bg-surface-container-high rounded-full overflow-hidden">
 <div class="h-full bg-secondary rounded-full" style="width: 7%;"></div>
 </div>
-<span class="text-label-sm font-label-sm font-bold text-primary w-8 text-right">7%</span>
+<span class="text-label-sm font-label-sm font-semibold text-primary w-8 text-right">7%</span>
 </div>
 <!-- 3 Stars -->
 <div class="flex items-center gap-3">
-<span class="text-label-sm font-label-sm w-12 text-on-surface-variant font-medium">3 Stars</span>
-<div class="flex-1 h-3 bg-surface-container-high rounded-full overflow-hidden shadow-inner">
+<span class="text-label-sm font-label-sm w-12 text-on-surface-variant">3 Stars</span>
+<div class="flex-1 h-2.5 bg-surface-container-high rounded-full overflow-hidden">
 <div class="h-full bg-outline-variant rounded-full" style="width: 1%;"></div>
 </div>
-<span class="text-label-sm font-label-sm font-bold text-primary w-8 text-right">1%</span>
+<span class="text-label-sm font-label-sm font-semibold text-primary w-8 text-right">1%</span>
 </div>
 <!-- 2 & 1 Stars -->
 <div class="flex items-center gap-3 opacity-60">
-<span class="text-label-sm font-label-sm w-12 text-on-surface-variant font-medium">1-2 Stars</span>
-<div class="flex-1 h-3 bg-surface-container-high rounded-full overflow-hidden shadow-inner">
+<span class="text-label-sm font-label-sm w-12 text-on-surface-variant">1-2 Stars</span>
+<div class="flex-1 h-2.5 bg-surface-container-high rounded-full overflow-hidden">
 <div class="h-full bg-outline-variant rounded-full" style="width: 0%;"></div>
 </div>
-<span class="text-label-sm font-label-sm font-bold text-on-surface-variant w-8 text-right">0%</span>
+<span class="text-label-sm font-label-sm font-semibold text-on-surface-variant w-8 text-right">0%</span>
 </div>
 </div>
 <!-- Sanctuary Sub-Scores Bento -->
 <div class="lg:col-span-4 grid grid-cols-2 gap-4">
-<div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/20 hover:bg-surface-container transition-colors">
-<div class="flex items-center gap-1.5 text-primary mb-1.5">
+<div class="p-3.5 bg-surface-container-low rounded-lg border border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-primary mb-1">
 <span class="material-symbols-outlined text-[18px]" data-icon="sparkles">arrow_back_ios_new</span>
 <span class="text-label-md font-label-md font-semibold">Service Quality</span>
 </div>
@@ -291,8 +244,8 @@
 <span class="text-label-sm font-label-sm text-on-surface-variant">/ 5.0</span>
 </div>
 </div>
-<div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/20 hover:bg-surface-container transition-colors">
-<div class="flex items-center gap-1.5 text-primary mb-1.5">
+<div class="p-3.5 bg-surface-container-low rounded-lg border border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-primary mb-1">
 <span class="material-symbols-outlined text-[18px]" data-icon="spa">spa</span>
 <span class="text-label-md font-label-md font-semibold">Sanctuary Vibe</span>
 </div>
@@ -301,8 +254,8 @@
 <span class="text-label-sm font-label-sm text-on-surface-variant">/ 5.0</span>
 </div>
 </div>
-<div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/20 hover:bg-surface-container transition-colors">
-<div class="flex items-center gap-1.5 text-primary mb-1.5">
+<div class="p-3.5 bg-surface-container-low rounded-lg border border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-primary mb-1">
 <span class="material-symbols-outlined text-[18px]" data-icon="favorite">favorite</span>
 <span class="text-label-md font-label-md font-semibold">Hospitality</span>
 </div>
@@ -311,8 +264,8 @@
 <span class="text-label-sm font-label-sm text-on-surface-variant">/ 5.0</span>
 </div>
 </div>
-<div class="p-4 bg-surface-container-low rounded-xl border border-outline-variant/20 hover:bg-surface-container transition-colors">
-<div class="flex items-center gap-1.5 text-primary mb-1.5">
+<div class="p-3.5 bg-surface-container-low rounded-lg border border-outline-variant/20">
+<div class="flex items-center gap-1.5 text-primary mb-1">
 <span class="material-symbols-outlined text-[18px]" data-icon="payments">payments</span>
 <span class="text-label-md font-label-md font-semibold">Value for Money</span>
 </div>
@@ -324,34 +277,36 @@
 </div>
 </div>
 </div>
-</div>
 </section>
 <!-- Filter and Sort Bar -->
-<section class="px-6 lg:px-16 max-w-7xl mx-auto pt-10 pb-8">
+<section class="px-6 lg:px-16 max-w-7xl mx-auto pb-8">
 <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 border-b border-outline-variant/30 pb-6">
 <!-- Category Filter Pills -->
 <div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-none">
-<button class="px-5 py-2.5 rounded-full filter-pill-active text-label-md font-label-md whitespace-nowrap transition-all duration-200">
+<button class="px-5 py-2 rounded-full bg-primary-container text-on-primary text-label-md font-label-md whitespace-nowrap shadow-sm transition-all duration-150">
             All Reviews
           </button>
-<button class="px-5 py-2.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-secondary hover:bg-surface-container-low transition-all duration-200 text-label-md font-label-md whitespace-nowrap">
+<button class="px-5 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-secondary transition-all duration-150 text-label-md font-label-md whitespace-nowrap">
             Hair Artistry
           </button>
-<button class="px-5 py-2.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-secondary hover:bg-surface-container-low transition-all duration-200 text-label-md font-label-md whitespace-nowrap">
+<button class="px-5 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-secondary transition-all duration-150 text-label-md font-label-md whitespace-nowrap">
             Skin &amp; Facials
           </button>
-<button class="px-5 py-2.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-secondary hover:bg-surface-container-low transition-all duration-200 text-label-md font-label-md whitespace-nowrap">
+<button class="px-5 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-secondary transition-all duration-150 text-label-md font-label-md whitespace-nowrap">
             Massage &amp; Spa
           </button>
-<button class="px-5 py-2.5 rounded-full bg-surface-container-lowest border border-outline-variant/40 text-on-surface-variant hover:text-primary hover:border-secondary hover:bg-surface-container-low transition-all duration-200 text-label-md font-label-md whitespace-nowrap">
+<button class="px-5 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-secondary transition-all duration-150 text-label-md font-label-md whitespace-nowrap">
             Bridal Packages
+          </button>
+<button class="px-5 py-2 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface-variant hover:text-primary hover:border-secondary transition-all duration-150 text-label-md font-label-md whitespace-nowrap">
+            Limketkai Experience
           </button>
 </div>
 <!-- Sort Select / Toggle Dropdown -->
 <div class="flex items-center gap-3 shrink-0">
-<span class="text-label-md font-label-md text-on-surface-variant font-medium">Sort by:</span>
+<span class="text-label-md font-label-md text-on-surface-variant">Sort by:</span>
 <div class="relative inline-block">
-<select class="appearance-none bg-surface-container-lowest border border-outline-variant/40 rounded-full pl-4 pr-10 py-2.5 text-label-md font-label-md font-semibold text-primary focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all cursor-pointer shadow-sm hover:bg-surface-container-low">
+<select class="appearance-none bg-surface-container-lowest border border-outline-variant/30 rounded-full pl-4 pr-10 py-2 text-label-md font-label-md font-semibold text-primary focus:outline-none focus:ring-1 focus:ring-secondary transition-all cursor-pointer">
 <option>Most Recent</option>
 <option>Highest Rated</option>
 <option>Verified Guests with Photos</option>
@@ -365,390 +320,383 @@
 <section class="px-6 lg:px-16 max-w-7xl mx-auto pb-16">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 <!-- CARD 1: Maria Angelica Ramos -->
-<article class="review-card bg-surface-container-lowest rounded-xl p-7 border border-outline-variant/20 card-rose-shadow flex flex-col justify-between relative overflow-hidden">
-<div class="quote-mark">"</div>
-<div class="relative z-10">
+<article class="bg-surface-container-lowest rounded-xl p-6 lg:p-7 border border-outline-variant/20 card-rose-shadow flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+<div>
 <!-- Header: Avatar, Name & Location -->
-<div class="flex items-start justify-between gap-3 mb-5">
-<div class="flex items-center gap-3.5">
-<div class="w-12 h-12 rounded-full bg-gradient-to-br from-secondary-fixed to-secondary text-white font-bold font-title-lg flex items-center justify-center shrink-0 shadow-sm ring-2 ring-surface-container-lowest">
+<div class="flex items-start justify-between gap-3 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold font-title-lg flex items-center justify-center shrink-0 border border-secondary-container">
                   MR
                 </div>
 <div>
-<h3 class="text-title-md font-title-md text-on-background font-bold">Maria Angelica Ramos</h3>
-<div class="flex items-center gap-1 text-label-sm font-label-sm text-secondary font-medium mt-0.5">
+<h3 class="text-title-md font-title-md text-on-background font-semibold">Maria Angelica Ramos</h3>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-secondary font-medium">
 <span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
                     Uptown CDO
                   </div>
 </div>
 </div>
 <!-- Verified Badge -->
-<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high/60 text-primary text-label-sm font-label-sm font-semibold border border-outline-variant/20" title="Verified Customer">
-<span class="material-symbols-outlined text-[14px] text-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary text-label-sm font-label-sm font-semibold" title="Verified Customer">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
                 Verified
               </span>
 </div>
 <!-- Gilded Stars & Date -->
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between mb-3">
 <div class="flex text-tertiary-container">
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <span class="text-label-sm font-label-sm text-outline">May 14, 2025</span>
 </div>
 <!-- Service Tag -->
-<div class="mb-4 inline-block px-3 py-1 rounded-full bg-surface-container-low text-secondary text-label-sm font-label-sm font-semibold border border-outline-variant/30">
+<div class="mb-3.5 inline-block px-3 py-1 rounded-full bg-surface-container-low text-secondary text-label-sm font-label-sm font-semibold border border-outline-variant/30">
               Royal True Radiance Spa Retreat Package
             </div>
 <!-- Heartfelt Text -->
-<p class="text-body-lg font-body-lg text-on-surface italic leading-relaxed">
+<p class="text-body-md font-body-md text-on-surface-variant italic">
               "The most peaceful sanctuary in CDO! The hot stone massage dissolved all my shoulder tightness and the private suite smelled like heaven."
             </p>
 </div>
 <!-- Card Footer Metadata -->
-<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm text-outline relative z-10">
-<span class="flex items-center gap-1.5">
+<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span class="flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px] text-secondary" data-icon="door_front">door_front</span>
-              Rose Garden Suite
+              Private Rose Garden Suite
             </span>
-<button class="flex items-center gap-1 font-medium text-primary hover:text-secondary transition-colors px-2 py-1 rounded-full hover:bg-surface-container">
-<span class="material-symbols-outlined text-[16px]" data-icon="thumb_up">thumb_up</span> 28
-            </button>
+<span class="font-medium text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="thumb_up">thumb_up</span> 28
+            </span>
 </div>
 </article>
-<!-- CARD 2: Christine Villanueva (Bride) - FEATURED -->
-<article class="review-card bg-surface-container-lowest rounded-xl p-7 border-2 border-tertiary-container/40 card-rose-shadow flex flex-col justify-between relative overflow-hidden">
-<div class="absolute top-0 right-0 bg-tertiary-container text-on-primary text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-bl-xl shadow-sm z-20">
+<!-- CARD 2: Christine Villanueva (Bride) -->
+<article class="bg-surface-container-lowest rounded-xl p-6 lg:p-7 border border-tertiary-container/30 card-rose-shadow flex flex-col justify-between transition-all duration-200 hover:-translate-y-1 relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-tertiary-container text-on-primary text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-bl-lg">
             Featured Bridal Story
           </div>
-<div class="quote-mark text-tertiary-fixed/50">"</div>
-<div class="relative z-10 mt-2">
-<div class="flex items-start justify-between gap-3 mb-5">
-<div class="flex items-center gap-3.5">
-<div class="w-12 h-12 rounded-full bg-gradient-to-br from-surface-container-highest to-outline-variant text-primary font-bold font-title-lg flex items-center justify-center shrink-0 shadow-sm ring-2 ring-surface-container-lowest">
+<div>
+<div class="flex items-start justify-between gap-3 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest text-primary font-bold font-title-lg flex items-center justify-center shrink-0 border border-outline-variant">
                   CV
                 </div>
 <div>
-<h3 class="text-title-md font-title-md text-on-background font-bold">Christine Villanueva</h3>
-<div class="flex items-center gap-1 text-label-sm font-label-sm text-secondary font-medium mt-0.5">
+<h3 class="text-title-md font-title-md text-on-background font-semibold">Christine Villanueva</h3>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-secondary font-medium">
 <span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
                     Macasandig, CDO • Bride
                   </div>
 </div>
 </div>
-<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high/60 text-primary text-label-sm font-label-sm font-semibold border border-outline-variant/20">
-<span class="material-symbols-outlined text-[14px] text-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
                 Verified
               </span>
 </div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between mb-3">
 <div class="flex text-tertiary-container">
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <span class="text-label-sm font-label-sm text-outline">April 28, 2025</span>
 </div>
-<div class="mb-4 inline-block px-3 py-1 rounded-full bg-tertiary-fixed/30 text-on-tertiary-fixed text-label-sm font-label-sm font-semibold border border-tertiary-container/30">
+<div class="mb-3.5 inline-block px-3 py-1 rounded-full bg-surface-container-low text-secondary text-label-sm font-label-sm font-semibold border border-outline-variant/30">
               Bride-to-Be Glow Ritual
             </div>
-<p class="text-body-lg font-body-lg text-on-surface italic leading-relaxed">
+<p class="text-body-md font-body-md text-on-surface-variant italic">
               "Booked for my wedding preparation at Limketkai Luxe nearby. My skin had an effortless radiant glass glow for days!"
             </p>
 </div>
-<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm text-outline relative z-10">
-<span class="flex items-center gap-1.5">
+<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span class="flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px] text-tertiary-container" data-icon="celebration">celebration</span>
-              Luxe Hotel Wedding
+              Limketkai Luxe Hotel Wedding
             </span>
-<button class="flex items-center gap-1 font-medium text-primary hover:text-secondary transition-colors px-2 py-1 rounded-full hover:bg-surface-container">
-<span class="material-symbols-outlined text-[16px]" data-icon="thumb_up">thumb_up</span> 45
-            </button>
+<span class="font-medium text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="thumb_up">thumb_up</span> 45
+            </span>
 </div>
 </article>
 <!-- CARD 3: Janelle Gutierrez -->
-<article class="review-card bg-surface-container-lowest rounded-xl p-7 border border-outline-variant/20 card-rose-shadow flex flex-col justify-between relative overflow-hidden">
-<div class="quote-mark">"</div>
-<div class="relative z-10">
-<div class="flex items-start justify-between gap-3 mb-5">
-<div class="flex items-center gap-3.5">
-<div class="w-12 h-12 rounded-full bg-gradient-to-br from-secondary-fixed to-secondary text-white font-bold font-title-lg flex items-center justify-center shrink-0 shadow-sm ring-2 ring-surface-container-lowest">
+<article class="bg-surface-container-lowest rounded-xl p-6 lg:p-7 border border-outline-variant/20 card-rose-shadow flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+<div>
+<div class="flex items-start justify-between gap-3 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold font-title-lg flex items-center justify-center shrink-0 border border-secondary-container">
                   JG
                 </div>
 <div>
-<h3 class="text-title-md font-title-md text-on-background font-bold">Janelle Gutierrez</h3>
-<div class="flex items-center gap-1 text-label-sm font-label-sm text-secondary font-medium mt-0.5">
+<h3 class="text-title-md font-title-md text-on-background font-semibold">Janelle Gutierrez</h3>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-secondary font-medium">
 <span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
                     Pueblo de Oro
                   </div>
 </div>
 </div>
-<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high/60 text-primary text-label-sm font-label-sm font-semibold border border-outline-variant/20">
-<span class="material-symbols-outlined text-[14px] text-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
                 Verified
               </span>
 </div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between mb-3">
 <div class="flex text-tertiary-container">
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <span class="text-label-sm font-label-sm text-outline">May 2, 2025</span>
 </div>
-<div class="mb-4 inline-block px-3 py-1 rounded-full bg-surface-container-low text-secondary text-label-sm font-label-sm font-semibold border border-outline-variant/30">
+<div class="mb-3.5 inline-block px-3 py-1 rounded-full bg-surface-container-low text-secondary text-label-sm font-label-sm font-semibold border border-outline-variant/30">
               Balayage &amp; Botanical Color
             </div>
-<p class="text-body-lg font-body-lg text-on-surface italic leading-relaxed">
+<p class="text-body-md font-body-md text-on-surface-variant italic">
               "Maria is a hair wizard. My hair color was brassy and dry; she revitalized it into honey caramel without damage."
             </p>
 </div>
-<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm text-outline relative z-10">
-<span class="flex items-center gap-1.5">
+<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span class="flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px] text-secondary" data-icon="content_cut">content_cut</span>
-              Colorist: Maria S.
+              Master Colorist: Maria S.
             </span>
-<button class="flex items-center gap-1 font-medium text-primary hover:text-secondary transition-colors px-2 py-1 rounded-full hover:bg-surface-container">
-<span class="material-symbols-outlined text-[16px]" data-icon="thumb_up">thumb_up</span> 19
-            </button>
+<span class="font-medium text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="thumb_up">thumb_up</span> 19
+            </span>
 </div>
 </article>
 <!-- CARD 4: Atty. Rafael Mendoza -->
-<article class="review-card bg-surface-container-lowest rounded-xl p-7 border border-outline-variant/20 card-rose-shadow flex flex-col justify-between relative overflow-hidden">
-<div class="quote-mark">"</div>
-<div class="relative z-10">
-<div class="flex items-start justify-between gap-3 mb-5">
-<div class="flex items-center gap-3.5">
-<div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary-fixed to-primary-fixed-dim text-on-primary-fixed font-bold font-title-lg flex items-center justify-center shrink-0 shadow-sm ring-2 ring-surface-container-lowest">
+<article class="bg-surface-container-lowest rounded-xl p-6 lg:p-7 border border-outline-variant/20 card-rose-shadow flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+<div>
+<div class="flex items-start justify-between gap-3 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed font-bold font-title-lg flex items-center justify-center shrink-0 border border-outline-variant">
                   RM
                 </div>
 <div>
-<h3 class="text-title-md font-title-md text-on-background font-bold">Atty. Rafael Mendoza</h3>
-<div class="flex items-center gap-1 text-label-sm font-label-sm text-secondary font-medium mt-0.5">
+<h3 class="text-title-md font-title-md text-on-background font-semibold">Atty. Rafael Mendoza</h3>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-secondary font-medium">
 <span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
                     Nazareth, CDO
                   </div>
 </div>
 </div>
-<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high/60 text-primary text-label-sm font-label-sm font-semibold border border-outline-variant/20">
-<span class="material-symbols-outlined text-[14px] text-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
                 Verified
               </span>
 </div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between mb-3">
 <div class="flex text-tertiary-container">
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <span class="text-label-sm font-label-sm text-outline">April 19, 2025</span>
 </div>
-<div class="mb-4 inline-block px-3 py-1 rounded-full bg-surface-container-low text-secondary text-label-sm font-label-sm font-semibold border border-outline-variant/30">
+<div class="mb-3.5 inline-block px-3 py-1 rounded-full bg-surface-container-low text-secondary text-label-sm font-label-sm font-semibold border border-outline-variant/30">
               Traditional Hilot &amp; Scalp Detox
             </div>
-<p class="text-body-lg font-body-lg text-on-surface italic leading-relaxed">
+<p class="text-body-md font-body-md text-on-surface-variant italic">
               "Extremely professional therapists. Hospital-grade cleanliness and calming ambience right inside Limketkai."
             </p>
 </div>
-<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm text-outline relative z-10">
-<span class="flex items-center gap-1.5">
+<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span class="flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px] text-secondary" data-icon="clean_hands">clean_hands</span>
-              Firm Pressure
+              Therapeutic Pressure: Firm
             </span>
-<button class="flex items-center gap-1 font-medium text-primary hover:text-secondary transition-colors px-2 py-1 rounded-full hover:bg-surface-container">
-<span class="material-symbols-outlined text-[16px]" data-icon="thumb_up">thumb_up</span> 33
-            </button>
+<span class="font-medium text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="thumb_up">thumb_up</span> 33
+            </span>
 </div>
 </article>
 <!-- CARD 5: Sophia Louise Cruz -->
-<article class="review-card bg-surface-container-lowest rounded-xl p-7 border border-outline-variant/20 card-rose-shadow flex flex-col justify-between relative overflow-hidden">
-<div class="quote-mark">"</div>
-<div class="relative z-10">
-<div class="flex items-start justify-between gap-3 mb-5">
-<div class="flex items-center gap-3.5">
-<div class="w-12 h-12 rounded-full bg-gradient-to-br from-secondary-fixed to-secondary text-white font-bold font-title-lg flex items-center justify-center shrink-0 shadow-sm ring-2 ring-surface-container-lowest">
+<article class="bg-surface-container-lowest rounded-xl p-6 lg:p-7 border border-outline-variant/20 card-rose-shadow flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+<div>
+<div class="flex items-start justify-between gap-3 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold font-title-lg flex items-center justify-center shrink-0 border border-secondary-container">
                   SC
                 </div>
 <div>
-<h3 class="text-title-md font-title-md text-on-background font-bold">Sophia Louise Cruz</h3>
-<div class="flex items-center gap-1 text-label-sm font-label-sm text-secondary font-medium mt-0.5">
+<h3 class="text-title-md font-title-md text-on-background font-semibold">Sophia Louise Cruz</h3>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-secondary font-medium">
 <span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
                     Kauswagan, CDO
                   </div>
 </div>
 </div>
-<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high/60 text-primary text-label-sm font-label-sm font-semibold border border-outline-variant/20">
-<span class="material-symbols-outlined text-[14px] text-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
                 Verified
               </span>
 </div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between mb-3">
 <div class="flex text-tertiary-container">
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <span class="text-label-sm font-label-sm text-outline">May 9, 2025</span>
 </div>
-<div class="mb-4 inline-block px-3 py-1 rounded-full bg-surface-container-low text-secondary text-label-sm font-label-sm font-semibold border border-outline-variant/30">
+<div class="mb-3.5 inline-block px-3 py-1 rounded-full bg-surface-container-low text-secondary text-label-sm font-label-sm font-semibold border border-outline-variant/30">
               Deluxe Gel Mani-Pedi
             </div>
-<p class="text-body-lg font-body-lg text-on-surface italic leading-relaxed">
+<p class="text-body-md font-body-md text-on-surface-variant italic">
               "Longest lasting manicure I have had in CDO. Camille took so much care with cuticle health."
             </p>
 </div>
-<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm text-outline relative z-10">
-<span class="flex items-center gap-1.5">
+<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span class="flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px] text-secondary" data-icon="palette">palette</span>
               Nail Artist: Camille V.
             </span>
-<button class="flex items-center gap-1 font-medium text-primary hover:text-secondary transition-colors px-2 py-1 rounded-full hover:bg-surface-container">
-<span class="material-symbols-outlined text-[16px]" data-icon="thumb_up">thumb_up</span> 16
-            </button>
+<span class="font-medium text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="thumb_up">thumb_up</span> 16
+            </span>
 </div>
 </article>
 <!-- CARD 6: Bea Nicole Tan -->
-<article class="review-card bg-surface-container-lowest rounded-xl p-7 border border-outline-variant/20 card-rose-shadow flex flex-col justify-between relative overflow-hidden">
-<div class="quote-mark">"</div>
-<div class="relative z-10">
-<div class="flex items-start justify-between gap-3 mb-5">
-<div class="flex items-center gap-3.5">
-<div class="w-12 h-12 rounded-full bg-gradient-to-br from-surface-container-highest to-outline-variant text-primary font-bold font-title-lg flex items-center justify-center shrink-0 shadow-sm ring-2 ring-surface-container-lowest">
+<article class="bg-surface-container-lowest rounded-xl p-6 lg:p-7 border border-outline-variant/20 card-rose-shadow flex flex-col justify-between transition-all duration-200 hover:-translate-y-1">
+<div>
+<div class="flex items-start justify-between gap-3 mb-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest text-primary font-bold font-title-lg flex items-center justify-center shrink-0 border border-outline-variant">
                   BT
                 </div>
 <div>
-<h3 class="text-title-md font-title-md text-on-background font-bold">Bea Nicole Tan</h3>
-<div class="flex items-center gap-1 text-label-sm font-label-sm text-secondary font-medium mt-0.5">
+<h3 class="text-title-md font-title-md text-on-background font-semibold">Bea Nicole Tan</h3>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-secondary font-medium">
 <span class="material-symbols-outlined text-[14px]" data-icon="location_on">location_on</span>
                     Carmen, CDO
                   </div>
 </div>
 </div>
-<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high/60 text-primary text-label-sm font-label-sm font-semibold border border-outline-variant/20">
-<span class="material-symbols-outlined text-[14px] text-primary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-primary text-label-sm font-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
                 Verified
               </span>
 </div>
-<div class="flex items-center justify-between mb-4">
+<div class="flex items-center justify-between mb-3">
 <div class="flex text-tertiary-container">
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-[20px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <span class="text-label-sm font-label-sm text-outline">May 11, 2025</span>
 </div>
-<div class="mb-4 inline-block px-3 py-1 rounded-full bg-surface-container-low text-secondary text-label-sm font-label-sm font-semibold border border-outline-variant/30">
+<div class="mb-3.5 inline-block px-3 py-1 rounded-full bg-surface-container-low text-secondary text-label-sm font-label-sm font-semibold border border-outline-variant/30">
               Radiant Hydrafacial
             </div>
-<p class="text-body-lg font-body-lg text-on-surface italic leading-relaxed">
+<p class="text-body-md font-body-md text-on-surface-variant italic">
               "No pain, zero redness, just pure plump skin. Booking via Viber Concierge was super seamless."
             </p>
 </div>
-<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm text-outline relative z-10">
-<span class="flex items-center gap-1.5">
+<div class="mt-6 pt-4 border-t border-outline-variant/20 flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span class="flex items-center gap-1">
 <span class="material-symbols-outlined text-[16px] text-secondary" data-icon="chat">chat</span>
-              Via Viber Concierge
+              Booked via Viber Concierge
             </span>
-<button class="flex items-center gap-1 font-medium text-primary hover:text-secondary transition-colors px-2 py-1 rounded-full hover:bg-surface-container">
-<span class="material-symbols-outlined text-[16px]" data-icon="thumb_up">thumb_up</span> 22
-            </button>
+<span class="font-medium text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="thumb_up">thumb_up</span> 22
+            </span>
 </div>
 </article>
 </div>
 <!-- Pagination / Load More -->
 <div class="mt-12 text-center">
-<button class="inline-flex items-center gap-2 px-8 py-3.5 rounded-full border-2 border-secondary/60 text-primary font-bold text-label-lg font-label-lg hover:bg-surface-container hover:border-primary transition-all duration-200">
+<button class="inline-flex items-center gap-2 px-8 py-3 rounded-full border border-secondary text-primary font-semibold text-label-lg font-label-lg hover:bg-surface-container transition-all duration-200">
           Load More Kagay-anon Stories
-          <span class="material-symbols-outlined text-[20px]" data-icon="expand_more">expand_more</span>
+          <span class="material-symbols-outlined text-[18px]" data-icon="expand_more">expand_more</span>
 </button>
 </div>
 </section>
 <!-- Visual Atmosphere Highlight Section -->
-<section class="py-16 bg-surface-container-low/80 border-y border-outline-variant/30">
+<section class="py-12 bg-surface-container-low/60 border-y border-outline-variant/30">
 <div class="max-w-7xl mx-auto px-6 lg:px-16">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
-<div class="flex flex-col md:flex-row items-center md:items-start gap-5">
-<div class="p-4 bg-surface-container-lowest rounded-full text-primary border border-outline-variant/20 shrink-0 shadow-sm">
-<span class="material-symbols-outlined text-[28px]" data-icon="verified_user">verified_user</span>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-lowest rounded-full text-primary border border-outline-variant/30 shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-icon="verified_user">verified_user</span>
 </div>
 <div>
-<h4 class="text-title-lg font-title-lg text-primary font-bold mb-1">100% Genuine Testimonials</h4>
-<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">Every review corresponds to an appointment registered in our Limketkai spa ledger.</p>
+<h4 class="text-title-md font-title-md text-primary font-semibold">100% Genuine Testimonials</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Every review corresponds to an appointment registered in our Limketkai spa ledger.</p>
 </div>
 </div>
-<div class="flex flex-col md:flex-row items-center md:items-start gap-5">
-<div class="p-4 bg-surface-container-lowest rounded-full text-primary border border-outline-variant/20 shrink-0 shadow-sm">
-<span class="material-symbols-outlined text-[28px]" data-icon="sanitizer">sanitizer</span>
-</div>
-<div>
-<h4 class="text-title-lg font-title-lg text-primary font-bold mb-1">Medical-Grade Hygiene</h4>
-<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">Individual tool autoclave sterilization and pristine private suite sanitization.</p>
-</div>
-</div>
-<div class="flex flex-col md:flex-row items-center md:items-start gap-5">
-<div class="p-4 bg-surface-container-lowest rounded-full text-primary border border-outline-variant/20 shrink-0 shadow-sm">
-<span class="material-symbols-outlined text-[28px]" data-icon="headset_mic">headset_mic</span>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-lowest rounded-full text-primary border border-outline-variant/30 shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-icon="sanitizer">sanitizer</span>
 </div>
 <div>
-<h4 class="text-title-lg font-title-lg text-primary font-bold mb-1">CDO Concierge Service</h4>
-<p class="text-body-md font-body-md text-on-surface-variant leading-relaxed">Instant assistance via Viber &amp; Messenger with dedicated booking coordinators.</p>
+<h4 class="text-title-md font-title-md text-primary font-semibold">Medical-Grade Hygiene</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Individual tool autoclave sterilization and pristine private suite sanitization.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="p-3 bg-surface-container-lowest rounded-full text-primary border border-outline-variant/30 shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-icon="headset_mic">headset_mic</span>
+</div>
+<div>
+<h4 class="text-title-md font-title-md text-primary font-semibold">CDO Concierge Service</h4>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1">Instant assistance via Viber &amp; Messenger with dedicated booking coordinators.</p>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- 'Share Your Radiance Experience' CTA Card -->
-<section class="px-6 lg:px-16 max-w-7xl mx-auto py-20">
-<div class="bg-surface-container-lowest rounded-xl p-8 lg:p-14 border border-outline-variant/40 card-rose-shadow text-center relative overflow-hidden group">
+<section class="px-6 lg:px-16 max-w-7xl mx-auto py-16">
+<div class="bg-surface-container-lowest rounded-xl p-8 lg:p-14 border border-outline-variant/40 card-rose-shadow text-center relative overflow-hidden">
 <!-- Delicate Champagne Accent Border Ribbon -->
-<div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-secondary-container via-tertiary-container to-primary"></div>
-<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-secondary-fixed/20 rounded-full blur-3xl pointer-events-none group-hover:bg-secondary-fixed/30 transition-all duration-500"></div>
-<div class="max-w-2xl mx-auto space-y-5 relative z-10">
-<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-surface-container text-primary mb-2 shadow-inner border border-outline-variant/20">
-<span class="material-symbols-outlined text-[32px]" data-icon="edit_note">edit_note</span>
+<div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-secondary-container via-tertiary-container to-primary"></div>
+<div class="max-w-2xl mx-auto space-y-4">
+<div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-surface-container text-primary mb-2">
+<span class="material-symbols-outlined text-[28px]" data-icon="edit_note">edit_note</span>
 </div>
-<h2 class="text-headline-md md:text-headline-lg font-headline-md text-primary">
+<h2 class="text-headline-md font-headline-md text-primary">
             Share Your Radiance Experience
           </h2>
-<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+<p class="text-body-lg font-body-lg text-on-surface-variant">
             Did you recently visit our Limketkai sanctuary? Your feedback elevates our craft and helps fellow Kagay-anons discover mindful self-care.
           </p>
 <!-- Quick Action Buttons -->
-<div class="pt-6 flex flex-wrap items-center justify-center gap-4">
-<a class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-surface-container-low border border-outline-variant/40 text-on-surface hover:text-primary hover:border-secondary hover:bg-surface-container transition-all font-bold text-label-lg font-label-lg shadow-sm hover:shadow-md" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+<a class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-surface-container-low border border-outline-variant/40 text-on-surface hover:text-primary hover:border-secondary transition-all font-semibold text-label-lg font-label-lg" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
 <span class="material-symbols-outlined text-tertiary-container" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
               Write Google Review
             </a>
-<a class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-surface-container-low border border-outline-variant/40 text-on-surface hover:text-primary hover:border-secondary hover:bg-surface-container transition-all font-bold text-label-lg font-label-lg shadow-sm hover:shadow-md" href="https://facebook.com" rel="noopener noreferrer" target="_blank">
+<a class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-surface-container-low border border-outline-variant/40 text-on-surface hover:text-primary hover:border-secondary transition-all font-semibold text-label-lg font-label-lg" href="https://facebook.com" rel="noopener noreferrer" target="_blank">
 <span class="material-symbols-outlined text-secondary" data-icon="recommend">recommend</span>
               Recommend on Facebook
             </a>
-<button class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-primary-container text-on-primary hover:bg-primary transition-all font-bold text-label-lg font-label-lg shadow-md hover:shadow-lg hover:-translate-y-0.5">
+<button class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-primary-container text-on-primary hover:bg-primary transition-all font-semibold text-label-lg font-label-lg shadow-sm">
 <span class="material-symbols-outlined" data-icon="rate_review">rate_review</span>
               Direct Guest Feedback
             </button>
 </div>
-<p class="text-label-sm font-label-sm text-outline pt-3">
+<p class="text-label-sm font-label-sm text-outline pt-2">
             Verified review submissions receive a complimentary ₱200 voucher toward their next sensory therapy ritual.
           </p>
 </div>
 </div>
 </section>
 </main>
-<!-- ================= WEB FOOTER ================= -->
+<!-- ================= WEB FOOTER (Shared Components JSON Anchor) ================= -->
 <footer class="bg-surface-container-lowest border-t border-outline-variant/30">
 <div class="w-full py-16 px-6 lg:px-16 max-w-7xl mx-auto flex flex-col gap-10">
 <!-- Top Row: Brand & Quick Links Cluster -->
@@ -758,7 +706,7 @@
 <div class="flex items-center gap-3">
 <img alt="True Radiance Beauty Salon and Spa Logo" class="h-14 w-auto object-contain" src="/images/logo.png"/>
 </div>
-<p class="text-body-md font-body-md text-on-surface-variant max-w-sm leading-relaxed">
+<p class="text-body-md font-body-md text-on-surface-variant max-w-sm">
             High-end wellness and bespoke aesthetic services in Cagayan de Oro City. A restorative sanctuary dedicated to graceful beauty and tranquil rejuvenation.
           </p>
 <div class="flex items-center gap-2 pt-2 text-label-md font-label-md text-secondary font-semibold">
@@ -766,30 +714,30 @@
             Rosario Crescent, Limketkai Center, CDO
           </div>
 </div>
-<!-- Links Grid -->
+<!-- Links Grid (from Footer links in JSON) -->
 <div class="md:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-6">
 <div class="space-y-3">
 <span class="text-label-md font-label-md uppercase tracking-wider text-primary font-bold block">Sanctuary</span>
 <ul class="space-y-2.5 text-body-md font-body-md">
-<li><a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="/services">Services</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#">Signature Packages</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#">Consultation Booking</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="/services">Services</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Signature Packages</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Consultation Booking</a></li>
 </ul>
 </div>
 <div class="space-y-3">
 <span class="text-label-md font-label-md uppercase tracking-wider text-primary font-bold block">Experience</span>
 <ul class="space-y-2.5 text-body-md font-body-md">
-<li><a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#">Specialist Roster</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#">Limketkai Location &amp; Map</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#">Viber &amp; Messenger Concierge</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Specialist Roster</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Limketkai Location &amp; Map</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Viber &amp; Messenger Concierge</a></li>
 </ul>
 </div>
 <div class="space-y-3">
 <span class="text-label-md font-label-md uppercase tracking-wider text-primary font-bold block">Policies</span>
 <ul class="space-y-2.5 text-body-md font-body-md">
-<li><a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#">Privacy Policy</a></li>
-<li><a class="text-on-surface-variant hover:text-primary transition-colors font-medium" href="#">Terms of Service</a></li>
-<li><a class="text-primary font-bold" href="#">Reviews &amp; Feedback</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-primary font-semibold" href="#">Reviews &amp; Feedback</a></li>
 </ul>
 </div>
 </div>
@@ -800,7 +748,7 @@
           © 2025 True Radiance Beauty Salon and Spa. All rights reserved. Rosario Crescent, Limketkai Center, Cagayan de Oro City, 9000 Misamis Oriental, Philippines.
         </p>
 <div class="flex items-center gap-3 shrink-0">
-<span class="text-label-sm font-label-sm text-secondary bg-surface-container px-3 py-1 rounded-full font-semibold border border-outline-variant/20">
+<span class="text-label-sm font-label-sm text-secondary bg-surface-container px-3 py-1 rounded-full font-medium">
             CDO Limketkai Branch
           </span>
 </div>
