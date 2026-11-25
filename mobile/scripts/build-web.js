@@ -75,6 +75,8 @@ for (const page of PAGES) {
     console.log(`  ${page}.html  (no tailwind)`);
   }
 
+  // PWA-only tags (manifest, icons, install prompt) are not needed inside the native app
+  html = html.replace(/<link rel="(?:manifest|apple-touch-icon|icon)"[^>]*>\s*/g, '').replace(/<script src="\/js\/pwa\.js" defer><\/script>\s*/g, '');
   html = html.replace(/<head[^>]*>/i, (h) => h + '\n<script src="/js/app-bridge.js"></script>');
   write(path.join(WWW, page + '.html'), rewriteRoutes(html));
 }

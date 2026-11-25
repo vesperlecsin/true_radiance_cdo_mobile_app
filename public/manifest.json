@@ -1,0 +1,21 @@
+{
+  "name": "True Radiance Beauty Salon & Spa",
+  "short_name": "True Radiance",
+  "description": "Book services at True Radiance Beauty Salon & Spa, Cagayan de Oro.",
+  "id": "/",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#fdf4f6",
+  "theme_color": "#9c2d4f",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Book now", "url": "/book", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "My account", "url": "/my-account", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

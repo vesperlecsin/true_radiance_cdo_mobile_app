@@ -47,6 +47,11 @@ app.get(
 
 // Serve JS files explicitly and public folder for images
 app.use('/js', express.static(path.join(__dirname, 'public', 'js')));
+// PWA: the service worker must never be cached hard, or phones won't pick up updates.
+app.get('/sw.js', (req, res) => {
+  res.set({ 'Cache-Control': 'no-cache', 'Service-Worker-Allowed': '/' });
+  res.sendFile(path.join(__dirname, 'public', 'sw.js'));
+});
 app.use(express.static(path.join(__dirname, 'public'), { extensions: ['html'] }));
 
 // 404 Handlers
